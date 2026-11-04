@@ -7486,3 +7486,158 @@ img, video, canvas {
 
 
 
+
+/* ═══════════════════════════════════════════════════════════
+   IVORY & WHITE CONTRAST SECTIONS
+   Clean alternating ivory (#F7F6F2) background for professional demo contrast
+   ═══════════════════════════════════════════ */
+.section-ivory,
+section.grid-section.section-ivory,
+.editorial-section-ivory {
+  background-color: #F7F6F2 !important;
+  color: #111827 !important;
+  border-top: 1px solid #E5E7EB !important;
+  border-bottom: 1px solid #E5E7EB !important;
+}
+
+.section-ivory .editorial-eyebrow,
+.section-ivory .grid-eyebrow-pill,
+.section-ivory .roadmap-step-num {
+  color: #4B5563 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+}
+
+.section-ivory .grid-eyebrow-pill {
+  background: #E5E7EB !important;
+  border-color: #D1D5DB !important;
+  color: #1F2937 !important;
+  box-shadow: none !important;
+}
+
+.section-ivory h1,
+.section-ivory h2,
+.section-ivory h3,
+.section-ivory h4,
+.section-ivory .grid-main-title,
+.section-ivory .editorial-title {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.section-ivory p,
+.section-ivory .editorial-lead,
+.section-ivory .grid-main-subtitle {
+  color: #4B5563 !important;
+}
+
+/* Ivory Section Cards (Pillars & Watch Cards) */
+.section-ivory .pillar-card,
+.section-ivory .roadmap-step {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+  color: #111827 !important;
+  border-radius: 8px !important;
+}
+
+.section-ivory .pillar-card h3,
+.section-ivory .roadmap-step-title {
+  color: #111827 !important;
+}
+
+.section-ivory .pillar-card p,
+.section-ivory .roadmap-step-desc {
+  color: #4B5563 !important;
+}
+
+.section-ivory .roadmap-step.completed {
+  border-color: #D1D5DB !important;
+}
+
+.section-ivory .roadmap-step.active {
+  border-color: #111827 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.section-ivory .status-done {
+  background: #E5E7EB !important;
+  color: #1F2937 !important;
+}
+
+.section-ivory .status-active {
+  background: #111827 !important;
+  color: #FFFFFF !important;
+}
+
+.section-ivory .status-next {
+  background: #F3F4F6 !important;
+  color: #6B7280 !important;
+  border: 1px solid #E5E7EB !important;
+}
+
+/* Watch Cards inside Ivory Grid Section */
+section.grid-section.section-ivory .cta-product-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+section.grid-section.section-ivory .cta-product-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+  border-color: #D1D5DB !important;
+}
+
+section.grid-section.section-ivory .card-title {
+  color: #111827 !important;
+}
+
+section.grid-section.section-ivory .card-subtitle {
+  color: #6B7280 !important;
+}
+
+section.grid-section.section-ivory .card-desc {
+  color: #4B5563 !important;
+}
+
+section.grid-section.section-ivory .card-meta span {
+  color: #6B7280 !important;
+}
+
+section.grid-section.section-ivory .card-price {
+  color: #111827 !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+}
+
+section.grid-section.section-ivory .card-edition-badge {
+  background: #F3F4F6 !important;
+  border: 1px solid #E5E7EB !important;
+  color: #374151 !important;
+}
+
+section.grid-section.section-ivory .btn-quick-add {
+  background: #111827 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+section.grid-section.section-ivory .btn-quick-add:hover {
+  background: #374151 !important;
+}
+
+section.grid-section.section-ivory .btn-card-explore,
+section.grid-section.section-ivory .card-cta-btn {
+  background: #F3F4F6 !important;
+  color: #111827 !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 4px !important;
+}
+
+section.grid-section.section-ivory .btn-card-explore:hover,
+section.grid-section.section-ivory .card-cta-btn:hover {
+  background: #E5E7EB !important;
+  color: #111827 !important;
+}
