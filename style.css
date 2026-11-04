@@ -6605,15 +6605,15 @@ section.grid-section .card-subtitle {
 
 /* Title: Watch Model Name */
 section.grid-section .card-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 1.85rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.03em !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
   color: #FFFFFF !important;
   text-transform: uppercase !important;
   margin-bottom: 12px !important;
   line-height: 1.18 !important;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: none !important;
 }
 
 /* Description: Crisp Editorial Narrative */
@@ -7576,68 +7576,174 @@ section.grid-section.section-ivory,
   border: 1px solid #E5E7EB !important;
 }
 
-/* Watch Cards inside Ivory Grid Section */
+/* Watch Cards inside Ivory Grid Section — Refined Slightly Darker Card on Light Background */
 section.grid-section.section-ivory .cta-product-card {
-  background: #FFFFFF !important;
-  border: 1px solid #E5E7EB !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  background: #EAE6DE !important; /* Slightly darker than ivory #F7F6F2 to create handsome tactile contrast */
+  border: 1px solid #D5D0C5 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease !important;
 }
 
 section.grid-section.section-ivory .cta-product-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
-  border-color: #D1D5DB !important;
+  background: #E3DFD6 !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.13), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  border-color: #BDB7A7 !important;
 }
 
+/* Watch Image Stage on Card — Sleek Studio Frame */
+section.grid-section.section-ivory .card-image-wrap {
+  background: #14161C !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.65) !important;
+  overflow: hidden !important;
+  margin-top: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+section.grid-section.section-ivory .card-image-wrap::after {
+  box-shadow: inset 0 0 24px 8px #14161C !important;
+}
+
+/* Typography on Slightly Darker Card — High Contrast & No Fuzzy Drop Shadows */
 section.grid-section.section-ivory .card-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
   color: #111827 !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  filter: none !important;
+  margin-bottom: 8px !important;
 }
 
 section.grid-section.section-ivory .card-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
   color: #6B7280 !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  margin-bottom: 6px !important;
+  display: block !important;
 }
 
 section.grid-section.section-ivory .card-desc {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+  color: #374151 !important;
+  text-shadow: none !important;
+  margin-bottom: 16px !important;
+}
+
+section.grid-section.section-ivory .card-meta {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
   color: #4B5563 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 20px !important;
 }
 
 section.grid-section.section-ivory .card-meta span {
-  color: #6B7280 !important;
+  color: #4B5563 !important;
+  font-weight: 600 !important;
+}
+
+section.grid-section.section-ivory .card-meta span:last-child {
+  color: #111827 !important;
+  font-weight: 800 !important;
+  font-family: 'DM Mono', monospace !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.02em !important;
+  text-shadow: none !important;
 }
 
 section.grid-section.section-ivory .card-price {
   color: #111827 !important;
-  font-weight: 700 !important;
-  font-size: 15px !important;
+  font-family: 'DM Mono', monospace !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  margin-top: 4px !important;
+  text-shadow: none !important;
 }
 
-section.grid-section.section-ivory .card-edition-badge {
-  background: #F3F4F6 !important;
-  border: 1px solid #E5E7EB !important;
-  color: #374151 !important;
+section.grid-section.section-ivory .card-edition-badge,
+section.grid-section.section-ivory .cta-product-card .card-edition-badge {
+  background: rgba(17, 24, 39, 0.95) !important;
+  color: #F9FAFB !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.16em !important;
+}
+
+/* Action Buttons — High Contrast, Clean & Tactile */
+section.grid-section.section-ivory .card-cta-btn,
+section.grid-section.section-ivory .btn-card-explore {
+  background: #111827 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #111827 !important;
+  border-radius: 8px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  padding: 13px 22px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14) !important;
+  transition: all 0.22s ease !important;
+  cursor: pointer !important;
+  text-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+section.grid-section.section-ivory .card-cta-btn:hover,
+section.grid-section.section-ivory .btn-card-explore:hover {
+  background: #1F2937 !important;
+  border-color: #1F2937 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22) !important;
+}
+
+section.grid-section.section-ivory .card-cta-btn svg {
+  stroke: #FFFFFF !important;
 }
 
 section.grid-section.section-ivory .btn-quick-add {
-  background: #111827 !important;
-  color: #FFFFFF !important;
-  border: none !important;
-  border-radius: 4px !important;
+  background: #FFFFFF !important;
+  color: #111827 !important;
+  border: 1px solid #CBD5E1 !important;
+  border-radius: 8px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 13px 18px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.22s ease !important;
+  cursor: pointer !important;
 }
 
 section.grid-section.section-ivory .btn-quick-add:hover {
-  background: #374151 !important;
-}
-
-section.grid-section.section-ivory .btn-card-explore,
-section.grid-section.section-ivory .card-cta-btn {
-  background: #F3F4F6 !important;
-  color: #111827 !important;
-  border: 1px solid #E5E7EB !important;
-  border-radius: 4px !important;
-}
-
-section.grid-section.section-ivory .btn-card-explore:hover,
-section.grid-section.section-ivory .card-cta-btn:hover {
-  background: #E5E7EB !important;
-  color: #111827 !important;
+  background: #F1F5F9 !important;
+  border-color: #94A3B8 !important;
+  color: #0F172A !important;
+  transform: translateY(-2px) !important;
 }
