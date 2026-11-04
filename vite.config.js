@@ -228,6 +228,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         collection: resolve(import.meta.dirname, 'collection.html'),
+        upcoming: resolve(import.meta.dirname, 'upcoming.html'),
         about: resolve(import.meta.dirname, 'about.html'),
         profile: resolve(import.meta.dirname, 'profile.html'),
         checkout: resolve(import.meta.dirname, 'checkout.html'),
