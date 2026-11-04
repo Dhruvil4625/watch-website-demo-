@@ -16,14 +16,14 @@ const ADMIN_AUTH_KEY = 'gtc_admin_authenticated';
 
 export const EMPTY_IMAGE_PLACEHOLDER_SVG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300"><rect width="100%" height="100%" fill="%2312110e"/><circle cx="150" cy="150" r="110" fill="none" stroke="%23c9a84c" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/><circle cx="150" cy="150" r="90" fill="none" stroke="%23c9a84c" stroke-width="1" opacity="0.6"/><circle cx="150" cy="150" r="4" fill="%23c9a84c"/><line x1="150" y1="90" x2="150" y2="150" stroke="%23c9a84c" stroke-width="2" stroke-linecap="round"/><line x1="150" y1="150" x2="195" y2="150" stroke="%23c9a84c" stroke-width="1.5" stroke-linecap="round"/><text x="150" y="210" fill="%23c9a84c" font-family="monospace" font-size="10" letter-spacing="3" text-anchor="middle" opacity="0.8">IMAGE CLEARED</text><text x="150" y="226" fill="%238c8270" font-family="sans-serif" font-size="8" text-anchor="middle">Click Edit to upload</text></svg>`;
 
-// 6 Canonical Genesis & Horizon Timepieces
+// 6 Canonical Genesis & Horizon Timepieces (Demo range: ₹5,000 - ₹7,000)
 export const INITIAL_WATCH_CATALOG = [
   {
     id: 'glacial',
     title: 'GLACIAL TWILIGHT',
     subtitle: 'REF. HIM-GT-2601 · ICE BLUE SUNBURST',
     badge: 'LIMITED · 001/300',
-    price: '₹2,45,000',
+    price: '₹5,499',
     collection: 'Horizon 300',
     description: 'Cold-forged 904L steel monobloc architecture crowned with an ice blue sunburst dial, reflecting glacial twilight at extreme altitudes.',
     images: {
@@ -50,7 +50,7 @@ export const INITIAL_WATCH_CATALOG = [
     title: 'MINERAL SLATE',
     subtitle: 'REF. HIM-MS-2602 · ANTHRACITE FLUTED',
     badge: 'LIMITED · 042/300',
-    price: '₹2,65,000',
+    price: '₹5,999',
     collection: 'Horizon 300',
     description: 'Hand-Anglage & High-Luster Flat Polishing paired with an anthracite fluted dial, reflecting rock-face strata with purity.',
     images: {
@@ -77,7 +77,7 @@ export const INITIAL_WATCH_CATALOG = [
     title: 'SUMMIT ICE',
     subtitle: 'REF. HIM-SI-2603 · ARCTIC MATTE WHITE',
     badge: 'LIMITED · 089/300',
-    price: '₹2,55,000',
+    price: '₹5,299',
     collection: 'Horizon 300',
     description: 'Arctic matte white dial with circular Côtes de Surat finishing and black mirror-polished screws, built for extreme sub-zero peaks.',
     images: {
@@ -104,7 +104,7 @@ export const INITIAL_WATCH_CATALOG = [
     title: 'HIMALAYAN HORIZON',
     subtitle: 'REF. R 39 SC AT HIMALAYAN (GD)',
     badge: 'MAISON PIECE · 001/300',
-    price: '₹2,85,000',
+    price: '₹6,499',
     collection: 'Genesis Atelier',
     description: 'CNC micro-milled contours mimicking the 8,000m peaks, encased in 316L surgical steel with 22K gold rotor.',
     images: {
@@ -131,7 +131,7 @@ export const INITIAL_WATCH_CATALOG = [
     title: 'HIMALAYAN RS',
     subtitle: 'REF. V 32 SC AT FO SMURFETTE (RS)',
     badge: 'NUMERÉE · 014/300',
-    price: '₹2,95,000',
+    price: '₹6,299',
     collection: 'Genesis Atelier',
     description: 'A refined horological edition featuring perlage finishing, Côtes de Genève bridges, and subtle warmth.',
     images: {
@@ -158,7 +158,7 @@ export const INITIAL_WATCH_CATALOG = [
     title: 'NOCTURNE SUMMIT',
     subtitle: 'REF. HIM-NS-2606 · CYAN NOCTURNE',
     badge: 'EXCLUSIF · 007/300',
-    price: '₹3,10,000',
+    price: '₹6,999',
     collection: 'Horizon Exclusif',
     description: 'Diamond-faceted markers charged with high-intensity cyan Swiss lume for extraordinary alpine darkness visibility.',
     images: {
@@ -215,7 +215,14 @@ export function getAllWatches() {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+        // Enforce demo price range (₹5,000 - ₹7,000); if old luxury prices exist, reset to updated catalog
+        const hasOldPrices = parsed.some((w) => {
+          const num = parseInt(String(w.price || '').replace(/[^0-9]/g, ''), 10);
+          return num > 10000;
+        });
+        if (!hasOldPrices) {
+          return parsed;
+        }
       }
     }
   } catch (e) {
