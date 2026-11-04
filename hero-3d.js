@@ -87,14 +87,14 @@ export const VARIANTS = [
     dialColor: '#121212',       // Velvet Mineral Black
     dialRoughness: 0.40,
     dialMetalness: 0.10,
-    chassisColor: '#C9A84C',    // Brushed Antique Gold
+    chassisColor: '#FFFFFF',    // Brushed Antique Gold
     chassisRoughness: 0.22,
     chassisMetalness: 0.90,
     bezelColor: '#A68230',      // Deep antique gold rim
     // Assets
     bgUrl: '/assets/3d/bg_dark_rock.webp',
     lightUrl: '/assets/3d/light_dark_rock.exr',
-    accentDotColor: '#C9A84C',
+    accentDotColor: '#FFFFFF',
   },
   {
     id: 'summit-ice',
@@ -268,7 +268,7 @@ export class HimalayanHero3D {
 
     const softbox = ctx.createRadialGradient(256, 45, 5, 256, 45, 120);
     softbox.addColorStop(0, 'rgba(255, 248, 230, 0.95)');
-    softbox.addColorStop(0.45, 'rgba(201, 168, 76, 0.4)');
+    softbox.addColorStop(0.45, 'rgba(255, 255, 255, 0.4)');
     softbox.addColorStop(1, 'transparent');
     ctx.fillStyle = softbox;
     ctx.fillRect(0, 0, 512, 170);
@@ -1073,11 +1073,11 @@ export class HimalayanHero3D {
       },
       'mineral-slate': {
         sectionBg: '#111111',
-        overlay: 'radial-gradient(circle at 50% 50%, transparent 35%, #111111 95%), radial-gradient(circle at 50% 45%, rgba(201, 168, 76, 0.15) 0%, transparent 65%), linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 0%, transparent 40%, #111111 100%)'
+        overlay: 'radial-gradient(circle at 50% 50%, transparent 35%, #111111 95%), radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.08) 0%, transparent 65%), linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 0%, transparent 40%, #111111 100%)'
       },
       'summit-ice': {
         sectionBg: '#111111',
-        overlay: 'radial-gradient(circle at 50% 50%, transparent 35%, #111111 95%), radial-gradient(circle at 50% 45%, rgba(232, 214, 179, 0.18) 0%, transparent 65%), linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 0%, transparent 40%, #111111 100%)'
+        overlay: 'radial-gradient(circle at 50% 50%, transparent 35%, #111111 95%), radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.08) 0%, transparent 65%), linear-gradient(to bottom, rgba(17, 17, 17, 0.4) 0%, transparent 40%, #111111 100%)'
       },
       'alpine-pine': {
         sectionBg: '#111111',
