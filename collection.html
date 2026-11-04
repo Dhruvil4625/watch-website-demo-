@@ -42,10 +42,10 @@
         <ul class="links">
           <!-- 1. Home -->
           <li>
-            <a class="nav-link" id="nav-home" href="index.html">Home</a>
+            <a class="nav-link " id="nav-home" href="index.html">Home</a>
           </li>
 
-          <!-- 2. Collection (Morphing Dropdown) -->
+          <!-- 2. Collection -->
           <li>
             <button class="trigger active" data-menu="collection" aria-expanded="false">
               <span>Collection</span>
@@ -55,9 +55,14 @@
             </button>
           </li>
 
-          <!-- 3. About Us -->
+          <!-- 3. Upcoming -->
           <li>
-            <a class="nav-link" id="nav-about" href="about.html">About Us</a>
+            <a class="nav-link " id="nav-upcoming" href="upcoming.html">Upcoming</a>
+          </li>
+
+          <!-- 4. About Us -->
+          <li>
+            <a class="nav-link " id="nav-about" href="about.html">About Us</a>
           </li>
         </ul>
 
@@ -145,6 +150,7 @@
       <h3>Navigation</h3>
       <a href="index.html">Home</a>
       <a href="collection.html">Collection (360° Showcase)</a>
+      <a href="upcoming.html">Upcoming Releases</a>
       <a href="about.html">About Us</a>
 
       <h3>Featured Models</h3>
@@ -615,6 +621,7 @@
           <h5 class="footer-col-title">Navigation</h5>
           <a href="index.html">Home</a>
           <a href="collection.html">Collection (360° Showcase)</a>
+          <a href="upcoming.html">Upcoming Releases</a>
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact Us</a>
         </div>
@@ -641,6 +648,7 @@
         <div class="footer-bottom-links">
           <a href="index.html">Home</a>
           <a href="collection.html">Collection</a>
+          <a href="upcoming.html">Upcoming</a>
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact Us</a>
           <a href="privacy.html">Privacy</a>
@@ -853,7 +861,7 @@
   <script>
     if ('requestIdleCallback' in window) {
       window.requestIdleCallback(() => {
-        ['index.html', 'about.html'].forEach((href) => {
+        ['index.html', 'upcoming.html', 'about.html'].forEach((href) => {
           const link = document.createElement('link');
           link.rel = 'prefetch';
           link.href = href;
