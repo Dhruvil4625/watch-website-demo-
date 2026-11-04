@@ -2528,7 +2528,7 @@ const initProductDetailsModal = (showcaseInstance) => {
           id: currentWatch.id || `gtc-watch-${activeModelIndex}`,
           name: currentWatch.title || currentWatch.name || 'GTC Himalayan Edition',
           ref: currentWatch.ref || 'REF. HIM-GT-2001',
-          price: currentWatch.price || '₹2,45,000 INR',
+          price: currentWatch.price || '₹5,499 INR',
           numericPrice: currentWatch.numericPrice || 245000,
           img: currentWatch.image || currentWatch.img || '/assets/photo/ethos-watch.webp',
         });
