@@ -147,8 +147,8 @@ export function addToGtcCart(item) {
     id: item.id,
     name: item.name || 'GTC Himalayan Timepiece',
     ref: item.ref || 'REF. HIM-GT-2001',
-    price: item.price || `₹${(numericPrice || 245000).toLocaleString('en-IN')} INR`,
-    numericPrice: numericPrice || 245000,
+    price: item.price || `₹${(numericPrice || 5499).toLocaleString('en-IN')} INR`,
+    numericPrice: numericPrice || 5499,
     img: item.img || '/assets/photo/ethos-watch.webp',
   });
 
