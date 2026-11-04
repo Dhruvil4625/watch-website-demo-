@@ -48,7 +48,7 @@
   align-items: center;
   gap: 2rem;
   background: rgba(18, 23, 32, 0.65);
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
   padding: 1.25rem 2rem;
   margin-top: 2rem;
@@ -59,7 +59,7 @@
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 0.76rem;
   letter-spacing: 0.16em;
-  color: var(--accent-color, #e8d6b3);
+  color: var(--accent-color, #9CA3AF);
   text-transform: uppercase;
 }
 
@@ -94,7 +94,7 @@
 .countdown-sep {
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 1.2rem;
-  color: var(--primary-color, #c9a84c);
+  color: var(--primary-color, #FFFFFF);
   opacity: 0.6;
   margin-bottom: 12px;
 }
@@ -124,8 +124,8 @@
 
 .filter-pill:hover,
 .filter-pill.active {
-  background: var(--primary-color, #c9a84c);
-  border-color: var(--primary-color, #c9a84c);
+  background: var(--primary-color, #FFFFFF);
+  border-color: var(--primary-color, #FFFFFF);
   color: #090d12;
   font-weight: 600;
 }
@@ -136,7 +136,7 @@
   grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
   background: linear-gradient(135deg, rgba(18, 23, 32, 0.8) 0%, rgba(9, 13, 18, 0.95) 100%);
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   padding: 3rem;
   margin-bottom: 4rem;
@@ -151,7 +151,7 @@
   right: 0;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -184,8 +184,8 @@
   left: 16px;
   background: rgba(9, 13, 18, 0.88);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--primary-color, #c9a84c);
-  color: var(--primary-color, #c9a84c);
+  border: 1px solid var(--primary-color, #FFFFFF);
+  color: var(--primary-color, #FFFFFF);
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 0.68rem;
   letter-spacing: 0.14em;
@@ -204,7 +204,7 @@
   font-size: 0.74rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-color, #e8d6b3);
+  color: var(--accent-color, #9CA3AF);
   margin-bottom: 0.75rem;
 }
 
@@ -271,7 +271,7 @@
 
 .upcoming-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(201, 168, 76, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
 }
 
@@ -313,9 +313,9 @@
 }
 
 .upcoming-status-tag.testing {
-  background: rgba(201, 168, 76, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   color: #090d12;
-  border: 1px solid #c9a84c;
+  border: 1px solid #FFFFFF;
 }
 
 .upcoming-status-tag.concept {
@@ -342,7 +342,7 @@
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 0.7rem;
   letter-spacing: 0.14em;
-  color: var(--accent-color, #e8d6b3);
+  color: var(--accent-color, #9CA3AF);
 }
 
 .upcoming-card-eta {
@@ -393,7 +393,7 @@
 /* ─── Production Roadmap ─────────────────────────────────── */
 .roadmap-section {
   background: rgba(18, 23, 32, 0.4);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   padding: 3.5rem;
   margin-bottom: 5rem;
@@ -425,15 +425,15 @@
 }
 
 .roadmap-step.active {
-  border-color: var(--primary-color, #c9a84c);
-  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+  border-color: var(--primary-color, #FFFFFF);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .roadmap-step-num {
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 0.72rem;
   letter-spacing: 0.16em;
-  color: var(--primary-color, #c9a84c);
+  color: var(--primary-color, #FFFFFF);
   margin-bottom: 0.5rem;
 }
 
@@ -467,7 +467,7 @@
 }
 
 .status-active {
-  background: rgba(201, 168, 76, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   color: #f0d588;
 }
 
@@ -479,7 +479,7 @@
 /* ─── VIP Waitlist RSVP Section ──────────────────────────── */
 .waitlist-section {
   background: linear-gradient(135deg, rgba(18, 23, 32, 0.85) 0%, rgba(9, 13, 18, 0.95) 100%);
-  border: 1px solid rgba(201, 168, 76, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 8px;
   padding: 4rem 3rem;
   display: grid;
@@ -512,7 +512,7 @@
   gap: 0.75rem;
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 0.82rem;
-  color: var(--accent-color, #e8d6b3);
+  color: var(--accent-color, #9CA3AF);
 }
 
 .waitlist-benefits li {
@@ -562,12 +562,12 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-color, #c9a84c);
-  box-shadow: 0 0 10px rgba(201, 168, 76, 0.25);
+  border-color: var(--primary-color, #FFFFFF);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
 .waitlist-btn {
-  background: var(--primary-color, #c9a84c);
+  background: var(--primary-color, #FFFFFF);
   color: #090d12;
   border: none;
   border-radius: 4px;
@@ -585,13 +585,13 @@
 .waitlist-btn:hover {
   background: #deb859;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
 }
 
 .rsvp-success-card {
   display: none;
   background: rgba(18, 23, 32, 0.95);
-  border: 1px solid var(--primary-color, #c9a84c);
+  border: 1px solid var(--primary-color, #FFFFFF);
   border-radius: 6px;
   padding: 2rem;
   text-align: center;
@@ -603,14 +603,14 @@
 
 .rsvp-badge {
   display: inline-block;
-  background: rgba(201, 168, 76, 0.15);
-  color: var(--primary-color, #c9a84c);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--primary-color, #FFFFFF);
   font-family: var(--font-mono, 'DM Mono', monospace);
   font-size: 1.1rem;
   font-weight: 700;
   padding: 6px 16px;
   border-radius: 4px;
-  border: 1px dashed var(--primary-color, #c9a84c);
+  border: 1px dashed var(--primary-color, #FFFFFF);
   margin: 1rem 0;
 }
 
