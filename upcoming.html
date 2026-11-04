@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upcoming Releases &amp; Prototypes · Gujarat Time Company</title>
+  <meta name="description" content="Discover future horological releases, field-testing prototypes, and upcoming calibres from Gujarat Time Company in Surat, India." />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" type="image/svg+xml" href="/assets/photo/logo.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./src/components/editorialPage.css" />
+  <link rel="stylesheet" href="./src/components/upcomingPage.css" />
+</head>
+<body class="editorial-page upcoming-page">
+
+  <!-- ═══════════════════════════════════════════
+       MAISON NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="bar">
+      <!-- Logo (Left) -->
+      <a class="logo" href="index.html" aria-label="GTC Home">
+        <img class="nav-logo-img" src="/assets/photo/logo.svg" alt="Gujarat Time Company" />
+      </a>
+
+      <!-- Desktop Nav (Center: 4 Items) -->
+      <nav class="desktop-nav" id="nav" aria-label="Main">
+        <ul class="links">
+          <!-- 1. Home -->
+          <li>
+            <a class="nav-link" id="nav-home" href="index.html">Home</a>
+          </li>
+
+          <!-- 2. Collection (Morphing Dropdown) -->
+          <li>
+            <button class="trigger" data-menu="collection" aria-expanded="false">
+              <span>Collection</span>
+              <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </li>
+
+          <!-- 3. Upcoming (Active) -->
+          <li>
+            <a class="nav-link active" id="nav-upcoming" href="upcoming.html">Upcoming</a>
+          </li>
+
+          <!-- 4. About Us -->
+          <li>
+            <a class="nav-link" id="nav-about" href="about.html">About Us</a>
+          </li>
+        </ul>
+
+        <!-- Morphing Dropdown Container for Collection -->
+        <div class="dd" id="dd" aria-hidden="true">
+          <div class="panel p-collection" id="p-collection" data-panel="collection">
+            <div class="collection-vertical-header">
+              <span class="collection-header-title">Collections</span>
+              <span class="collection-header-count">2 Views</span>
+            </div>
+
+            <div class="collection-items-list">
+              <a class="collection-item" href="collection.html">
+                <div class="item-visual">
+                  <img src="/assets/photo/z1.webp" alt="Main Collection Atelier" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top"><span class="item-badge">SHOWCASE 360°</span></div>
+                  <strong class="item-title">Main Collection</strong>
+                  <p class="item-desc">Interactive 360° virtual horology showcase.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+
+              <a class="collection-item" href="index.html#hero">
+                <div class="item-visual">
+                  <img src="/assets/photo/bg1.webp" alt="GTC Himalayan Edition" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top"><span class="item-badge">HORIZON 300</span></div>
+                  <strong class="item-title">GTC Himalayan</strong>
+                  <p class="item-desc">High-altitude alpine chronometer edition.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
+
+            <div class="collection-vertical-footer">
+              <a href="collection.html" class="collection-footer-link">
+                <span>Explore Full Timepiece Gallery</span>
+                <span class="footer-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Actions (Right) -->
+      <div class="actions">
+        <div class="auth-nav-container" id="auth-nav-container"></div>
+        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="gtc-cart-count" id="gtc-cart-badge">0</span>
+        </button>
+        <button class="cta open-reserve-modal">Reserve Now</button>
+        <button class="menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 5.5h12M2 10.5h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Sheet -->
+    <div class="sheet" id="sheet" aria-hidden="true">
+      <h3>Navigation</h3>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection (360° Showcase)</a>
+      <a href="upcoming.html" style="color: var(--primary-color, #c9a84c);">Upcoming Releases</a>
+      <a href="about.html">About Us</a>
+
+      <h3>Featured Models</h3>
+      <a href="index.html#hero">GTC Himalayan Horizon</a>
+      <a href="collection.html#grid-section">All Timepieces</a>
+
+      <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px;">
+        <div class="auth-nav-container" id="auth-nav-container-mobile" style="width: 100%;"></div>
+        <button class="cta open-reserve-modal" style="width: 100%; justify-content: center;">Reserve Timepiece</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO BANNER & LIVE COUNTDOWN
+  ═══════════════════════════════════════════ -->
+  <section class="editorial-hero">
+    <div class="editorial-breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Horology Lab</span>
+      <span class="sep">/</span>
+      <span>Upcoming Releases</span>
+    </div>
+
+    <div class="upcoming-hero-badge">
+      <span class="pulse-dot"></span>
+      <span>SURAT ATELIER R&amp;D PIPELINE · 2026–2027</span>
+    </div>
+
+    <h1 class="editorial-title">Next Horizons in Mechanical Watchmaking</h1>
+    <p class="editorial-lead">
+      Preview upcoming limited-production editions, field-tested chronographs, and experimental calibres in active development at Gujarat Time Company.
+    </p>
+
+    <!-- Target Release Countdown -->
+    <div class="countdown-strip">
+      <div class="countdown-label">
+        <span>NEXT PLANNED DROP:</span><br>
+        <strong style="color: #fff; font-size: 0.95rem;">GTC Thar Desert Chronograph</strong>
+      </div>
+      <div class="countdown-timer">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="count-days">75</span>
+          <span class="countdown-tag">Days</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="count-hours">14</span>
+          <span class="countdown-tag">Hours</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="count-mins">28</span>
+          <span class="countdown-tag">Mins</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="count-secs">45</span>
+          <span class="countdown-tag">Secs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT CONTAINER
+  ═══════════════════════════════════════════ -->
+  <main class="editorial-container" style="max-width: 1400px; margin: 0 auto; padding: 0 6%;">
+
+    <!-- ─── Category Filter Pills ─── -->
+    <div class="upcoming-filter-bar">
+      <button class="filter-pill active" data-filter="all">All Projects (5)</button>
+      <button class="filter-pill" data-filter="chronograph">Chronographs (2)</button>
+      <button class="filter-pill" data-filter="diver">Oceanic Diver (1)</button>
+      <button class="filter-pill" data-filter="calibre">Calibre &amp; Lab (2)</button>
+    </div>
+
+    <!-- ─── Featured Prototype Spotlight ─── -->
+    <section class="spotlight-card">
+      <div class="spotlight-media">
+        <img src="/assets/photo/ethos-watch.webp" alt="GTC Thar Desert Chronograph Prototype" loading="lazy" />
+        <span class="spotlight-badge">FLAGSHIP PROTOTYPE // STAGE 03</span>
+      </div>
+      <div class="spotlight-info">
+        <span class="spotlight-subtitle">Ref. TC-40-BR · Autumn 2026 Preview</span>
+        <h2 class="spotlight-title">GTC Thar Desert Chronograph</h2>
+        <p class="spotlight-desc">
+          Engineered for arid heat, dust resistance, and high-shock terrain. Crafted with a 40mm marine-grade CuSn8 bronze monobloc case and a rippled dune-texture bicompax dial inspired by Rajasthan’s vast Thar Desert.
+        </p>
+
+        <div class="spotlight-specs-grid">
+          <div class="spec-cell">
+            <span class="spec-cell-label">Movement</span>
+            <span class="spec-cell-val">Calibre GTC-C26 Bi-Compax</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-cell-label">Case Architecture</span>
+            <span class="spec-cell-val">40mm CuSn8 Aged Bronze</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-cell-label">Water Resistance</span>
+            <span class="spec-cell-val">100m (10 ATM) Threaded Crown</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-cell-label">Production Target</span>
+            <span class="spec-cell-val">250 Numbered Pieces</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#waitlist" class="waitlist-btn quick-notify-btn" data-watch="GTC Thar Desert Chronograph" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+            Join Priority Waitlist →
+          </a>
+          <button class="secondary-btn open-reserve-modal" data-watch="GTC Thar Chronograph" style="font-size: 0.78rem; padding: 12px 22px;">
+            View Technical Dossier
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Upcoming Grid Lineup ─── -->
+    <div style="margin-bottom: 2rem;">
+      <span class="editorial-eyebrow">ACTIVE HOROLOGICAL DEVELOPMENT</span>
+      <h2 style="font-family: var(--font-hero); font-size: 2rem; color: #fff;">Pipeline Editions in Production</h2>
+    </div>
+
+    <div class="upcoming-grid">
+
+      <!-- Card 1: GTC Oceanic 600M Diver -->
+      <article class="upcoming-card" data-category="diver">
+        <div class="upcoming-card-visual">
+          <img src="/assets/photo/gtc-lume-night.webp" alt="GTC Oceanic 600M Titanium Diver" loading="lazy" />
+          <span class="upcoming-status-tag testing">Hydrostatic Testing</span>
+        </div>
+        <div class="upcoming-card-body">
+          <div class="upcoming-card-meta">
+            <span class="upcoming-card-ref">Ref. OC-42-TI</span>
+            <span class="upcoming-card-eta">ETA: Q4 2026</span>
+          </div>
+          <h3 class="upcoming-card-title">GTC Oceanic 600M Deep Diver</h3>
+          <p class="upcoming-card-desc">
+            A heavy-duty diver made from ultra-light Grade 5 Titanium with an automatic helium escape valve and ceramic unidirectional bezel. Tested to withstand the crushing pressures of the Arabian Sea.
+          </p>
+          <div class="upcoming-card-specs">
+            <span class="upcoming-card-spec-pill">600m / 60 ATM</span>
+            <span class="upcoming-card-spec-pill">Grade 5 Titanium</span>
+            <span class="upcoming-card-spec-pill">Helium Valve</span>
+            <span class="upcoming-card-spec-pill">Cyan Super-LumiNova</span>
+          </div>
+          <div class="upcoming-card-footer">
+            <button class="waitlist-btn quick-notify-btn" data-watch="GTC Oceanic 600M Deep Diver" style="width: 100%; padding: 10px; font-size: 0.72rem;">
+              Request Early Notification
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Horizon GMT Worldtimer -->
+      <article class="upcoming-card" data-category="calibre">
+        <div class="upcoming-card-visual">
+          <img src="/assets/photo/gtc-calibre-movement.webp" alt="Horizon GMT Worldtimer Calibre" loading="lazy" />
+          <span class="upcoming-status-tag prototyping">Calibre Regulation</span>
+        </div>
+        <div class="upcoming-card-body">
+          <div class="upcoming-card-meta">
+            <span class="upcoming-card-ref">Ref. GMT-3000</span>
+            <span class="upcoming-card-eta">ETA: Early 2027</span>
+          </div>
+          <h3 class="upcoming-card-title">Horizon GMT Worldtimer</h3>
+          <p class="upcoming-card-desc">
+            Equipped with our in-house Calibre GTC-3000 featuring a true traveler jumping local hour hand, dual-tone ceramic bezel ring, and 72-hour autonomous power reserve.
+          </p>
+          <div class="upcoming-card-specs">
+            <span class="upcoming-card-spec-pill">Traveler GMT</span>
+            <span class="upcoming-card-spec-pill">72h Reserve</span>
+            <span class="upcoming-card-spec-pill">Ceramic 24H Bezel</span>
+            <span class="upcoming-card-spec-pill">±2s Daily Rate</span>
+          </div>
+          <div class="upcoming-card-footer">
+            <button class="waitlist-btn quick-notify-btn" data-watch="Horizon GMT Worldtimer" style="width: 100%; padding: 10px; font-size: 0.72rem;">
+              Request Early Notification
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Surat Lapidary Skeleton -->
+      <article class="upcoming-card" data-category="calibre">
+        <div class="upcoming-card-visual">
+          <img src="/assets/photo/z1.webp" alt="Surat Lapidary Skeleton Prototype" loading="lazy" />
+          <span class="upcoming-status-tag concept">Concept Laboratory</span>
+        </div>
+        <div class="upcoming-card-body">
+          <div class="upcoming-card-meta">
+            <span class="upcoming-card-ref">Ref. SK-27-EXP</span>
+            <span class="upcoming-card-eta">ETA: Mid 2027</span>
+          </div>
+          <h3 class="upcoming-card-title">Surat Lapidary Skeleton</h3>
+          <p class="upcoming-card-desc">
+            An openworked masterwork with fully skeletonized ruthenium bridges, hand-chamfered 45° anglage by Surat diamond polishers, and an exposed balance wheel at 6 o'clock.
+          </p>
+          <div class="upcoming-card-specs">
+            <span class="upcoming-card-spec-pill">Openworked Bridges</span>
+            <span class="upcoming-card-spec-pill">Mirror Anglage</span>
+            <span class="upcoming-card-spec-pill">Ruthenium Finish</span>
+            <span class="upcoming-card-spec-pill">50 Pieces Only</span>
+          </div>
+          <div class="upcoming-card-footer">
+            <button class="waitlist-btn quick-notify-btn" data-watch="Surat Lapidary Skeleton" style="width: 100%; padding: 10px; font-size: 0.72rem;">
+              Request Early Notification
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Himalayan Midnight Noir -->
+      <article class="upcoming-card" data-category="chronograph">
+        <div class="upcoming-card-visual">
+          <img src="/assets/photo/ethos-watch-rs.webp" alt="Himalayan Midnight Noir Edition" loading="lazy" />
+          <span class="upcoming-status-tag testing">Final Tooling</span>
+        </div>
+        <div class="upcoming-card-body">
+          <div class="upcoming-card-meta">
+            <span class="upcoming-card-ref">Ref. H-NOIR-39</span>
+            <span class="upcoming-card-eta">ETA: Winter 2026</span>
+          </div>
+          <h3 class="upcoming-card-title">Himalayan Midnight Noir</h3>
+          <p class="upcoming-card-desc">
+            An all-black stealth iteration of the Himalayan Horizon. Hardened Diamond-Like Carbon (DLC) matte case with a deep obsidian dial and darkened anthracite lume plots.
+          </p>
+          <div class="upcoming-card-specs">
+            <span class="upcoming-card-spec-pill">DLC Obsidian Finish</span>
+            <span class="upcoming-card-spec-pill">Stealth Anthracite</span>
+            <span class="upcoming-card-spec-pill">39mm Monobloc</span>
+            <span class="upcoming-card-spec-pill">100 Pieces Limit</span>
+          </div>
+          <div class="upcoming-card-footer">
+            <button class="waitlist-btn quick-notify-btn" data-watch="Himalayan Midnight Noir" style="width: 100%; padding: 10px; font-size: 0.72rem;">
+              Request Early Notification
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ─── Production Roadmap ─── -->
+    <section class="roadmap-section">
+      <div class="roadmap-header">
+        <span class="editorial-eyebrow">MANUFACTURING TIMELINE</span>
+        <h2 style="font-family: var(--font-hero); font-size: 2.2rem; color: #fff;">From Concept to Wrist</h2>
+        <p style="color: rgba(248, 245, 239, 0.7); margin-top: 0.5rem; font-size: 0.95rem;">
+          Every Gujarat Time Company reference follows an unhurried, multi-phase engineering protocol before allocation.
+        </p>
+      </div>
+
+      <div class="roadmap-pipeline">
+        <div class="roadmap-step completed">
+          <div class="roadmap-step-num">PHASE 01</div>
+          <h4 class="roadmap-step-title">CAD &amp; Casework</h4>
+          <p class="roadmap-step-desc">Solid billet 316L and bronze micro-milling, bezel tolerances, and crystal seated fits.</p>
+          <span class="roadmap-step-status status-done">✓ Completed</span>
+        </div>
+
+        <div class="roadmap-step active">
+          <div class="roadmap-step-num">PHASE 02</div>
+          <h4 class="roadmap-step-title">Stress Testing</h4>
+          <p class="roadmap-step-desc">Extreme temperature exposure (-20°C to +55°C), barometric drops, and 60 ATM water testing.</p>
+          <span class="roadmap-step-status status-active">● In Progress</span>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-step-num">PHASE 03</div>
+          <h4 class="roadmap-step-title">Surat Anglage</h4>
+          <p class="roadmap-step-desc">Hand finishing of calibre bridges and diamond-paste mirror polishing by local master artisans.</p>
+          <span class="roadmap-step-status status-next">○ Scheduled</span>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-step-num">PHASE 04</div>
+          <h4 class="roadmap-step-title">Numbered Release</h4>
+          <p class="roadmap-step-desc">Opening priority reservation windows for registered waitlist collectors worldwide.</p>
+          <span class="roadmap-step-status status-next">○ Upcoming</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VIP Waitlist RSVP Form ─── -->
+    <section class="waitlist-section" id="waitlist">
+      <div class="waitlist-info">
+        <span class="editorial-eyebrow">PRIORITY ACCESS PROTOCOL</span>
+        <h2>Reserve Your Place in the Prototype Queue</h2>
+        <p>
+          Due to strictly limited batch sizes (100–300 numbered pieces per reference), we allocate early access slots to verified watch enthusiasts and collectors.
+        </p>
+
+        <ul class="waitlist-benefits">
+          <li>❖ 48-Hour Head Start Before Public Launch</li>
+          <li>❖ Direct Access to Engineering Field Test Reports</li>
+          <li>❖ Choice of Low-Digit Case Serial Numbers</li>
+          <li>❖ Zero Upfront Obligation or Deposit Required</li>
+        </ul>
+      </div>
+
+      <div>
+        <form class="waitlist-form" id="upcoming-rsvp-form">
+          <div class="form-group">
+            <label for="rsvp-name">Full Name</label>
+            <input type="text" id="rsvp-name" placeholder="e.g. Siddharth Mehta" required />
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-email">Email Address</label>
+            <input type="email" id="rsvp-email" placeholder="e.g. s.mehta@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-watch">Preferred Prototype Model</label>
+            <select id="rsvp-watch">
+              <option value="GTC Thar Desert Chronograph">GTC Thar Desert Chronograph (Ref. TC-40-BR)</option>
+              <option value="GTC Oceanic 600M Deep Diver">GTC Oceanic 600M Deep Diver (Ref. OC-42-TI)</option>
+              <option value="Horizon GMT Worldtimer">Horizon GMT Worldtimer (Ref. GMT-3000)</option>
+              <option value="Surat Lapidary Skeleton">Surat Lapidary Skeleton (Ref. SK-27-EXP)</option>
+              <option value="Himalayan Midnight Noir">Himalayan Midnight Noir (Ref. H-NOIR-39)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-notes">Comments / Serial Request (Optional)</label>
+            <textarea id="rsvp-notes" rows="2" placeholder="e.g. Interested in low serial #007 or #018"></textarea>
+          </div>
+
+          <button type="submit" class="waitlist-btn">Submit Priority RSVP</button>
+        </form>
+
+        <!-- Dynamic Success Feedback Card -->
+        <div class="rsvp-success-card" id="rsvp-success-card">
+          <span style="font-size: 2rem;">✓</span>
+          <h3 style="font-family: var(--font-hero); color: #fff; margin: 0.5rem 0;">Priority Registration Confirmed</h3>
+          <p id="rsvp-details" style="font-size: 0.88rem; color: rgba(248, 245, 239, 0.8); line-height: 1.6;"></p>
+          <div class="rsvp-badge" id="rsvp-ticket-num">GTC-PROT-7104</div>
+          <p style="font-size: 0.75rem; color: var(--accent-color); font-family: var(--font-mono);">
+            Save this confirmation code. We will notify you when pre-orders unlock.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" aria-label="Gujarat Time Company Home">
+            <img class="footer-logo" src="/assets/photo/logo.svg" alt="Gujarat Time Company Logo" />
+          </a>
+          <p class="footer-tagline">Contemporary Indian Watchmaking · Est. 2026</p>
+          <p class="footer-address">
+            Gujarat Time Company Pvt. Ltd.<br>
+            Surat Horological District<br>
+            Gujarat 395007, India
+          </p>
+          <div class="footer-socials">
+            <a class="footer-social" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a class="footer-social" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a class="footer-social" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Navigation</h5>
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection (360° Showcase)</a>
+          <a href="upcoming.html">Upcoming Releases</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Timepieces Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Timepieces</h5>
+          <a href="index.html#hero">GTC Himalayan (Horizon 300)</a>
+          <a href="collection.html">360° Virtual Showcase</a>
+          <a href="collection.html#grid-section">All Watch Models</a>
+          <a href="upcoming.html#waitlist">Prototype Waitlist</a>
+          <a href="about.html#manufacture">Design &amp; Engineering</a>
+        </div>
+
+        <!-- Reserve Column -->
+        <div class="footer-col footer-col-reserve">
+          <h5 class="footer-col-title">Watch Reservation</h5>
+          <p class="footer-col-desc">Limited edition timepieces precision-assembled in Surat, India. Inquire or reserve directly online.</p>
+          <button class="footer-reserve-btn open-reserve-modal">Reserve Your Piece</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC and the GTC Himalayan are marks of Gujarat Time Company. Designed and assembled in Surat, India.</p>
+        <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection</a>
+          <a href="upcoming.html">Upcoming</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       TECHNICAL DOSSIER MODAL (#reserve-modal)
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="reserve-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dossier-title">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close Technical Dossier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="dossier-view-front">
+        <div class="dossier-header-strip">
+          <span class="dossier-badge">SURAT ATELIER · PROTOTYPE LAB</span>
+          <span class="dossier-edition-count">UPCOMING ALLOCATION</span>
+        </div>
+        <h2 class="dossier-title" id="dossier-title">GTC PROTOTYPE SPECIFICATION</h2>
+        <p class="dossier-subtitle">Next-Generation Engineering · Surat Atelier</p>
+        <div style="margin: 2rem 0; text-align: center;">
+          <a href="#waitlist" class="editorial-submit-btn" onclick="document.getElementById('modal-close').click();" style="text-decoration: none; display: inline-block;">
+            Join Priority Waitlist
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/upcoming.js"></script>
+</body>
+</html>
+
