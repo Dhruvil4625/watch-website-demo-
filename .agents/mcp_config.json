@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "Figma": {
+      "serverUrl": "http://127.0.0.1:3845/mcp"
+    },
+    "remote-composio": {
+      "serverUrl": "https://connect.composio.dev/mcp",
+      "headers": {
+        "x-consumer-api-key": "YOUR_COMPOSIO_API_KEY_HERE"
+      }
+    }
+  }
+}

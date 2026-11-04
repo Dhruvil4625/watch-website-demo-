@@ -1,0 +1,984 @@
+/* ═══════════════════════════════════════════════════════════
+   GTC HIMALAYAN · ADMIN MASTER STUDIO & WATCH MANAGEMENT SUITE
+   Haute Horlogerie Manufacture · Surat Atelier (Est. 2026)
+   Obsidian (#0b0b0b) & Antique Gold (#C9A84C) Design System
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── 1. CARD ADMIN TOOLBAR & ACTIONS (INJECTED ON WATCH CTA CARDS) ─── */
+.gtc-card-admin-toolbar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 15;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gtc-card-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(11, 11, 11, 0.88);
+  border: 1px solid #C9A84C;
+  border-radius: 20px;
+  color: #C9A84C;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 168, 76, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gtc-card-edit-btn:hover {
+  background: #C9A84C;
+  color: #0b0b0b;
+  box-shadow: 0 6px 22px rgba(201, 168, 76, 0.45);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.gtc-card-edit-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+}
+
+.gtc-card-delete-img-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(14, 13, 11, 0.9);
+  border: 1px solid rgba(239, 68, 68, 0.55);
+  border-radius: 20px;
+  color: #f87171;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gtc-card-delete-img-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.gtc-card-delete-img-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+}
+
+/* Add Watch CTA Card inside Grid */
+.cta-add-watch-card {
+  border: 1.5px dashed rgba(201, 168, 76, 0.4) !important;
+  background: rgba(18, 17, 15, 0.65) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 480px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  padding: 36px 24px !important;
+}
+
+.cta-add-watch-card:hover {
+  border-color: #C9A84C !important;
+  background: rgba(24, 22, 18, 0.85) !important;
+  box-shadow: 0 10px 30px rgba(201, 168, 76, 0.2) !important;
+  transform: translateY(-4px);
+}
+
+.add-watch-plus-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1.5px solid #C9A84C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A84C;
+  font-size: 28px;
+  margin-bottom: 18px;
+  background: rgba(201, 168, 76, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cta-add-watch-card:hover .add-watch-plus-icon {
+  background: #C9A84C;
+  color: #0b0b0b;
+  transform: scale(1.1) rotate(90deg);
+}
+
+.add-watch-title {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.14em;
+  margin: 0 0 8px;
+}
+
+.add-watch-subtitle {
+  color: #C9A84C;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+/* ─── 2. FLOATING ADMIN DOCK (BOTTOM RIGHT OF SCREEN) ────── */
+.gtc-admin-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(14, 13, 11, 0.92);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  border-radius: 40px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.75), 0 0 20px rgba(201, 168, 76, 0.25);
+  backdrop-filter: blur(14px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gtc-admin-dock:hover {
+  border-color: #C9A84C;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.85), 0 0 28px rgba(201, 168, 76, 0.4);
+}
+
+.dock-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  background: rgba(201, 168, 76, 0.15);
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.dock-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4ade80;
+  animation: dockPulse 2s infinite ease-in-out;
+}
+
+@keyframes dockPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.dock-title {
+  color: #C9A84C;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+
+.dock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 20px;
+  color: #E8D6B3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.dock-btn:hover {
+  background: rgba(201, 168, 76, 0.2);
+  color: #ffffff;
+  border-color: #C9A84C;
+}
+
+.dock-btn.dock-btn-primary {
+  background: #C9A84C;
+  color: #0b0b0b;
+  border-color: #C9A84C;
+  font-weight: 700;
+}
+
+.dock-btn.dock-btn-primary:hover {
+  background: #dfbe63;
+  box-shadow: 0 0 14px rgba(201, 168, 76, 0.5);
+}
+
+/* ─── 3. MODAL OVERLAY (MASTER STUDIO & WATCH EDITOR) ───── */
+.gtc-admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(14px);
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gtc-admin-modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.gtc-admin-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  max-height: 90vh;
+  background: #0e0d0b;
+  border: 1.5px solid #C9A84C;
+  border-radius: 18px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 35px rgba(201, 168, 76, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalPopIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPopIn {
+  from { transform: scale(0.95) translateY(14px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Dialog Header */
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  background: #141310;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.dialog-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dialog-eyebrow {
+  color: #C9A84C;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.dialog-title {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.dialog-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: #E8D6B3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.dialog-close-btn:hover {
+  background: #C9A84C;
+  color: #0b0b0b;
+  transform: rotate(90deg);
+}
+
+/* Dialog Tabs */
+.dialog-tabs-bar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #12110e;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  overflow-x: auto;
+}
+
+.dialog-tab-btn {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #9e9382;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dialog-tab-btn:hover {
+  color: #E8D6B3;
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.dialog-tab-btn.active {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: #C9A84C;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Dialog Body */
+.dialog-body {
+  padding: 28px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+/* ─── 4. WATCH INVENTORY LIST IN STUDIO ──────────────────── */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.inventory-card {
+  background: #141310;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.inventory-card:hover {
+  border-color: #C9A84C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(201, 168, 76, 0.2);
+  transform: translateY(-3px);
+}
+
+.inventory-card-top {
+  position: relative;
+  height: 180px;
+  background: radial-gradient(circle at center, #26241e 0%, #100f0c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.inventory-thumb {
+  max-height: 140px;
+  max-width: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.7));
+  transition: transform 0.3s ease;
+}
+
+.inventory-card:hover .inventory-thumb {
+  transform: scale(1.08);
+}
+
+.inventory-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  background: rgba(11, 11, 11, 0.85);
+  border: 1px solid #C9A84C;
+  border-radius: 4px;
+  color: #C9A84C;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+.inventory-price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 3px 8px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 4px;
+  color: #4ade80;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.inventory-card-content {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-card-title {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.inventory-card-sub {
+  color: #b8aa91;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  margin: 0 0 12px;
+  letter-spacing: 0.06em;
+}
+
+.inventory-specs-pill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.spec-pill {
+  padding: 2px 7px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 3px;
+  color: #E8D6B3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+}
+
+.inventory-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.inventory-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.inventory-btn-edit {
+  background: #C9A84C;
+  border: 1px solid #C9A84C;
+  color: #0b0b0b;
+  font-weight: 700;
+}
+
+.inventory-btn-edit:hover {
+  background: #e2c168;
+}
+
+.inventory-btn-delete {
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
+.inventory-btn-delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+
+/* ─── 5. TIMEPIECE FORM (3 IMAGES + GLB MODEL LIGHTER) ───── */
+.timepiece-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-section-title {
+  color: #C9A84C;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  margin: 10px 0 6px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gtc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gtc-input-group label {
+  color: #E8D6B3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gtc-admin-input,
+.gtc-admin-textarea,
+.gtc-admin-select {
+  padding: 10px 14px;
+  background: #141310;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gtc-admin-input:focus,
+.gtc-admin-textarea:focus,
+.gtc-admin-select:focus {
+  outline: none;
+  border-color: #C9A84C;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+  background: #1c1a15;
+}
+
+/* 3-Images Section */
+.images-3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.image-slot-card {
+  background: #141310;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-slot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slot-tag {
+  color: #C9A84C;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+
+.image-slot-preview {
+  height: 120px;
+  background: #090807;
+  border: 1px dashed rgba(201, 168, 76, 0.25);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-slot-preview img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.image-preset-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.preset-chip {
+  padding: 3px 6px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 3px;
+  color: #E8D6B3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-chip:hover {
+  background: #C9A84C;
+  color: #0b0b0b;
+}
+
+.file-upload-label {
+  display: block;
+  text-align: center;
+  padding: 6px;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 6px;
+  color: #C9A84C;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-upload-label:hover {
+  background: #C9A84C;
+  color: #0b0b0b;
+}
+
+/* Form Actions */
+.form-submit-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.admin-action-btn {
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-action-btn.btn-save {
+  background: #C9A84C;
+  border: 1px solid #C9A84C;
+  color: #0b0b0b;
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.35);
+}
+
+.admin-action-btn.btn-save:hover {
+  background: #e2c168;
+  box-shadow: 0 6px 24px rgba(201, 168, 76, 0.5);
+  transform: translateY(-2px);
+}
+
+.admin-action-btn.btn-cancel {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: #E8D6B3;
+}
+
+.admin-action-btn.btn-cancel:hover {
+  background: rgba(201, 168, 76, 0.1);
+  color: #ffffff;
+}
+
+/* ─── 6. DETAILS MODAL 3-IMAGE CAROUSEL & SPECS ──────────── */
+.details-images-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.details-image-view {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #23211c 0%, #0e0d0b 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 18px;
+}
+
+.details-image-view img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.8));
+  transition: transform 0.4s ease;
+}
+
+.details-image-view:hover img {
+  transform: scale(1.05);
+}
+
+.details-image-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.image-view-tab {
+  padding: 6px 14px;
+  background: rgba(20, 19, 16, 0.9);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 20px;
+  color: #E8D6B3;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.image-view-tab:hover,
+.image-view-tab.active {
+  background: #C9A84C;
+  color: #0b0b0b;
+  font-weight: 700;
+  border-color: #C9A84C;
+}
+
+/* ─── 7. TOAST ALERTS ────────────────────────────────────── */
+.gtc-admin-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: #141310;
+  border: 1px solid #C9A84C;
+  border-radius: 30px;
+  color: #ffffff;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 20px rgba(201, 168, 76, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gtc-admin-toast.active {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.gtc-admin-toast.toast-success {
+  border-color: #4ade80;
+}
+
+/* ─── 7B. CARD EMPTY IMAGE PLACEHOLDER & ADMIN ACTIONS ─── */
+.card-image-wrap.has-no-image {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.card-empty-image-placeholder {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  border: 1.5px dashed rgba(201, 168, 76, 0.4);
+  border-radius: 12px;
+  background: radial-gradient(circle at center, rgba(32, 30, 24, 0.75) 0%, rgba(14, 13, 11, 0.95) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cta-product-card:hover .card-empty-image-placeholder {
+  border-color: #C9A84C;
+  background: radial-gradient(circle at center, rgba(45, 40, 28, 0.85) 0%, rgba(18, 16, 13, 0.98) 100%);
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.2);
+}
+
+.empty-placeholder-svg {
+  width: 48px;
+  height: 48px;
+  stroke: #C9A84C;
+  margin-bottom: 10px;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.3));
+}
+
+.empty-placeholder-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #E8D6B3;
+  margin-bottom: 5px;
+}
+
+.empty-placeholder-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: #8c8270;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+/* Slot Image Header Delete Button */
+.btn-delete-slot-image {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 12px;
+  color: #fca5a5;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-delete-slot-image:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.slot-actions-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.slot-actions-row .file-upload-label {
+  flex: 1;
+  margin: 0;
+}
+
+.btn-slot-clear-full {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 6px;
+  color: #fca5a5;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-slot-clear-full:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+.image-slot-card.is-cleared {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.image-slot-card.is-cleared .slot-tag {
+  color: #f87171 !important;
+}
+
+.details-empty-placeholder {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(201, 168, 76, 0.35);
+  border-radius: 12px;
+  background: rgba(14, 13, 11, 0.7);
+  text-align: center;
+  padding: 20px;
+}
+
+/* ─── 8. RESPONSIVE BREAKPOINTS ──────────────────────────── */
+@media (max-width: 768px) {
+  .dialog-body {
+    padding: 18px;
+  }
+  .form-grid-2,
+  .form-grid-3,
+  .images-3-grid {
+    grid-template-columns: 1fr;
+  }
+  .gtc-admin-dock {
+    bottom: 16px;
+    right: 16px;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 32px);
+  }
+}

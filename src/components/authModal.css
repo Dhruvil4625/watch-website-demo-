@@ -1,0 +1,975 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAISON GUJARAT TIME COMPANY — LUXURY AUTHENTICATION VAULT
+   Split-Screen Obsidian & Antique Gold Modal (Precision Calibrated & Lag-Free)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --gtc-page-bg: #070707;
+  --gtc-gold: #C9A84C;
+  --gtc-gold-bright: #E8D6B3;
+  --gtc-gold-dark: #8c7333;
+  --gtc-gold-hairline: rgba(201, 168, 76, 0.26);
+  --gtc-gold-glow: rgba(201, 168, 76, 0.14);
+  --gtc-obsidian-card: radial-gradient(circle at 50% 0%, rgba(26, 24, 19, 0.96) 0%, rgba(12, 12, 11, 0.98) 100%);
+  --gtc-field-bg: rgba(255, 255, 255, 0.035);
+  --gtc-field-hover: rgba(255, 255, 255, 0.05);
+  --gtc-field-focus: rgba(22, 20, 15, 0.85);
+  --gtc-text-ivory: #f8f5ef;
+  --gtc-text-muted: rgba(232, 214, 179, 0.65);
+}
+
+/* ============================================================================
+   1. MODAL BACKDROP & BASE STAGE
+   ============================================================================ */
+.gtc-auth-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(5, 5, 5, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.24s;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.gtc-auth-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.gtc-stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background: var(--gtc-page-bg);
+  overflow: hidden;
+}
+
+/* Fast Luxury Close Button */
+.gtc-auth-close-btn {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  z-index: 100010;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(18, 17, 14, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--gtc-gold);
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  user-select: none;
+}
+
+.gtc-auth-close-btn:hover {
+  background: rgba(201, 168, 76, 0.2);
+  border-color: var(--gtc-gold);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.gtc-auth-close-btn:active {
+  transform: scale(0.92);
+}
+
+/* ============================================================================
+   2. LEFT PHOTO / CINEMATIC VIDEO STAGE
+   ============================================================================ */
+.gtc-photo {
+  position: relative;
+  flex: 1 1 54%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0b0b0b;
+}
+
+.photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.photo-img--wide {
+  display: none;
+}
+
+.gtc-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 7, 7, 0.35) 0%, rgba(7, 7, 7, 0.75) 100%);
+  pointer-events: none;
+}
+
+/* Hero Crest & Architectural Titles */
+.gtc-hero {
+  position: absolute;
+  left: 48px;
+  bottom: 54px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gtc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(14, 14, 14, 0.85);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  color: var(--gtc-gold-bright);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.gtc-badge-glyph {
+  width: 16px;
+  height: 16px;
+  fill: var(--gtc-gold);
+}
+
+.gtc-hl-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.gtc-hl {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(38px, 4.4vw, 54px);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+}
+
+#hl2 {
+  color: var(--gtc-gold);
+  font-style: italic;
+}
+
+/* ============================================================================
+   3. RIGHT PANE & CRISP GLASSMORPHIC CARD (NO MATRIX SCALE LAG)
+   ============================================================================ */
+.gtc-pane {
+  position: relative;
+  flex: 1 1 46%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--gtc-page-bg);
+}
+
+.gtc-card {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  border-radius: 24px;
+  background: var(--gtc-obsidian-card);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid var(--gtc-gold-hairline);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.9), 0 0 40px rgba(201, 168, 76, 0.08);
+  padding: 40px 38px 36px;
+  box-sizing: border-box;
+  transform: translateY(12px);
+  opacity: 0.95;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+}
+
+.gtc-auth-modal-backdrop.active .gtc-card {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gtc-card-in {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Typography */
+#h1 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--gtc-text-ivory);
+  text-align: center;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+#sub {
+  font-size: 14px;
+  color: var(--gtc-text-muted);
+  text-align: center;
+  margin: -6px 0 0;
+  line-height: 1.45;
+}
+
+#sub b {
+  color: var(--gtc-gold);
+  font-weight: 600;
+}
+
+/* ============================================================================
+   4. SEGMENTED TABS (FIXED OVERLAP & CLEAN SPLIT)
+   ============================================================================ */
+.gtc-auth-tabs {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: #090909 !important;
+  border: 1px solid rgba(201, 168, 76, 0.22) !important;
+  padding: 5px !important;
+  border-radius: 999px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin-top: 4px;
+}
+
+.gtc-auth-tab-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  font-family: 'DM Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  color: rgba(232, 214, 179, 0.6) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 12px !important;
+}
+
+.gtc-auth-tab-btn:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.gtc-auth-tab-btn.active {
+  background: linear-gradient(180deg, #221f18 0%, #141310 100%) !important;
+  color: var(--gtc-gold) !important;
+  border: 1px solid rgba(201, 168, 76, 0.45) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(201, 168, 76, 0.22) !important;
+}
+
+/* ============================================================================
+   5. UNIFIED STATUS ALERT
+   ============================================================================ */
+.gtc-auth-alert {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 12.5px;
+  line-height: 1.45;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+  word-break: break-word;
+  transition: all 0.2s ease;
+}
+
+.gtc-auth-alert.error {
+  display: block;
+  padding: 10px 14px;
+  background: rgba(220, 38, 38, 0.12);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+.gtc-auth-alert.success {
+  display: block;
+  padding: 10px 14px;
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--gtc-gold-bright);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+
+/* Views Visibility */
+.gtc-auth-view {
+  display: none;
+  width: 100%;
+}
+
+.gtc-auth-view.active {
+  display: block;
+}
+
+/* ============================================================================
+   6. CRISP INPUT FIELDS (NO DOUBLE BORDER / ZERO TYPING LAG)
+   ============================================================================ */
+.gtc-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gtc-signup-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  width: 100%;
+}
+
+.gtc-field {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  border-radius: 12px;
+  background: var(--gtc-field-bg);
+  border: 1px solid var(--gtc-gold-hairline);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.gtc-field:hover {
+  border-color: rgba(201, 168, 76, 0.45);
+  background: var(--gtc-field-hover);
+}
+
+.gtc-field:focus-within {
+  border-color: var(--gtc-gold) !important;
+  box-shadow: 0 0 0 3px var(--gtc-gold-glow), 0 0 16px rgba(201, 168, 76, 0.1) !important;
+  background: var(--gtc-field-focus) !important;
+}
+
+/* Pure clean input: absolutely NO internal outline */
+.gtc-auth-input {
+  width: 100%;
+  height: 100%;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  font-family: inherit;
+  font-size: 14.5px;
+  padding: 0;
+  letter-spacing: 0.01em;
+}
+
+.gtc-auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.gtc-auth-input:focus,
+.gtc-auth-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Kill global focus-visible outline on text inputs */
+.gtc-stage input:focus,
+.gtc-stage input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================================
+   7. PRIMARY GOLD CTA BUTTON
+   ============================================================================ */
+.gtc-login-btn {
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #E8D6B3 0%, #C9A84C 50%, #9E7D3B 100%);
+  color: #0b0b0b;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.28), 0 2px 6px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, filter 0.2s ease;
+  margin-top: 4px;
+}
+
+.gtc-login-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 28px rgba(201, 168, 76, 0.42);
+}
+
+.gtc-login-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.96);
+}
+
+.gtc-login-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.gtc-login-arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.gtc-login-arrow path {
+  stroke: #0b0b0b;
+}
+
+/* ============================================================================
+   8. DIVIDER & SECONDARY BUTTONS
+   ============================================================================ */
+.gtc-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--gtc-gold);
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.18em;
+  margin: 4px 0;
+}
+
+.gtc-div-l,
+.gtc-div-r {
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 168, 76, 0.22);
+}
+
+.gtc-g-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--gtc-gold-bright);
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.gtc-g-btn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gtc-gold);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.gtc-bottom {
+  text-align: center;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 2px 0 0;
+}
+
+.gtc-bottom a {
+  color: var(--gtc-gold);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  margin-left: 4px;
+}
+
+.gtc-bottom a:hover {
+  color: var(--gtc-gold-bright);
+  text-decoration: underline;
+}
+
+/* Quorum Mode State overrides: strictly hide collector navigation elements */
+#gtc-auth-modal.quorum-active .gtc-auth-tabs,
+#gtc-auth-modal.quorum-active .gtc-divider,
+#gtc-auth-modal.quorum-active #gtc-secondary-btn,
+#gtc-auth-modal.quorum-active #bottom {
+  display: none !important;
+}
+
+/* ============================================================================
+   9. ADMIN QUORUM 3-KEY 60-SECOND SELF-DESTRUCT VIEW
+   ============================================================================ */
+.gtc-quorum-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.quorum-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 999px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--gtc-gold-bright);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.quorum-badge #quorum-countdown {
+  font-weight: 700;
+  color: var(--gtc-gold);
+}
+
+.quorum-instruction {
+  font-size: 13px;
+  color: rgba(232, 214, 179, 0.7);
+  text-align: center;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.quorum-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.quorum-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.quorum-field label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.quorum-key-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gtc-gold);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.quorum-owner-email {
+  font-family: 'DM Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+  color: rgba(232, 214, 179, 0.55);
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-align: center;
+}
+
+.quorum-input {
+  height: 52px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  letter-spacing: 0.22em;
+  font-family: 'DM Mono', monospace;
+  font-size: 18px !important;
+  font-weight: 700;
+  border-radius: 12px;
+  background: var(--gtc-field-bg);
+  border: 1px solid var(--gtc-gold-hairline);
+  color: #ffffff;
+  padding: 0 4px;
+}
+
+.quorum-input:focus {
+  border-color: var(--gtc-gold) !important;
+  box-shadow: 0 0 0 3px var(--gtc-gold-glow) !important;
+  background: var(--gtc-field-focus) !important;
+}
+
+.quorum-input:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.quorum-submit-btn {
+  margin-top: 4px;
+}
+
+/* Quorum Secondary Actions Row (Resend OTP + Back to Login) */
+.quorum-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+.gtc-quorum-resend-btn {
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.08);
+  color: var(--gtc-gold-bright);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.gtc-quorum-resend-btn:hover:not(:disabled) {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: var(--gtc-gold);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.gtc-quorum-resend-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.gtc-quorum-resend-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gtc-quorum-resend-btn .resend-icon {
+  font-size: 13px;
+  color: var(--gtc-gold);
+}
+
+.gtc-quorum-back-btn {
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(232, 214, 179, 0.65);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gtc-quorum-back-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* ============================================================================
+   10. NAVBAR BADGES & PROFILE PILLS
+   ============================================================================ */
+.auth-nav-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.auth-nav-btn {
+  background: transparent;
+  color: var(--gtc-gold-bright);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.auth-nav-btn:hover {
+  border-color: var(--gtc-gold);
+  color: var(--gtc-gold);
+  background: rgba(201, 168, 76, 0.08);
+  transform: translateY(-1px);
+}
+
+.auth-nav-btn .auth-icon {
+  color: var(--gtc-gold);
+  font-size: 0.75rem;
+}
+
+.auth-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 5px 12px 5px 14px;
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.auth-user-name {
+  color: #F8F5EF;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.auth-user-name:hover {
+  color: var(--gtc-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.auth-role-tag {
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid var(--gtc-gold);
+  color: var(--gtc-gold);
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.auth-signout-btn {
+  background: none;
+  border: none;
+  color: rgba(232, 214, 179, 0.6);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.auth-signout-btn:hover {
+  color: #ff5a5f;
+  background: rgba(255, 90, 95, 0.1);
+}
+
+/* ============================================================================
+   11. RESPONSIVE BREAKPOINTS (TABLETS & MOBILE)
+   ============================================================================ */
+@media (max-width: 960px) {
+  .gtc-stage {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .gtc-photo {
+    display: none;
+  }
+
+  .gtc-pane {
+    flex: 1 1 100%;
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .gtc-card {
+    max-width: 440px;
+    padding: 32px 22px 28px;
+  }
+
+  #h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gtc-card {
+    padding: 28px 18px 24px;
+    border-radius: 18px;
+  }
+
+  .gtc-auth-tab-btn {
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+    padding: 0 6px !important;
+  }
+
+  .quorum-inputs-grid {
+    gap: 6px;
+  }
+
+  .quorum-input {
+    height: 48px;
+    font-size: 15px !important;
+  }
+}
+
+/* ============================================================================
+   12. FORGOT PASSWORD & VAULT RECOVERY STYLING
+   ============================================================================ */
+.gtc-forgot-pw-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -4px;
+  margin-bottom: 16px;
+}
+
+.gtc-forgot-pw-link {
+  background: none;
+  border: none;
+  color: var(--gtc-gold);
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 2px 4px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.gtc-forgot-pw-link:hover {
+  opacity: 1;
+  color: var(--gtc-gold-bright);
+}
+
+.gtc-forgot-pw-link:active {
+  transform: scale(0.96);
+}
+
+.gtc-reset-container {
+  width: 100%;
+}
+
+.gtc-reset-desc {
+  color: var(--gtc-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* ============================================================================
+   13. PASSWORD VISIBILITY EYE TOGGLE BUTTON
+   ============================================================================ */
+.btn-toggle-pw {
+  background: none;
+  border: none;
+  color: var(--gtc-gold);
+  cursor: pointer;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.15s ease, color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 8px;
+  border-radius: 6px;
+}
+
+.btn-toggle-pw:hover {
+  opacity: 1;
+  color: var(--gtc-gold-bright);
+  transform: scale(1.08);
+  background: rgba(201, 168, 76, 0.12);
+}
+
+.btn-toggle-pw:focus {
+  outline: none;
+}
+
+.btn-toggle-pw .eye-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+

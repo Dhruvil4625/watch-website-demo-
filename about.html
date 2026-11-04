@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About The Maison · Gujarat Time Company (GTC) · Surat Haute Horlogerie</title>
+  <meta name="description" content="Discover the origins of Maison Gujarat Time Company: uniting centuries of Surat lapidary mastery and diamond-polishing tolerances with independent Indian mechanical watchmaking." />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" type="image/svg+xml" href="/assets/photo/logo.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@200;300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./src/components/editorialPage.css" />
+</head>
+<body class="editorial-page">
+
+  <!-- ═══════════════════════════════════════════
+       MAISON SIGNATURE MORPHING DROPDOWN NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="bar">
+      <!-- Logo (Left) -->
+      <a class="logo" href="index.html" aria-label="GTC Home">
+        <img class="nav-logo-img" src="/assets/photo/logo.svg" alt="Gujarat Time Company" />
+      </a>
+
+      <!-- Desktop Morphing Nav (Centre: 4 Items) -->
+      <nav class="desktop-nav" id="nav" aria-label="Main">
+        <ul class="links">
+          <li>
+            <a class="nav-link active" id="nav-maison" href="about.html">Maison</a>
+          </li>
+          <li>
+            <button class="trigger" data-menu="collection" aria-expanded="false">
+              <span>Collection</span>
+              <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <a class="nav-link" id="nav-heritage" href="heritage.html">Heritage</a>
+          </li>
+          <li>
+            <a class="nav-link" id="nav-craftsmanship" href="craftsmanship.html">Craftsmanship</a>
+          </li>
+        </ul>
+
+        <!-- Morphing Dropdown Container for Collection -->
+        <div class="dd" id="dd" aria-hidden="true">
+          <div class="panel p-collection" id="p-collection" data-panel="collection">
+            <div class="collection-vertical-header">
+              <span class="collection-header-title">Maison Collections</span>
+              <span class="collection-header-count">3 Sub-Pages</span>
+            </div>
+
+            <div class="collection-items-list">
+              <a class="collection-item" href="collection.html">
+                <div class="item-visual">
+                  <img src="/assets/photo/z1.webp" alt="Main Collection Atelier" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top">
+                    <span class="item-badge">ATELIER 360°</span>
+                  </div>
+                  <strong class="item-title">Main Collection</strong>
+                  <p class="item-desc">Interactive 360° virtual horology showcase in Surat.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+
+              <a class="collection-item" href="index.html#hero">
+                <div class="item-visual">
+                  <img src="/assets/photo/gtc-front-watch.webp" alt="GTC Himalayan Flagship" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top">
+                    <span class="item-badge">HORIZON 300</span>
+                  </div>
+                  <strong class="item-title">GTC Himalayan</strong>
+                  <p class="item-desc">Numbered edition of 300 high-altitude alpine chronometers.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+
+              <a class="collection-item" href="craftsmanship.html">
+                <div class="item-visual">
+                  <img src="/assets/photo/gtc-calibre-movement.webp" alt="CTC GTC Calibre Manufacture" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top">
+                    <span class="item-badge">CALIBRE 2601</span>
+                  </div>
+                  <strong class="item-title">CTC / GTC Calibre</strong>
+                  <p class="item-desc">In-house monobloc engineering, movements &amp; dossiers.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
+
+            <div class="collection-vertical-footer">
+              <a href="collection.html" class="collection-footer-link">
+                <span>Explore Full Timepiece Gallery</span>
+                <span class="footer-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Actions (Right) -->
+      <div class="actions">
+        <div class="auth-nav-container" id="auth-nav-container"></div>
+        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Acquisition Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="gtc-cart-count" id="gtc-cart-badge">0</span>
+        </button>
+        <button class="cta open-reserve-modal">Reserve Now</button>
+        <button class="menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 5.5h12M2 10.5h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Sheet -->
+    <div class="sheet" id="sheet" aria-hidden="true">
+      <h3>Maison</h3>
+      <a href="about.html" style="color: var(--primary-color, #c9a84c);">About The Maison</a>
+      <a href="index.html">Maison Overview</a>
+
+      <h3>Collection</h3>
+      <a href="collection.html">Main Collection Page (360° Atelier)</a>
+      <a href="index.html#hero">GTC Himalayan Sub-page</a>
+      <a href="craftsmanship.html">CTC / GTC Calibre Atelier</a>
+
+      <h3>Heritage</h3>
+      <a href="heritage.html">Heritage Coffret Vault</a>
+
+      <h3>Craftsmanship</h3>
+      <a href="craftsmanship.html">Craftsmanship &amp; Engineering</a>
+
+      <h3>Client Services</h3>
+      <a href="contact.html">Contact Us &amp; Concierge</a>
+      <a href="warranty.html">5-Year International Warranty</a>
+
+      <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(201, 168, 76, 0.2); display: flex; flex-direction: column; gap: 8px;">
+        <div class="auth-nav-container" id="auth-nav-container-mobile" style="width: 100%;"></div>
+        <button class="cta open-reserve-modal" style="width: 100%; justify-content: center;">Reserve Timepiece</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="editorial-hero">
+    <div class="editorial-breadcrumbs">
+      <a href="index.html">Maison GTC</a>
+      <span class="sep">/</span>
+      <span>The Maison</span>
+      <span class="sep">/</span>
+      <span>About Us</span>
+    </div>
+    <span class="editorial-eyebrow">❖ SURAT ATELIER · FOUNDED MMXXVI ❖</span>
+    <h1 class="editorial-title">Where Centuries of Lapidary Precision Meet Independent Indian Haute Horlogerie</h1>
+    <p class="editorial-lead">
+      Maison Gujarat Time Company was founded upon an authentic premise: that Surat, having perfected the art of cutting nine out of ten diamonds on Earth with sub-micron patience, possesses the rightful metallurgical pedigree to build the world's most exacting mechanical timepieces.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN EDITORIAL CONTENT
+  ═══════════════════════════════════════════ -->
+  <main class="editorial-container">
+    
+    <!-- Chapter 1: The Lapidary Crucible -->
+    <section class="editorial-split" id="manufacture">
+      <div class="editorial-copy">
+        <span class="editorial-eyebrow">CHAPTER I · THE SURAT CRUCIBLE</span>
+        <h2>Sub-Micron Tolerances Forged in Diamond Dust</h2>
+        <p>
+          For over a century, master artisans in Surat have coaxed fire and brilliance from raw carbon crystals. This craft requires calculating angles to one-tenth of a degree and measuring tolerances in microns rather than millimeters.
+        </p>
+        <p>
+          Maison GTC redirects this generational obsession toward mechanical chronometry. When our master polishers apply a <strong>45° anglage</strong> bevel to the bridges of Calibre GTC-2601, or execute <em>poli noir</em> (black polish) on our hand-finished steel hands, they deploy the very same diamond-paste techniques passed down through lineages of Gujarati gem-cutters.
+        </p>
+      </div>
+      <div class="editorial-media-frame">
+        <img src="/assets/photo/gtc-calibre-movement.webp" alt="Calibre GTC-2601 Hand Finishing" loading="lazy" />
+        <div class="editorial-media-caption">Calibre GTC-2601 · Monobloc Rotor &amp; 45° Hand-Polished Anglage</div>
+      </div>
+    </section>
+
+    <!-- Chapter 2: The Horizon Philosophy -->
+    <section class="editorial-split reversed">
+      <div class="editorial-copy">
+        <span class="editorial-eyebrow">CHAPTER II · PHILOSOPHY &amp; CADENCE</span>
+        <h2>The Scarcity of Unhurried Mastery</h2>
+        <p>
+          In an era of automated mass production, Maison GTC chooses deliberate scarcity. We craft in numbered micro-allocations—most notably the <strong>Horizon 300 Genesis Series</strong>, strictly limited to three hundred individually registered timepieces worldwide.
+        </p>
+        <p>
+          Each case is cold-forged from medical-grade 316L high-density steel, and each movement undergoes a rigorous <strong>7-day chronometric validation cycle</strong> in six positions and three temperatures before earning the Surat Atelier hallmark.
+        </p>
+      </div>
+      <div class="editorial-media-frame">
+        <img src="/assets/photo/gtc-front-watch.webp" alt="GTC Himalayan Finished Timepiece" loading="lazy" />
+        <div class="editorial-media-caption">GTC Himalayan Flagship · Ref. R 39 SC AT · Surat Atelier</div>
+      </div>
+    </section>
+
+    <!-- The Three Pillars of Haute Horlogerie -->
+    <section style="margin: 5rem 0;">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 3rem;">
+        <span class="editorial-eyebrow">THE FOUNDATIONAL TRIAD</span>
+        <h2 style="font-family: var(--font-hero); font-size: 2.4rem; color: #fff;">Three Foundational Pillars</h2>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-num">PILLAR 01 // ARCHITECTURE</div>
+          <h3>Monobloc Casework</h3>
+          <p>
+            Machined from solid billets of surgical 316L steel. Featuring alternating satin-brushed flank surfaces and mirror-polished bezels designed to endure extreme high-altitude atmospheric shifts.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">PILLAR 02 // CHRONOMETRY</div>
+          <h3>In-House Calibre GTC-2601</h3>
+          <p>
+            Operating at 28,800 vibrations per hour (4 Hz) with a 42-hour autonomy reserve. Equipped with anti-shock Incabloc protection and a custom skeletonized tungsten-ruthenium oscillating weight.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">PILLAR 03 // PROVENANCE</div>
+          <h3>Archival Ledger &amp; Provenance</h3>
+          <p>
+            Every timepiece is recorded in the physical and cryptographic ledger at the Surat Atelier, backed by a lifetime immutable Certificate of Authenticity signed by our founding master horologists.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atelier Stewardship & Governance -->
+    <section class="editorial-split" style="background: rgba(18, 23, 32, 0.4); border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 4px; padding: 3.5rem; margin-bottom: 2rem;">
+      <div class="editorial-copy">
+        <span class="editorial-eyebrow">FOUNDING STEWARDSHIP</span>
+        <h2>Custodians of Gujarati Horological Legacy</h2>
+        <p>
+          Gujarat Time Company is governed by a 3-Key Founding Charter. Every allocation decision, archival acquisition, and movement modification requires unanimous ratification by our founding stewards:
+        </p>
+        <ul style="list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.8rem; font-family: var(--font-mono); font-size: 0.88rem; color: var(--accent-color);">
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: var(--primary-color);">❖</span>
+            <span><strong>D. Ramoliya</strong> — Co-Founder &amp; Chief Archivist</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: var(--primary-color);">❖</span>
+            <span><strong>P. Sherathiya</strong> — Co-Founder &amp; Master Horologist</span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 10px;">
+            <span style="color: var(--primary-color);">❖</span>
+            <span><strong>Gujarat Time Company Atelier Seal</strong> — Surat Atelier Custody</span>
+          </li>
+        </ul>
+        <div style="margin-top: 2rem;">
+          <a href="contact.html#salon" class="channel-btn">Schedule Private Salon Visit</a>
+        </div>
+      </div>
+      <div class="editorial-media-frame">
+        <img src="/assets/photo/z1.webp" alt="Surat Atelier Private Salon" loading="lazy" />
+        <div class="editorial-media-caption">Surat Atelier Private Viewing Salon · Vesu-Dumas Corridor</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       MAISON STANDARDIZED LUXURY FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" aria-label="Gujarat Time Company Home">
+            <img class="footer-logo" src="/assets/photo/logo.svg" alt="Gujarat Time Company Logo" />
+          </a>
+          <p class="footer-tagline">Surat Manufacture · Est. 2026</p>
+          <p class="footer-address">
+            Gujarat Time Company Pvt. Ltd.<br>
+            Surat Horological District<br>
+            Gujarat 395007, India
+          </p>
+          <div class="footer-socials">
+            <a class="footer-social" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a class="footer-social" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a class="footer-social" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Collections Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Timepieces</h5>
+          <a href="collection.html#himalayan">GTC Himalayan (Horizon 300)</a>
+          <a href="collection.html">360° Virtual Atelier</a>
+          <a href="collection.html#grid-section">The Himalayan Collection</a>
+          <a href="craftsmanship.html">Calibre &amp; Movements</a>
+          <a href="profile.html#allocations">Bespoke Allocations</a>
+        </div>
+
+        <!-- Maison Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">The Maison</h5>
+          <a href="about.html">About Maison GTC</a>
+          <a href="heritage.html">Heritage &amp; Provenance</a>
+          <a href="craftsmanship.html">Craftsmanship &amp; Finishing</a>
+          <a href="about.html#manufacture">Surat Horological Atelier</a>
+          <a href="index.html#ethos">Ethos &amp; Manifesto</a>
+        </div>
+
+        <!-- Client Concierge Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Client Concierge</h5>
+          <a href="contact.html">Contact Us &amp; Concierge</a>
+          <a href="contact.html#salon">Surat Atelier Private Salon</a>
+          <a href="warranty.html">5-Year International Warranty</a>
+          <a href="warranty.html#care-guide">Horological Care Guide</a>
+          <a href="profile.html">Collector Sanctuary Vault</a>
+        </div>
+
+        <!-- Genesis Allocation Dossier Column -->
+        <div class="footer-col footer-col-reserve">
+          <h5 class="footer-col-title">Genesis Allocation</h5>
+          <p class="footer-col-desc">Strictly limited to 300 numbered timepieces worldwide. Individually regulated and hand-finished by master lapidaries in Surat, India.</p>
+          <a href="collection.html" class="footer-reserve-btn">Explore Allocations</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC, Horizon, and the GTC Himalayan are registered marks of Gujarat Time Company. Designed and hand-assembled in Surat, India.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Allocation</a>
+          <a href="warranty.html">Warranty &amp; Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       TECHNICAL DOSSIER MODAL (#reserve-modal)
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="reserve-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dossier-title">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close Technical Dossier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="dossier-view-front">
+        <div class="dossier-header-strip">
+          <span class="dossier-badge">GENESIS ALLOCATION · SURAT ATELIER</span>
+          <span class="dossier-edition-count">EDITION LIMIT: 300 TIMEPIECES</span>
+        </div>
+        <h2 class="dossier-title" id="dossier-title">GTC HIMALAYAN · HORIZON 300</h2>
+        <p class="dossier-subtitle">High-Altitude Alpine Chronometer · Hand-Anglage by Surat Lapidaries</p>
+        <div style="margin: 2rem 0; text-align: center;">
+          <a href="collection.html" class="editorial-submit-btn" style="text-decoration: none; display: inline-block;">Acquire From Collection</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/editorial.js"></script>
+</body>
+</html>

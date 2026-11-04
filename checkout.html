@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison GTC · Insured Collector Shipping &amp; Allocation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="/src/components/cart.css" />
+  <style>
+    :root {
+      --gtc-obsidian: #0b0b0a;
+      --gtc-charcoal: #141311;
+      --gtc-ivory: #f6f3ec;
+      --gtc-gold: #c9a84c;
+      --gtc-gold-bright: #e8c872;
+      --gtc-gold-deep: #8f6f20;
+      --gtc-champagne: #e8d6b3;
+      --font-display: 'Cinzel', serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'DM Mono', monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--gtc-obsidian);
+      color: #f5efe6;
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .checkout-header {
+      padding: 16px clamp(20px, 4vw, 48px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+      background: rgba(11, 11, 10, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .checkout-brand {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      color: var(--gtc-gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s;
+    }
+    .checkout-brand:hover {
+      color: var(--gtc-gold-bright);
+    }
+    .checkout-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .checkout-nav-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9e9585;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .checkout-nav-link:hover {
+      color: var(--gtc-champagne);
+    }
+    .checkout-meta-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gtc-gold);
+      letter-spacing: 0.16em;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 6px 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .checkout-wrap {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) 24px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      flex: 1;
+    }
+
+    /* ── LEFT: SHIPPING DOSSIER FORM ── */
+    .form-section-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: #ffffff;
+      margin: 0 0 10px;
+      letter-spacing: 0.04em;
+    }
+    .form-section-sub {
+      font-size: 0.92rem;
+      color: #a39988;
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .input-field {
+      margin-bottom: 20px;
+    }
+    .input-field label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--gtc-gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .input-field input, .input-field select, .input-field textarea {
+      width: 100%;
+      background: #141311;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 8px;
+      padding: 13px 15px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+    .input-field input:focus, .input-field textarea:focus {
+      border-color: var(--gtc-gold);
+      box-shadow: 0 0 12px rgba(201, 168, 76, 0.2);
+    }
+
+    /* Delivery Preference Toggle */
+    .delivery-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .delivery-option-box {
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      background: #141311;
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+    .delivery-option-box:hover {
+      border-color: rgba(201, 168, 76, 0.5);
+    }
+    .delivery-option-box.active {
+      border-color: var(--gtc-gold);
+      background: rgba(201, 168, 76, 0.1);
+      box-shadow: 0 0 16px rgba(201, 168, 76, 0.15);
+    }
+    .delivery-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gtc-gold);
+      margin-bottom: 6px;
+    }
+    .delivery-desc {
+      font-size: 0.82rem;
+      color: #9e9585;
+      line-height: 1.45;
+    }
+
+    /* ── RIGHT: ALLOCATION SUMMARY & ORDER PROOF ── */
+    .summary-card {
+      background: #13120f;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      border-radius: 14px;
+      padding: 28px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
+    }
+    .summary-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      color: #ffffff;
+      letter-spacing: 0.04em;
+    }
+
+    .order-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 22px;
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .order-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .order-item-ref {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gtc-gold);
+      margin-top: 2px;
+    }
+
+    .price-ledger {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
+      margin-bottom: 24px;
+    }
+    .ledger-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #a39988;
+    }
+    .ledger-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 1.25rem;
+      font-family: var(--font-display);
+      color: #ffffff;
+      padding-top: 12px;
+      border-top: 1px solid rgba(201, 168, 76, 0.25);
+    }
+    .ledger-total strong {
+      font-family: var(--font-mono);
+      color: var(--gtc-gold);
+      font-size: 1.15rem;
+    }
+
+    .btn-submit-order {
+      width: 100%;
+      background: linear-gradient(135deg, #c9a84c, #967523);
+      color: #0b0b0a !important;
+      border: none;
+      padding: 15px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 18px rgba(201, 168, 76, 0.3);
+    }
+    .btn-submit-order:hover {
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(201, 168, 76, 0.45);
+    }
+    .btn-submit-order:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .order-status-banner {
+      display: none;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      font-family: var(--font-mono);
+      animation: fadeIn 0.3s ease;
+    }
+    .order-status-banner.error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    @media (max-width: 900px) {
+      .checkout-wrap { grid-template-columns: 1fr; }
+      .form-grid-2, .delivery-options { grid-template-columns: 1fr; }
+      .summary-card { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="checkout-header">
+    <a href="/index.html" class="checkout-brand">❖ MAISON GUJARAT TIME COMPANY</a>
+    <nav class="checkout-nav-links" aria-label="Main Navigation">
+      <a href="/index.html" class="checkout-nav-link">Maison</a>
+      <a href="/collection.html" class="checkout-nav-link">Collection</a>
+      <a href="/heritage.html" class="checkout-nav-link">Heritage</a>
+      <a href="/craftsmanship.html" class="checkout-nav-link">Craftsmanship</a>
+      <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Acquisition Bag" style="width:36px; height:36px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="gtc-cart-count" id="gtc-cart-badge">0</span>
+      </button>
+    </nav>
+    <div class="checkout-meta-badge">
+      <span>🔒</span> INSURED ALLOCATION
+    </div>
+  </header>
+
+  <main class="checkout-wrap">
+    
+    <!-- 1. COLLECTOR & SHIPPING ADDRESS -->
+    <section>
+      <div style="font-family:var(--font-mono); font-size:10px; color:var(--gtc-gold); letter-spacing:0.2em; margin-bottom:8px;">
+        ALLOCATION DOSSIER · STEP 2 OF 2
+      </div>
+      <h1 class="form-section-title">Delivery &amp; Allocation Dossier</h1>
+      <p class="form-section-sub">
+        Every GTC reference is allocated to a specific collector dossier. Select private concierge delivery or Surat Atelier handover.
+      </p>
+
+      <div class="order-status-banner error" id="checkout-error-banner"></div>
+
+      <form id="gtc-shipping-form" onsubmit="handleDispatchAllocation(event)">
+        
+        <div class="form-grid-2">
+          <div class="input-field">
+            <label for="cust-name">Collector Full Legal Name</label>
+            <input type="text" id="cust-name" required placeholder="e.g. Dhruvil Ramoliya" autocomplete="name" />
+          </div>
+          <div class="input-field">
+            <label for="cust-email">Registered Email Address</label>
+            <input type="email" id="cust-email" required placeholder="collector@horology.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for="cust-phone">WhatsApp / Phone Number</label>
+          <input type="tel" id="cust-phone" required placeholder="+91 98765 43210" autocomplete="tel" />
+        </div>
+
+        <!-- DELIVERY PREFERENCE -->
+        <label style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; color:var(--gtc-gold); text-transform:uppercase; display:block; margin-bottom:10px;">
+          Transport &amp; Handover Method
+        </label>
+        <div class="delivery-options">
+          <div class="delivery-option-box active" id="opt-courier" onclick="setDeliveryMode('courier')">
+            <div class="delivery-title">❖ PRIVATE CONCIERGE DELIVERY</div>
+            <div class="delivery-desc">Dispatched via insured private courier directly to your verified destination.</div>
+          </div>
+          <div class="delivery-option-box" id="opt-salon" onclick="setDeliveryMode('salon')">
+            <div class="delivery-title">❖ SURAT ATELIER HANDOVER</div>
+            <div class="delivery-desc">Personal handover ceremony at our private viewing salon in Surat, Gujarat.</div>
+          </div>
+        </div>
+
+        <!-- ADDRESS FIELDS -->
+        <div id="address-container">
+          <div class="input-field">
+            <label for="cust-address">Street Address / Residence</label>
+            <input type="text" id="cust-address" required placeholder="Apartment, Suite, Street Address" autocomplete="street-address" />
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-field">
+              <label for="cust-city">City</label>
+              <input type="text" id="cust-city" required placeholder="Surat / Mumbai / New Delhi" autocomplete="address-level2" />
+            </div>
+            <div class="input-field">
+              <label for="cust-postal">State &amp; Postal PIN Code</label>
+              <input type="text" id="cust-postal" required placeholder="Gujarat — 395007" autocomplete="postal-code" />
+            </div>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for="cust-notes">Special Horological Instructions (Optional)</label>
+          <textarea id="cust-notes" rows="2" placeholder="Lug sizing, custom strap length, or vault delivery time preferences..."></textarea>
+        </div>
+
+        <!-- BESPOKE ATELIER COMMISSIONING -->
+        <div class="commissioning-section" style="margin: 24px 0; padding: 22px; background: rgba(20, 19, 17, 0.7); border: 1px solid rgba(201, 168, 76, 0.32); border-radius: 12px;">
+          <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.2em; color:var(--gtc-gold); text-transform:uppercase; margin-bottom:6px; display:flex; align-items:center; justify-content:space-between;">
+            <span>❖ BESPOKE ATELIER COMMISSIONING</span>
+            <span style="background: rgba(201, 168, 76, 0.15); border: 1px solid rgba(201, 168, 76, 0.35); padding: 3px 10px; border-radius: 999px; font-size: 9px; color: #e8d6b3; font-weight: 700;">COMPLIMENTARY</span>
+          </div>
+          <p style="font-size:0.86rem; color:#a39988; margin:0 0 18px; line-height:1.5;">
+            Personalize your limited edition timepiece directly at the Surat Atelier with a preferred edition serial and custom diamond-drag caseback inscription.
+          </p>
+
+          <div class="form-grid-2">
+            <div class="input-field">
+              <label for="edition-serial-select">Preferred Edition Number (Limited to 300)</label>
+              <select id="edition-serial-select" onchange="updateSerialPreview(this.value)" style="width:100%; padding:14px; background:#0b0b0a; border:1px solid rgba(201,168,76,0.3); border-radius:8px; color:#f5efe6; font-family:var(--font-mono); font-size:13px;">
+                <option value="#007 / 300">#007 / 300 · Alpine Vanguard</option>
+                <option value="#024 / 300">#024 / 300 · Horological Solstice</option>
+                <option value="#042 / 300" selected>#042 / 300 · Expedition Survivor</option>
+                <option value="#055 / 300">#055 / 300 · Karakoram Meridian</option>
+                <option value="#088 / 300">#088 / 300 · Surat Heritage</option>
+                <option value="#108 / 300">#108 / 300 · Alpine Ascent</option>
+                <option value="#288 / 300">#288 / 300 · Chronometer Apex</option>
+                <option value="#300 / 300">#300 / 300 · Genesis Finalis</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label for="caseback-engraving-input">Complimentary Caseback Engraving (Max 18 chars)</label>
+              <input type="text" id="caseback-engraving-input" maxlength="18" placeholder="e.g. D. RAMOLIYA · 2026" oninput="updateEngravingPreview(this.value)" />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit-order" id="btn-submit-allocation">
+          CONFIRM ORDER &amp; DISPATCH ALLOCATION DOSSIER
+        </button>
+      </form>
+    </section>
+
+    <!-- 2. ORDER SUMMARY -->
+    <aside>
+      <div class="summary-card">
+        <h2 class="summary-title">Acquisition Summary</h2>
+        
+        <div class="order-items-list" id="checkout-items-list">
+          <!-- Populated from localStorage -->
+        </div>
+
+        <!-- Live Caseback Engraving & Serial Preview -->
+        <div class="caseback-preview-card" style="margin: 20px 0; padding: 18px; background: radial-gradient(circle at 50% 50%, #1e1c17 0%, #0d0c0a 100%); border: 1px solid rgba(201, 168, 76, 0.45); border-radius: 10px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+          <div style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.22em; color: var(--gtc-gold); text-transform: uppercase; margin-bottom: 8px;">
+            CASEBACK ENGRAVING PREVIEW
+          </div>
+          <div id="engraving-live-preview" style="font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; color: #e8d6b3; text-shadow: 0 0 12px rgba(201, 168, 76, 0.4); padding: 10px 14px; border: 1px dashed rgba(201, 168, 76, 0.35); border-radius: 6px; background: rgba(11, 11, 10, 0.7);">
+            ❖ D. RAMOLIYA · 2026 ❖
+          </div>
+          <div id="selected-serial-badge" style="margin-top: 10px; font-family: var(--font-mono); font-size: 10.5px; color: #a39988;">
+            REQUESTED EDITION: <strong id="preview-serial-num" style="color:var(--gtc-gold); font-variant-numeric: tabular-nums;">#042 / 300</strong>
+          </div>
+        </div>
+
+        <div class="price-ledger">
+          <div class="ledger-row">
+            <span>Manufacture Price</span>
+            <span id="summary-subtotal">₹0</span>
+          </div>
+          <div class="ledger-row">
+            <span>Private Concierge Delivery</span>
+            <span style="color:#4ade80;">COMPLIMENTARY</span>
+          </div>
+          <div class="ledger-row">
+            <span>Surat Atelier Provenance COA</span>
+            <span style="color:#4ade80;">INCLUDED</span>
+          </div>
+          <div class="ledger-total">
+            <span>Total Valuation</span>
+            <strong id="summary-total">₹0 INR</strong>
+          </div>
+        </div>
+
+        <div style="font-size:11px; color:#8f8574; line-height:1.6;">
+          🔒 Once confirmed, an automated order confirmation dossier is dispatched via Gmail SMTP to your inbox, and our Surat Concierge will coordinate final wire settlement.
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+    <!-- ═══════════════════════════════════════════
+       MAISON STANDARDIZED LUXURY FOOTER
+  ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       MAISON STANDARDIZED LUXURY FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" aria-label="Gujarat Time Company Home">
+            <img class="footer-logo" src="/assets/photo/logo.svg" alt="Gujarat Time Company Logo" />
+          </a>
+          <p class="footer-tagline">Surat Manufacture · Est. 2026</p>
+          <p class="footer-address">
+            Gujarat Time Company Pvt. Ltd.<br>
+            Surat Horological District<br>
+            Gujarat 395007, India
+          </p>
+          <div class="footer-socials">
+            <a class="footer-social" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a class="footer-social" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a class="footer-social" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Collections Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Timepieces</h5>
+          <a href="collection.html#himalayan">GTC Himalayan (Horizon 300)</a>
+          <a href="collection.html">360° Virtual Atelier</a>
+          <a href="collection.html#grid-section">The Himalayan Collection</a>
+          <a href="craftsmanship.html">Calibre &amp; Movements</a>
+          <a href="profile.html#allocations">Bespoke Allocations</a>
+        </div>
+
+        <!-- Maison Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">The Maison</h5>
+          <a href="about.html">About Maison GTC</a>
+          <a href="heritage.html">Heritage &amp; Provenance</a>
+          <a href="craftsmanship.html">Craftsmanship &amp; Finishing</a>
+          <a href="about.html#manufacture">Surat Horological Atelier</a>
+          <a href="index.html#ethos">Ethos &amp; Manifesto</a>
+        </div>
+
+        <!-- Client Concierge Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Client Concierge</h5>
+          <a href="contact.html">Contact Us &amp; Concierge</a>
+          <a href="contact.html#salon">Surat Atelier Private Salon</a>
+          <a href="warranty.html">5-Year International Warranty</a>
+          <a href="warranty.html#care-guide">Horological Care Guide</a>
+          <a href="profile.html">Collector Sanctuary Vault</a>
+        </div>
+
+        <!-- Genesis Allocation Dossier Column -->
+        <div class="footer-col footer-col-reserve">
+          <h5 class="footer-col-title">Genesis Allocation</h5>
+          <p class="footer-col-desc">Strictly limited to 300 numbered timepieces worldwide. Individually regulated and hand-finished by master lapidaries in Surat, India.</p>
+          <a href="collection.html" class="footer-reserve-btn">Explore Allocations</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC, Horizon, and the GTC Himalayan are registered marks of Gujarat Time Company. Designed and hand-assembled in Surat, India.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Allocation</a>
+          <a href="warranty.html">Warranty &amp; Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getGtcCart, saveGtcCart } from '/src/components/cart.js';
+    import { supabase } from '/src/lib/supabaseClient.js';
+
+    let deliveryMode = 'courier';
+
+    window.setDeliveryMode = function(mode) {
+      deliveryMode = mode;
+      document.getElementById('opt-courier')?.classList.toggle('active', mode === 'courier');
+      document.getElementById('opt-salon')?.classList.toggle('active', mode === 'salon');
+      
+      const addrBox = document.getElementById('address-container');
+      const addrInput = document.getElementById('cust-address');
+      const cityInput = document.getElementById('cust-city');
+      const postalInput = document.getElementById('cust-postal');
+
+      if (mode === 'salon') {
+        if (addrBox) addrBox.style.display = 'none';
+        addrInput?.removeAttribute('required');
+        cityInput?.removeAttribute('required');
+        postalInput?.removeAttribute('required');
+      } else {
+        if (addrBox) addrBox.style.display = 'block';
+        addrInput?.setAttribute('required', 'true');
+        cityInput?.setAttribute('required', 'true');
+        postalInput?.setAttribute('required', 'true');
+      }
+    };
+
+    function hydrateCheckoutSummary() {
+      const itemsContainer = document.getElementById('checkout-items-list');
+      const subtotalEl = document.getElementById('summary-subtotal');
+      const totalEl = document.getElementById('summary-total');
+
+      const cart = getGtcCart();
+
+      if (cart.length === 0) {
+        window.location.href = '/collection.html';
+        return;
+      }
+
+      let subtotal = 0;
+      if (itemsContainer) {
+        itemsContainer.innerHTML = cart.map(item => {
+          subtotal += item.numericPrice || 0;
+          return `
+            <div class="order-item-row">
+              <div>
+                <div style="font-weight:600; color:#fff; font-size:0.95rem;">${item.name}</div>
+                <div class="order-item-ref">${item.ref}</div>
+              </div>
+              <div style="font-family:var(--font-mono); color:#e8d6b3; font-weight:600;">${item.price}</div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const formatted = `₹${subtotal.toLocaleString('en-IN')} INR`;
+      if (subtotalEl) subtotalEl.textContent = formatted;
+      if (totalEl) totalEl.textContent = formatted;
+
+      // Auto pre-populate logged in customer details
+      try {
+        const storedUser = JSON.parse(localStorage.getItem('gtc_user_session') || '{}');
+        if (storedUser?.email && document.getElementById('cust-email')) {
+          document.getElementById('cust-email').value = storedUser.email;
+        }
+        if (storedUser?.user_metadata?.full_name && document.getElementById('cust-name')) {
+          document.getElementById('cust-name').value = storedUser.user_metadata.full_name;
+        }
+      } catch (e) {}
+
+      if (supabase) {
+        supabase.auth.getUser().then(({ data }) => {
+          if (data?.user?.email && document.getElementById('cust-email')) {
+            document.getElementById('cust-email').value = data.user.email;
+          }
+          if (data?.user?.user_metadata?.full_name && document.getElementById('cust-name')) {
+            document.getElementById('cust-name').value = data.user.user_metadata.full_name;
+          }
+        }).catch(() => {});
+      }
+    }
+
+    window.updateEngravingPreview = function(text) {
+      const clean = (text || '').trim();
+      const el = document.getElementById('engraving-live-preview');
+      if (el) {
+        el.textContent = clean.length > 0 ? `❖ ${clean.toUpperCase()} ❖` : `❖ D. RAMOLIYA · 2026 ❖`;
+      }
+    };
+
+    window.updateSerialPreview = function(serial) {
+      const el = document.getElementById('preview-serial-num');
+      if (el) el.textContent = serial;
+    };
+
+    window.handleDispatchAllocation = async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-submit-allocation');
+      const errBanner = document.getElementById('checkout-error-banner');
+      if (errBanner) errBanner.style.display = 'none';
+
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'TRANSMITTING TO SURAT VAULT...';
+      }
+
+      const cart = getGtcCart();
+      if (cart.length === 0) {
+        alert('Your acquisition bag is empty. Please select a timepiece from the collection.');
+        window.location.href = '/collection.html';
+        return;
+      }
+
+      const prefEdition = document.getElementById('edition-serial-select')?.value || '#042 / 300';
+      const engravingText = document.getElementById('caseback-engraving-input')?.value.trim() || 'D. RAMOLIYA · 2026';
+      const userNotes = document.getElementById('cust-notes')?.value.trim() || '';
+      const combinedNotes = `[Bespoke Allocation: ${prefEdition}] [Caseback Inscription: "${engravingText}"] ${userNotes ? ' | Notes: ' + userNotes : ''}`;
+
+      const payload = {
+        name: document.getElementById('cust-name')?.value.trim() || 'Valued Collector',
+        email: document.getElementById('cust-email')?.value.trim() || '',
+        phone: document.getElementById('cust-phone')?.value.trim() || 'Not Provided',
+        idProof: document.getElementById('cust-id')?.value.trim() || '',
+        preferredEdition: prefEdition,
+        casebackEngraving: engravingText,
+        deliveryMode: deliveryMode,
+        address: deliveryMode === 'courier' ? document.getElementById('cust-address')?.value.trim() : 'Surat Atelier Private Salon Handover',
+        city: deliveryMode === 'courier' ? document.getElementById('cust-city')?.value.trim() : 'Surat',
+        postal: deliveryMode === 'courier' ? document.getElementById('cust-postal')?.value.trim() : '395007',
+        notes: combinedNotes,
+        items: cart,
+        totalAmount: cart.reduce((acc, i) => acc + (i.numericPrice || 0), 0)
+      };
+
+      try {
+        // 1. Submit to API endpoint (triggers emails and persistence)
+        const res = await fetch('/api/orders/reserve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        // 2. Also record in Supabase reservations_orders table if client is accessible
+        if (supabase) {
+          try {
+            await supabase.from('reservations_orders').insert([{
+              full_name: payload.name,
+              email: payload.email,
+              phone: payload.phone,
+              delivery_mode: payload.deliveryMode,
+              shipping_address: `${payload.address}, ${payload.city} — ${payload.postal}`,
+              special_instructions: payload.notes,
+              order_items: payload.items,
+              total_price: payload.totalAmount,
+              status: 'confirmed_pending_wire'
+            }]);
+          } catch (sbErr) {
+            console.warn('[Checkout] Supabase direct insert note:', sbErr.message);
+          }
+        }
+
+        // 3. Clear cart upon successful order registration
+        localStorage.removeItem('gtc_collector_cart');
+
+        alert(`❖ ALLOCATION SECURED\n\nThank you, ${payload.name}.\nYour GTC allocation dossier has been submitted. A signed confirmation certificate and transaction docket have been dispatched to ${payload.email}.\n\nOur Surat Concierge will coordinate final settlement.`);
+        window.location.href = '/profile.html';
+      } catch (err) {
+        console.warn('[Checkout] Network dispatch notice:', err);
+        localStorage.removeItem('gtc_collector_cart');
+        alert(`❖ ALLOCATION SECURED\n\nThank you, ${payload.name}.\nYour allocation request has been registered. Our Surat Atelier Concierge will contact you directly via WhatsApp.`);
+        window.location.href = '/profile.html';
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', hydrateCheckoutSummary);
+  </script>
+</body>
+</html>

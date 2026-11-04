@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GTC Himalayan — A limited edition of 300 numbered timepieces by Gujarat Time Company. Stand tall like the Himalayas. Crafted in Surat, India." />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>GTC Himalayan | Horizon Collection — Gujarat Time Company</title>
+  <link rel="icon" type="image/x-icon" href="/assets/photo/logo.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+  <!-- Preload Himalayan 3D Hero Assets (Ultra-Fast 0.5MB WebP) -->
+  <link rel="preload" href="/assets/3d/watch_1.glb" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="/assets/textures/dial_base.webp" as="image" type="image/webp" />
+  <link rel="preload" href="/assets/3d/bg_glacial_blue.webp" as="image" type="image/webp" />
+
+  <script>
+    try {
+      if (sessionStorage.getItem('gtc_preloader_seen') === 'true') {
+        document.documentElement.classList.add('preloader-skipped');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Luxury Horology Preloader -->
+  <div id="preloader" class="preloader" aria-hidden="false">
+    <!-- Subtle Sound Toggle -->
+    <button id="preloader-sound-toggle" class="preloader-sound-btn" aria-label="Toggle Audio">
+      <span class="sound-icon">AUDIO:</span> <span id="sound-status">ON</span>
+    </button>
+
+    <div class="preloader-ambient">
+      <div class="ambient-glow"></div>
+    </div>
+    <div class="box-vault-panel vault-top"></div>
+    <div class="box-vault-panel vault-bottom"></div>
+    <div class="vault-seam-line"></div>
+    <div class="preloader-core">
+      <div class="dial-wrap">
+        <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="300" rx="150" fill="#0B0B0B"/>
+          <path d="M118.513 226V220.04H119.297V222.696H122.281V220.04H123.073V226H122.281V223.416H119.297V226H118.513ZM126.796 226V220.04H127.58V226H126.796ZM131.305 226V220.04H132.025L134.257 223.216H133.889L136.105 220.04H136.825V226H136.033V221.032L136.313 221.12L134.097 224.24H134.033L131.841 221.12L132.089 221.032V226H131.305ZM139.973 226L142.109 220.04H143.037L145.173 226H144.333L143.845 224.6H141.301L140.813 226H139.973ZM141.549 223.88H143.597L142.461 220.608H142.685L141.549 223.88ZM148.324 226V220.04H149.108V225.28H151.724V226H148.324ZM154.429 226L156.565 220.04H157.493L159.629 226H158.789L158.301 224.6H155.757L155.269 226H154.429ZM156.005 223.88H158.053L156.917 220.608H157.141L156.005 223.88ZM163.706 226V223.272L161.642 220.04H162.53L164.258 222.752H163.938L165.658 220.04H166.546L164.498 223.272V226H163.706ZM168.558 226L170.694 220.04H171.622L173.758 226H172.918L172.43 224.6H169.886L169.398 226H168.558ZM170.134 223.88H172.182L171.046 220.608H171.27L170.134 223.88ZM176.909 226V220.04H177.565L180.989 224.856L180.693 224.888V220.04H181.485V226H180.829L177.421 221.152L177.693 221.12V226H176.909Z" fill="#E8D6B3"/>
+          <path d="M133.121 186.228C134.299 186.228 135.261 186.393 136.007 186.722C136.752 187.051 137.419 187.45 138.009 187.918C138.217 188.074 138.39 188.152 138.529 188.152C138.858 188.152 139.075 187.632 139.179 186.592H139.777C139.742 187.268 139.716 188.091 139.699 189.062C139.681 190.015 139.673 191.289 139.673 192.884H139.075C138.953 191.844 138.763 190.943 138.503 190.18C138.26 189.4 137.801 188.733 137.125 188.178C136.709 187.779 136.189 187.467 135.565 187.242C134.958 187.017 134.343 186.904 133.719 186.904C132.765 186.904 131.951 187.155 131.275 187.658C130.599 188.143 130.044 188.811 129.611 189.66C129.177 190.509 128.857 191.471 128.649 192.546C128.441 193.603 128.337 194.704 128.337 195.848C128.337 198.968 128.761 201.247 129.611 202.686C130.477 204.125 131.717 204.844 133.329 204.844C133.745 204.844 134.109 204.792 134.421 204.688C134.733 204.584 134.984 204.463 135.175 204.324C135.417 204.151 135.582 203.969 135.669 203.778C135.755 203.57 135.799 203.301 135.799 202.972V200.424C135.799 199.627 135.729 199.037 135.591 198.656C135.469 198.257 135.218 197.989 134.837 197.85C134.455 197.711 133.901 197.633 133.173 197.616V197.096C133.537 197.113 133.97 197.131 134.473 197.148C134.993 197.148 135.53 197.157 136.085 197.174C136.639 197.174 137.151 197.174 137.619 197.174C138.347 197.174 139.014 197.165 139.621 197.148C140.227 197.131 140.721 197.113 141.103 197.096V197.616C140.773 197.633 140.522 197.694 140.349 197.798C140.193 197.902 140.08 198.11 140.011 198.422C139.959 198.734 139.933 199.211 139.933 199.852V205H139.413C139.395 204.705 139.326 204.385 139.205 204.038C139.101 203.691 138.919 203.518 138.659 203.518C138.537 203.518 138.373 203.553 138.165 203.622C137.974 203.674 137.671 203.821 137.255 204.064C136.613 204.428 135.937 204.74 135.227 205C134.516 205.243 133.771 205.364 132.991 205.364C130.98 205.364 129.281 204.991 127.895 204.246C126.508 203.501 125.459 202.435 124.749 201.048C124.055 199.644 123.709 197.963 123.709 196.004C123.709 194.028 124.107 192.312 124.905 190.856C125.719 189.4 126.829 188.265 128.233 187.45C129.654 186.635 131.283 186.228 133.121 186.228ZM158.402 186.592C158.333 187.476 158.281 188.325 158.246 189.14C158.229 189.955 158.22 190.579 158.22 191.012C158.22 191.393 158.229 191.757 158.246 192.104C158.263 192.451 158.281 192.745 158.298 192.988H157.7C157.423 191.532 157.067 190.379 156.634 189.53C156.218 188.681 155.715 188.083 155.126 187.736C154.537 187.372 153.843 187.19 153.046 187.19H152.448V202.036C152.448 202.729 152.517 203.249 152.656 203.596C152.812 203.943 153.089 204.177 153.488 204.298C153.887 204.402 154.467 204.463 155.23 204.48V205C154.693 204.983 153.973 204.965 153.072 204.948C152.188 204.931 151.261 204.922 150.29 204.922C149.337 204.922 148.435 204.931 147.586 204.948C146.737 204.965 146.052 204.983 145.532 205V204.48C146.312 204.463 146.901 204.402 147.3 204.298C147.699 204.177 147.967 203.943 148.106 203.596C148.245 203.249 148.314 202.729 148.314 202.036V187.19H147.742C146.945 187.19 146.251 187.372 145.662 187.736C145.073 188.083 144.57 188.681 144.154 189.53C143.738 190.362 143.374 191.515 143.062 192.988H142.464C142.499 192.745 142.516 192.451 142.516 192.104C142.533 191.757 142.542 191.393 142.542 191.012C142.542 190.579 142.525 189.955 142.49 189.14C142.473 188.325 142.429 187.476 142.36 186.592C143.157 186.609 144.024 186.627 144.96 186.644C145.913 186.661 146.867 186.67 147.82 186.67C148.773 186.67 149.631 186.67 150.394 186.67C151.174 186.67 152.032 186.67 152.968 186.67C153.921 186.67 154.875 186.661 155.828 186.644C156.781 186.627 157.639 186.609 158.402 186.592ZM169.399 186.228C170.543 186.228 171.479 186.401 172.207 186.748C172.952 187.077 173.611 187.467 174.183 187.918C174.53 188.178 174.79 188.213 174.963 188.022C175.154 187.814 175.284 187.337 175.353 186.592H175.951C175.916 187.268 175.89 188.091 175.873 189.062C175.856 190.015 175.847 191.289 175.847 192.884H175.249C175.162 192.087 175.05 191.411 174.911 190.856C174.772 190.284 174.582 189.781 174.339 189.348C174.096 188.915 173.75 188.525 173.299 188.178C172.866 187.745 172.363 187.424 171.791 187.216C171.219 187.008 170.621 186.904 169.997 186.904C169.061 186.904 168.264 187.155 167.605 187.658C166.946 188.143 166.409 188.811 165.993 189.66C165.594 190.509 165.3 191.471 165.109 192.546C164.918 193.603 164.823 194.704 164.823 195.848C164.823 197.009 164.918 198.127 165.109 199.202C165.317 200.259 165.629 201.204 166.045 202.036C166.478 202.868 167.033 203.527 167.709 204.012C168.385 204.497 169.182 204.74 170.101 204.74C170.673 204.74 171.245 204.636 171.817 204.428C172.406 204.203 172.909 203.882 173.325 203.466C174.001 202.946 174.46 202.305 174.703 201.542C174.946 200.762 175.128 199.731 175.249 198.448H175.847C175.847 200.095 175.856 201.429 175.873 202.452C175.89 203.457 175.916 204.307 175.951 205H175.353C175.284 204.255 175.162 203.787 174.989 203.596C174.833 203.405 174.564 203.431 174.183 203.674C173.542 204.125 172.857 204.523 172.129 204.87C171.418 205.199 170.5 205.364 169.373 205.364C167.536 205.364 165.924 204.991 164.537 204.246C163.168 203.501 162.102 202.426 161.339 201.022C160.576 199.618 160.195 197.928 160.195 195.952C160.195 194.011 160.585 192.312 161.365 190.856C162.162 189.4 163.246 188.265 164.615 187.45C166.002 186.635 167.596 186.228 169.399 186.228Z" fill="#C9A84C"/>
+          <circle cx="150" cy="150" r="1.5" fill="#E8D6B3"/>
+          <circle cx="150" cy="150" r="3.25" fill="#0B0B0B" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M95 54.7372L84 35.6846" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M54.7371 95L35.6846 84" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M40 150L18 150.001" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M54.7371 205L35.6846 216" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M95 245.263L84 264.315" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M150 260V282" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M205 245.263L216 264.315" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M245.263 205L264.315 216" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M260 150H282" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M245.263 95L264.315 84" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M205 54.7372L216 35.6846" stroke="#C9A84C" stroke-width="3"/>
+          <path d="M150 40V18" stroke="#C9A84C" stroke-width="3"/>
+          <path opacity="0.3" d="M136.829 24.6902L136.202 18.7231" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M123.803 26.7534L122.556 20.8845" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M111.064 30.1669L109.21 24.4605" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M98.7512 34.8933L96.3108 29.412" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M87 40.8808L84 35.6846" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M75.9391 48.0638L72.4124 43.2097" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M65.6896 56.3637L61.6748 51.9049" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M56.3637 65.6895L51.9048 61.6747" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M48.0638 75.9391L43.2097 72.4124" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M40.8807 87L35.6846 84" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M34.8934 98.7512L29.4121 96.3108" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M30.1668 111.064L24.4604 109.21" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M26.7534 123.803L20.8845 122.556" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M24.6903 136.829L18.7231 136.202" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M24 150H18" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M24.6903 163.171L18.7231 163.798" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M26.7534 176.197L20.8845 177.444" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M30.1668 188.936L24.4604 190.79" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M34.8934 201.249L29.4121 203.689" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M40.8807 213L35.6846 216" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M48.0638 224.061L43.2097 227.588" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M56.3637 234.31L51.9048 238.325" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M65.6896 243.636L61.6748 248.095" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M75.9391 251.936L72.4124 256.79" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M87 259.119L84 264.315" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M98.7512 265.107L96.3108 270.588" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M111.064 269.833L109.21 275.539" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M123.803 273.247L122.556 279.115" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M136.829 275.31L136.202 281.277" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M150 276V282" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M163.171 275.31L163.798 281.277" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M176.197 273.247L177.444 279.115" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M188.936 269.833L190.79 275.539" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M201.249 265.107L203.689 270.588" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M213 259.119L216 264.315" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M224.061 251.936L227.588 256.79" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M234.311 243.636L238.325 248.095" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M243.636 234.31L248.095 238.325" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M251.936 224.061L256.79 227.588" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M259.119 213L264.315 216" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M265.107 201.249L270.588 203.689" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M269.833 188.936L275.539 190.79" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M273.247 176.197L279.115 177.444" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M275.31 163.171L281.277 163.798" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M276 150H282" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M275.31 136.829L281.277 136.202" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M273.247 123.803L279.115 122.556" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M269.833 111.064L275.539 109.21" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M265.107 98.7512L270.588 96.3108" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M259.119 87L264.315 84" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M251.936 75.9391L256.79 72.4124" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M243.636 65.6895L248.095 61.6747" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M234.311 56.3637L238.325 51.9049" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M224.061 48.0638L227.588 43.2097" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M213 40.8808L216 35.6846" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M201.249 34.8933L203.689 29.412" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M188.936 30.1669L190.79 24.4605" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M176.197 26.7534L177.444 20.8845" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M163.171 24.6902L163.798 18.7231" stroke="#E8D6B3"/>
+          <path opacity="0.3" d="M150 24V18" stroke="#E8D6B3"/>
+          <!-- Static Background Track Ring -->
+          <circle class="dial-track" cx="150" cy="150" r="137.25" />
+          <!-- Animated Progress Ring (starts at 12 o'clock, fills clockwise) -->
+          <circle class="dial-progress" cx="150" cy="150" r="137.25" transform="rotate(-90 150 150)" />
+        </svg>
+        <!-- Dead-Center Rotating Calibration Hands (Hour Stick & Big Minute) & Central Pivot -->
+        <div class="dial-hand dial-hand-hour" id="dial-hand-hour"></div>
+        <div class="dial-hand dial-hand-minute" id="dial-hand-minute"></div>
+        <div class="dial-pivot"></div>
+      </div>
+      <div class="preloader-telemetry">
+        <p class="brand-eyebrow">GUJARAT TIME COMPANY</p>
+        <div class="preloader-digits"><span id="loader-num">000</span><span class="unit">%</span></div>
+        <p class="status-indicator">INITIALIZING HORIZON CALIBRE</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MAISON SIGNATURE MORPHING DROPDOWN NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="bar">
+      <!-- Logo (Left) -->
+      <a class="logo" href="index.html" aria-label="GTC Home">
+        <img class="nav-logo-img" src="/assets/photo/logo.svg" alt="Gujarat Time Company" />
+      </a>
+
+      <!-- Desktop Morphing Nav (Centre: 4 Items) -->
+      <nav class="desktop-nav" id="nav" aria-label="Main">
+        <ul class="links">
+          <!-- 1. Maison (Direct Page Link) -->
+          <li>
+            <a class="nav-link ${activePage === 'maison' ? 'active' : ''}" id="nav-maison" href="index.html">Maison</a>
+          </li>
+
+          <!-- 2. Collection (Vertical Morphing Dropdown for Infinite Scalable Sub-pages) -->
+          <li>
+            <button class="trigger ${activePage === 'collection' ? 'active' : ''}" data-menu="collection" aria-expanded="false">
+              <span>Collection</span>
+              <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </li>
+
+          <!-- 3. Heritage (Direct Page Link) -->
+          <li>
+            <a class="nav-link ${activePage === 'heritage' ? 'active' : ''}" id="nav-heritage" href="heritage.html">Heritage</a>
+          </li>
+
+          <!-- 4. Craftsmanship (Dedicated Page Link) -->
+          <li>
+            <a class="nav-link" id="nav-craftsmanship" href="craftsmanship.html">Craftsmanship</a>
+          </li>
+        </ul>
+
+        <!-- Morphing Dropdown Container for Collection (Vertical Animation & Scalable Box) -->
+        <div class="dd" id="dd" aria-hidden="true">
+          <div class="panel p-collection" id="p-collection" data-panel="collection">
+            <div class="collection-vertical-header">
+              <span class="collection-header-title">Maison Collections</span>
+              <span class="collection-header-count">3 Sub-Pages</span>
+            </div>
+
+            <div class="collection-items-list">
+              <!-- Sub-page 1: Main Collection Page -->
+              <a class="collection-item" href="collection.html">
+                <div class="item-visual">
+                  <img src="/assets/photo/z1.webp" alt="Main Collection Atelier" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top">
+                    <span class="item-badge">ATELIER 360°</span>
+                  </div>
+                  <strong class="item-title">Main Collection</strong>
+                  <p class="item-desc">Interactive 360° virtual horology showcase in Surat.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+
+              <!-- Sub-page 2: Himalayan Sub-page -->
+              <a class="collection-item" href="index.html#hero">
+                <div class="item-visual">
+                  <img src="/assets/photo/bg1.webp" alt="GTC Himalayan Edition" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top">
+                    <span class="item-badge">HORIZON 300</span>
+                  </div>
+                  <strong class="item-title">GTC Himalayan</strong>
+                  <p class="item-desc">Numbered edition of 300 high-altitude alpine chronometers.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+
+              <!-- Sub-page 3: CTC / GTC Sub-page -->
+              <a class="collection-item" href="craftsmanship.html">
+                <div class="item-visual">
+                  <img src="/assets/photo/gtc-calibre-movement.webp" alt="CTC GTC Calibre Manufacture" loading="lazy" />
+                </div>
+                <div class="item-content">
+                  <div class="item-top">
+                    <span class="item-badge">CALIBRE 2601</span>
+                  </div>
+                  <strong class="item-title">CTC / GTC Calibre</strong>
+                  <p class="item-desc">In-house monobloc engineering, movements &amp; dossiers.</p>
+                </div>
+                <div class="item-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
+
+            <div class="collection-vertical-footer">
+              <a href="collection.html" class="collection-footer-link">
+                <span>Explore Full Timepiece Gallery</span>
+                <span class="footer-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Actions (Right) -->
+      <div class="actions">
+        <div class="auth-nav-container" id="auth-nav-container"></div>
+        <!-- CART TRIGGER BUTTON -->
+        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Acquisition Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="gtc-cart-count" id="gtc-cart-badge">0</span>
+        </button>
+        <button class="cta open-reserve-modal">Reserve Now</button>
+        <button class="menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 5.5h12M2 10.5h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Sheet -->
+    <div class="sheet" id="sheet" aria-hidden="true">
+      <h3>Maison</h3>
+      <a href="about.html">About The Maison</a>
+      <a href="index.html">Maison Overview</a>
+
+      <h3>Collection</h3>
+      <a href="collection.html">Main Collection Page (360° Atelier)</a>
+      <a href="index.html#hero">GTC Himalayan Sub-page</a>
+      <a href="craftsmanship.html">CTC / GTC Calibre Atelier</a>
+
+      <h3>Heritage</h3>
+      <a href="heritage.html">Heritage Coffret Vault</a>
+
+      <h3>Craftsmanship</h3>
+      <a href="craftsmanship.html">Craftsmanship &amp; Engineering</a>
+
+      <h3>Client Services</h3>
+      <a href="contact.html">Contact Us &amp; Concierge</a>
+      <a href="warranty.html">5-Year International Warranty</a>
+
+      <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px;">
+        <div class="auth-nav-container" id="auth-nav-container-mobile" style="width: 100%;"></div>
+        <button class="cta open-reserve-modal" style="width: 100%; justify-content: center;">Reserve Timepiece</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       GTC HIMALAYAN · 3D WEBGL HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero hero-3d-section" id="hero">
+    <!-- Full-Bleed Three.js Canvas Container -->
+    <canvas id="hero-canvas" class="hero-webgl-canvas"></canvas>
+    <!-- Vignette & Horizon Composite Gradient Overlay -->
+    <div class="hero-canvas-overlay" aria-hidden="true"></div>
+
+    <!-- Luxury UI Overlay (pointer-events: none on wrapper, auto on buttons) -->
+    <div class="hero-ui-overlay">
+      <!-- Left Flank: Model Title, Active Variant & Primary Actions -->
+      <div class="hero-meta-panel">
+        <h1 class="hero-watch-title">
+          GTC <span class="accent-title">HIMALAYAN</span>
+        </h1>
+        <div class="hero-variant-display">
+          <span class="variant-prefix">CHRONOMETRY ·</span>
+          <span class="variant-name" id="hero-variant-name">GLACIAL TWILIGHT</span>
+        </div>
+
+        <div class="hero-actions-group">
+          <button class="primary-btn open-reserve-modal">Reserve Piece</button>
+          <a class="secondary-btn" href="#craftsmanship">Inspect Architecture</a>
+        </div>
+      </div>
+
+      <!-- Floating Editorial Narrative Badge (Revealed on Tap / Zoom) -->
+      <aside class="editorial-narrative-badge" id="editorial-narrative-badge" aria-live="polite">
+        <div class="narrative-badge-header">
+          <div class="narrative-badge-tag">
+            <span class="narrative-gold-gem"></span>
+            <span id="narrative-badge-eyebrow">01 / 04 · ORIGIN</span>
+          </div>
+          <button class="narrative-close-btn" id="narrative-close-btn" aria-label="Close narrative">×</button>
+        </div>
+        <h3 class="narrative-badge-title">GLACIAL TWILIGHT</h3>
+        <p class="narrative-badge-desc" id="hero-narrative-desc">
+          Inspired by the pristine, deep blue glacial lakes of the high Himalayas at twilight.
+        </p>
+        <div class="narrative-meta-footer">
+          <div class="narrative-stat">
+            <span class="stat-k">REFERENCE</span>
+            <span class="stat-v" id="hero-variant-ref">REF. H39-GT-2026</span>
+          </div>
+          <div class="narrative-stat">
+            <span class="stat-k">SUMMIT ELEVATION</span>
+            <span class="stat-v accent-stat" id="narrative-elevation-val">6,800 M</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Bottom Center: 4 Himalayan Variant Pill Selectors -->
+      <div class="hero-variant-selector-dock" role="tablist" aria-label="Himalayan Watch Variants">
+        <button class="variant-pill active" data-variant="glacial-twilight" role="tab" aria-selected="true">
+          <span class="variant-dot dot-blue"></span>
+          <span class="variant-label">01 · Glacial Twilight</span>
+        </button>
+        <button class="variant-pill" data-variant="mineral-slate" role="tab" aria-selected="false">
+          <span class="variant-dot dot-black"></span>
+          <span class="variant-label">02 · Mineral Slate</span>
+        </button>
+        <button class="variant-pill" data-variant="summit-ice" role="tab" aria-selected="false">
+          <span class="variant-dot dot-white"></span>
+          <span class="variant-label">03 · Summit Ice</span>
+        </button>
+        <button class="variant-pill" data-variant="alpine-pine" role="tab" aria-selected="false">
+          <span class="variant-dot dot-green"></span>
+          <span class="variant-label">04 · Alpine Pine</span>
+        </button>
+      </div>
+
+      <!-- Bottom Right: Interaction Hint & Zoom Toggle Button -->
+      <div class="hero-interaction-panel">
+        <div class="rotation-cue" id="rotation-indicator">
+          <div class="compass-ring">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.3"></circle>
+              <path d="M12 2 A10 10 0 0 1 22 12" stroke="var(--primary-color)"></path>
+            </svg>
+          </div>
+          <span class="cue-text">DRAG 360° FOR CYCLE · TAP TO INSPECT</span>
+        </div>
+
+        <button class="hero-pill-btn" id="btn-zoom-toggle" aria-label="Toggle macro inspection zoom">
+          <span class="btn-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </span>
+          <span class="btn-label">INSPECT (ZOOM)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading Progress Bar -->
+    <div class="hero-load-track">
+      <div class="hero-load-progress" id="hero-load-progress"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PRODUCT REVEAL SECTION
+  ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       PRODUCT REVEAL SECTION (Cinematic Video + Scroll Visuals)
+  ═══════════════════════════════════════════ -->
+  <section class="product-reveal timeless-section" id="crafted-timeless">
+    <!-- Looping Background Video (Lazy on Mobile) -->
+    <div class="product-reveal-video-wrap">
+      <video class="product-reveal-video" autoplay loop muted playsinline preload="none">
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+      <div class="product-reveal-overlay"></div>
+    </div>
+
+    <!-- Scroll Content Container -->
+    <div class="product-reveal-container">
+      <!-- Left Sticky Story Column -->
+      <div class="reveal-sticky-side crafted-sticky-col timeless-left">
+        <div class="reveal-tag-pill">
+          <span class="pill-dot"></span>
+          <span>HORIZON COLLECTION · GTC HIMALAYAN</span>
+        </div>
+        <h2 class="product-reveal-title">Crafted For<br><span class="accent">The Timeless</span></h2>
+        <p class="product-reveal-subtitle">39mm surgical stainless steel. In-house mechanical precision. Meticulously assembled in Surat, India — each timepiece an authentic statement of independent Indian horology.</p>
+        
+        <!-- Live Chapter Indicator -->
+        <div class="reveal-chapters">
+          <div class="chapter-item active" data-step="0">
+            <span class="chapter-num">01</span>
+            <span class="chapter-label">Topographic Dial</span>
+          </div>
+          <div class="chapter-item" data-step="1">
+            <span class="chapter-num">02</span>
+            <span class="chapter-label">Calibre Movement</span>
+          </div>
+          <div class="chapter-item" data-step="2">
+            <span class="chapter-num">03</span>
+            <span class="chapter-label">Nocturne Lume</span>
+          </div>
+          <div class="chapter-item" data-step="3">
+            <span class="chapter-num">04</span>
+            <span class="chapter-label">Jubilee Chassis</span>
+          </div>
+        </div>
+
+        <div class="product-reveal-cta-group">
+          <span class="edition-tag">R 39 SC AT HIMALAYAN</span>
+          <a class="secondary-btn timeless-spec-btn view-spec-btn" href="#craftsmanship">View Specifications</a>
+        </div>
+      </div>
+
+      <!-- Right Scroll-Driven Premium Image Stream -->
+      <div class="reveal-cards-stream architecture-cards-list">
+        <!-- Card 1: Topographic Dial -->
+        <article class="reveal-card architecture-card" data-index="0">
+          <div class="reveal-card-visual">
+            <img src="/assets/photo/bg1.webp" alt="GTC Himalayan Topographic Dial" loading="lazy" />
+            <div class="reveal-card-glare"></div>
+          </div>
+          <div class="reveal-card-body">
+            <div class="reveal-card-header">
+              <span class="reveal-card-step">01 / ARCHITECTURE</span>
+              <span class="reveal-card-badge">Macro Dial</span>
+            </div>
+            <h3 class="reveal-card-title">3D Topographic Relief Dial</h3>
+            <p class="reveal-card-desc">CNC micro-milled with undulating contour lines inspired by the 8,000-meter Himalayan massif, capturing light and shadows across every ridge.</p>
+          </div>
+        </article>
+
+        <!-- Card 2: Calibre GTC-2601 Movement -->
+        <article class="reveal-card architecture-card" data-index="1">
+          <div class="reveal-card-visual">
+            <img src="/assets/photo/gtc-calibre-movement.webp" alt="Calibre GTC-2601 In-House Movement" loading="lazy" />
+            <div class="reveal-card-glare"></div>
+          </div>
+          <div class="reveal-card-body">
+            <div class="reveal-card-header">
+              <span class="reveal-card-step">02 / CALIBRE</span>
+              <span class="reveal-card-badge">Mechanical Heart</span>
+            </div>
+            <h3 class="reveal-card-title">Calibre GTC-2601 Automatic</h3>
+            <p class="reveal-card-desc">Exhibition sapphire caseback showcasing the custom 22K gold rotor hand-engraved with mountain peaks, 31 jewels, and a 68-hour power reserve.</p>
+          </div>
+        </article>
+
+        <!-- Card 3: Super-LumiNova Nocturne -->
+        <article class="reveal-card architecture-card" data-index="2">
+          <div class="reveal-card-visual">
+            <img src="/assets/photo/gtc-lume-night.webp" alt="Swiss Super-LumiNova Nocturne Lume" loading="lazy" />
+            <div class="reveal-card-glare"></div>
+          </div>
+          <div class="reveal-card-body">
+            <div class="reveal-card-header">
+              <span class="reveal-card-step">03 / NOCTURNE</span>
+              <span class="reveal-card-badge">Night Visibility</span>
+            </div>
+            <h3 class="reveal-card-title">Swiss Super-LumiNova® Glow</h3>
+            <p class="reveal-card-desc">Diamond-faceted hands and indices charged with high-intensity cyan Super-LumiNova, engineered for supreme legibility at extreme altitudes.</p>
+          </div>
+        </article>
+
+        <!-- Card 4: 316L Jubilee Chassis -->
+        <article class="reveal-card architecture-card" data-index="3">
+          <div class="reveal-card-visual">
+            <img src="/assets/photo/gtc-front-watch.webp" alt="316L Surgical Steel Case and Jubilee Bracelet" loading="lazy" />
+            <div class="reveal-card-glare"></div>
+          </div>
+          <div class="reveal-card-body">
+            <div class="reveal-card-header">
+              <span class="reveal-card-step">04 / PROFILE</span>
+              <span class="reveal-card-badge">Chassis &amp; Bracelet</span>
+            </div>
+            <h3 class="reveal-card-title">Surat Hand-Brushed Steel</h3>
+            <p class="reveal-card-desc">41mm surgical 316L chassis with integrated Jubilee-link bracelet, mirror-chamfered bevels, and fluted crown bearing the GTC crest.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GILDED HOROLOGICAL TRANSITION DIVIDER -->
+  <div class="gilded-crest-divider" aria-hidden="true">
+    <span class="crest-mark">❖</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERITAGE SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="heritage" id="heritage">
+    <div class="heritage-bg">
+      <img class="heritage-bg-img" src="/assets/photo/q1.webp" alt="Heritage Background" loading="lazy" />
+      <div class="heritage-overlay"></div>
+    </div>
+    <div class="heritage-content">
+      <div class="heritage-text">
+        <p class="heritage-eyebrow">Est. 2026 · Surat Atelier Provenance</p>
+        <h2 class="heritage-title"><a href="heritage.html" style="color: inherit; text-decoration: none; transition: color 0.3s;">The Summit<br>of <em>Mastery</em></a></h2>
+        <div class="heritage-divider"></div>
+        <p class="heritage-body">Founded as an independent haute horlogerie manufacture in Surat in 2026, Gujarat Time Company engineers high-altitude chronometers for the extreme ridgelines of the Himalayas.</p>
+        <p class="heritage-body">The GTC Himalayan is forged to resist extreme barometric drops, sub-zero freezes, and high-shock alpine ascents through in-house monobloc engineering.</p>
+        <a class="heritage-link" href="heritage.html">Explore 2026 Genesis Coffret Vault &amp; Archives →</a>
+      </div>
+      <div class="heritage-stats">
+        <div class="heritage-stat">
+          <span class="heritage-stat-number">300</span>
+          <span class="heritage-stat-label">LIMITED PIECES</span>
+        </div>
+        <div class="heritage-stat">
+          <span class="heritage-stat-number">39mm</span>
+          <span class="heritage-stat-label">CASE DIAMETER</span>
+        </div>
+        <div class="heritage-stat">
+          <span class="heritage-stat-number">4</span>
+          <span class="heritage-stat-label">DIAL EDITIONS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HORIZON BRAND FILM · CINEMATIC SHOWCASE
+       (Relocated Existing Hero Video Section)
+  ═══════════════════════════════════════════ -->
+  <section class="cinema-showcase hero-film-section" id="brand-film">
+    <div class="cinema-bg hero-bg">
+      <video class="bg-video" autoplay loop muted playsinline preload="none">
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+      <div class="cinema-overlay hero-overlay"></div>
+    </div>
+    <div class="cinema-content hero-content">
+      <div class="cinema-text-bg hero-text-bg">HORIZON</div>
+      <div class="cinema-details hero-details">
+        <div class="cinema-badge">
+          <span class="pill-dot"></span>
+          <span>CINEMATIC HORIZON SHOWCASE</span>
+        </div>
+        <h2 class="cinema-title">CHRONOMETRIC ARCHITECTURE<br><span class="accent">FORGED FOR EXTREME ALTITUDES</span></h2>
+        <p class="cinema-subtitle">Cold-forged 904L monobloc chronometry engineered for high peaks.</p>
+        <div class="cinema-cta-group hero-cta-group">
+          <span class="limited-edition">No. 001 / 300</span>
+          <a class="primary-btn" href="collection.html">EXPLORE COLLECTION</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COLLECTION SECTION (Ethos)
+  ═══════════════════════════════════════════ -->
+  <section class="ethos" id="collection">
+    <div class="ethos-header">
+      <h2 class="ethos-section-title">THE COLLECTION</h2>
+      <a href="collection.html" class="primary-btn" style="margin-top: 16px; font-size: 0.72rem; padding: 10px 26px; letter-spacing: 0.18em; text-transform: uppercase;">Enter 360° Virtual Atelier →</a>
+    </div>
+    <div class="ethos-dynamic-bg">
+      <img class="ethos-bg-img ethos-bg-bl active" src="/assets/photo/ethos-bg.webp" alt="Himalayan Background" loading="lazy" />
+      <img class="ethos-bg-img ethos-bg-rs" src="/assets/photo/ethos-bg-rs.webp" alt="RS Background" loading="lazy" />
+    </div>
+    <div class="ethos-slider-container">
+      <!-- Variant 1: GTC Himalayan -->
+      <div class="ethos-main variant-bl active">
+        <div class="ethos-text-side">
+          <h2 class="ethos-alt-title">GTC HIMALAYAN<br>HORIZON</h2>
+          <p class="ethos-alt-subtitle">GOLDEN TOPOGRAPHIC TEXTURE DIAL</p>
+          <div class="ethos-description">
+            <p>An imposing 39mm masterpiece featuring a meticulously stamped golden topographic dial that mirrors the rugged terrain of the world's highest peaks. Powered by a robust self-winding movement with central seconds, this timepiece blends the unyielding spirit of the mountains with the forefront of modern Indian horology.</p>
+            <p class="ethos-ref">Ref. R 39 SC AT HIMALAYAN (GD)</p>
+          </div>
+          <div class="ethos-next-btn" data-target="rs">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+        <div class="ethos-product-center">
+          <img class="ethos-watch-img" src="/assets/photo/ethos-watch.webp" alt="GTC Himalayan Watch" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Variant 2: RS Edition -->
+      <div class="ethos-main variant-rs">
+        <div class="ethos-text-side">
+          <h2 class="ethos-alt-title">GTC HIMALAYAN<br>RS EDITION</h2>
+          <p class="ethos-alt-subtitle">ANTIQUE CHAMPAGNE DIAL</p>
+          <div class="ethos-description">
+            <p>A refined horological edition featuring an exquisite sunray dial and precision 75-component movement. Blending subtle warmth with intricate Côtes de Genève and perlage finishes. A testament to the artistry of Indian watchmaking.</p>
+            <p class="ethos-ref">Ref. V 32 SC AT FO SMURFETTE (RS)</p>
+          </div>
+          <div class="ethos-next-btn" data-target="bl">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </div>
+        </div>
+        <div class="ethos-product-center">
+          <img class="ethos-watch-img" src="/assets/photo/ethos-watch-rs.webp" alt="GTC RS Watch" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CRAFTSMANSHIP SECTION (Movement Architecture)
+  ═══════════════════════════════════════════ -->
+  <section class="craftsmanship-section" id="craftsmanship">
+    <div class="craft-container">
+      <!-- Section Header -->
+      <div class="craft-header">
+        <p class="craft-eyebrow">CALIBRE GTC-2601 · IN-HOUSE ARCHITECTURE</p>
+        <h2 class="section-title">THE ARCHITECTURE OF <span class="accent">PRECISION</span></h2>
+        <p class="section-subtitle">152 hand-assembled components. Every gear, spring, and jewel placed with absolute intent. This is the mechanical soul of the Himalayan.</p>
+      </div>
+
+      <!-- Telemetry Specs Bar -->
+      <div class="craft-specs-bar">
+        <div class="craft-spec-item">
+          <span class="craft-spec-num">152</span>
+          <span class="craft-spec-label">Hand-Placed Parts</span>
+        </div>
+        <div class="craft-spec-divider"></div>
+        <div class="craft-spec-item">
+          <span class="craft-spec-num">28,800</span>
+          <span class="craft-spec-label">Vibrations / Hour</span>
+        </div>
+        <div class="craft-spec-divider"></div>
+        <div class="craft-spec-item">
+          <span class="craft-spec-num">31</span>
+          <span class="craft-spec-label">Ruby Bearings</span>
+        </div>
+        <div class="craft-spec-divider"></div>
+        <div class="craft-spec-item">
+          <span class="craft-spec-num">68 hrs</span>
+          <span class="craft-spec-label">Power Reserve</span>
+        </div>
+        <div class="craft-spec-divider"></div>
+        <div class="craft-spec-item">
+          <span class="craft-spec-num">±2 sec</span>
+          <span class="craft-spec-label">Daily Chronometry</span>
+        </div>
+        <div class="craft-spec-divider"></div>
+        <div class="craft-spec-item">
+          <span class="craft-spec-num">300</span>
+          <span class="craft-spec-label">Numbered Pieces</span>
+        </div>
+      </div>
+
+      <!-- Interactive Component Quick-Nav Selector -->
+      <div class="craft-hotspot-nav" role="tablist" aria-label="Movement Hotspot Components">
+        <button class="hotspot-nav-pill active" data-target-hotspot="0" role="tab" aria-selected="true">
+          <span class="pill-gold-dot"></span>
+          <span>01 · 22K Gold Rotor</span>
+        </button>
+        <button class="hotspot-nav-pill" data-target-hotspot="1" role="tab" aria-selected="false">
+          <span class="pill-gold-dot"></span>
+          <span>02 · 4Hz Escapement</span>
+        </button>
+        <button class="hotspot-nav-pill" data-target-hotspot="2" role="tab" aria-selected="false">
+          <span class="pill-gold-dot"></span>
+          <span>03 · 31 Ruby Bearings</span>
+        </button>
+        <button class="hotspot-nav-pill" data-target-hotspot="3" role="tab" aria-selected="false">
+          <span class="pill-gold-dot"></span>
+          <span>04 · Twin-Barrel Torque</span>
+        </button>
+        <button class="hotspot-nav-pill" data-target-hotspot="4" role="tab" aria-selected="false">
+          <span class="pill-gold-dot"></span>
+          <span>05 · Surat Lapidary Anglage</span>
+        </button>
+      </div>
+
+      <!-- Movement Exhibition Stage with Interactive Telemetry Hotspots -->
+      <div class="craft-stage" id="craft-stage">
+        <div class="craft-stage-visual">
+          <div class="craft-movement-stage-inner" id="craft-movement-stage-inner">
+            <img class="craft-movement-img" id="craft-movement-img" src="/assets/photo/gtc-calibre-movement.webp" alt="Calibre GTC-2601 In-House Movement Architecture" loading="lazy" />
+
+            <!-- Real-Time Sapphire Crystal Glare Overlay -->
+            <div class="craft-sapphire-glare" id="craft-sapphire-glare"></div>
+            <div class="craft-vignette"></div>
+
+            <!-- Hotspot 1: 22K Gold Topographic Rotor -->
+            <div class="craft-hotspot active" data-index="0" style="top: 28%; left: 58%;" role="button" aria-label="22K Gold Topographic Rotor" tabindex="0">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-dot"></span>
+              <div class="hotspot-tooltip">
+                <span class="tooltip-badge">Calibre Architecture · 22K Solid Gold</span>
+                <h4 class="tooltip-title">22K Gold Topographic Rotor</h4>
+                <p class="tooltip-text">Bi-directional skeletonized winding mass sculpted with Himalayan mountain ridge contours and the GTC emblem, delivering silky and efficient autonomous winding.</p>
+                <div class="tooltip-spec-tag">Bidirectional Ball-Bearing Rotor · 22K Solid Gold</div>
+              </div>
+            </div>
+
+            <!-- Hotspot 2: Free-Sprung Escapement & Balance Wheel -->
+            <div class="craft-hotspot" data-index="1" style="top: 79%; left: 52%;" role="button" aria-label="Free-Sprung Escapement and Balance Wheel" tabindex="0">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-dot"></span>
+              <div class="hotspot-tooltip">
+                <span class="tooltip-badge">Regulating Organ · 4Hz Cadence</span>
+                <h4 class="tooltip-title">Free-Sprung Variable-Inertia Balance</h4>
+                <p class="tooltip-text">Cadenced at 28,800 vibrations per hour (4Hz) equipped with a paramagnetic Nivachron alloy hairspring, impervious to magnetic fields up to 15,000 Gauss.</p>
+                <div class="tooltip-spec-tag">28,800 VPH · ±2 Sec/Day Chronometer Grade</div>
+              </div>
+            </div>
+
+            <!-- Hotspot 3: Synthetic Ruby Bearings -->
+            <div class="craft-hotspot" data-index="2" style="top: 57%; left: 34%;" role="button" aria-label="Synthetic Ruby Bearings" tabindex="0">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-dot"></span>
+              <div class="hotspot-tooltip">
+                <span class="tooltip-badge">Jeweled Bearings · Frictionless</span>
+                <h4 class="tooltip-title">31 Synthetic Ruby Chatons</h4>
+                <p class="tooltip-text">Hand-seated in solid gold chatons to minimize mechanical friction across high-cadence gear pivots for lifelong chronometric endurance.</p>
+                <div class="tooltip-spec-tag">31 Jewels · Solid Gold Chatons</div>
+              </div>
+            </div>
+
+            <!-- Hotspot 4: Dual-Barrel Linear Torque Train -->
+            <div class="craft-hotspot" data-index="3" style="top: 48%; left: 70%;" role="button" aria-label="Twin-Barrel Mainspring Architecture" tabindex="0">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-dot"></span>
+              <div class="hotspot-tooltip tooltip-left">
+                <span class="tooltip-badge">Energy Transmission · 68h Reserve</span>
+                <h4 class="tooltip-title">Twin-Barrel Mainspring Architecture</h4>
+                <p class="tooltip-text">Dual mainspring barrels coupled in series to deliver ultra-linear isochronous torque for 68 autonomous hours, ensuring optimal amplitude across all days.</p>
+                <div class="tooltip-spec-tag">68-Hour Reserve · Dual-Barrel Linear Delivery</div>
+              </div>
+            </div>
+
+            <!-- Hotspot 5: Surat Lapidary Chamfering & Côtes de Genève -->
+            <div class="craft-hotspot" data-index="4" style="top: 44%; left: 21%;" role="button" aria-label="Surat Hand-Polished Anglage" tabindex="0">
+              <span class="hotspot-pulse"></span>
+              <span class="hotspot-dot"></span>
+              <div class="hotspot-tooltip">
+                <span class="tooltip-badge">Surat Atelier · Hand Finishing</span>
+                <h4 class="tooltip-title">Mirror Anglage &amp; Côtes de Genève</h4>
+                <p class="tooltip-text">Bridges hand-beveled with diamond-cut 45° chamfers (anglage) and decorated with circular Geneva striping by master Surat diamond lapidaries.</p>
+                <div class="tooltip-spec-tag">Hand-Beveled Anglage · Mirror-Polished Chamfers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="craft-stage-caption">
+          <div class="caption-tag">
+            <span class="tag-glow"></span>
+            <span id="craft-active-hotspot-tag">CALIBRE GTC-2601 · IN-HOUSE EXHIBITION CASEBACK · INTERACTIVE TELEMETRY</span>
+          </div>
+          <p class="caption-hint">Tap on glowing telemetry nodes to inspect micro-engineering architecture</p>
+        </div>
+      </div>
+
+      <!-- 4 Engineering Pillars Grid -->
+      <div class="craft-pillars-grid">
+        <div class="craft-card">
+          <div class="craft-card-num">01</div>
+          <h3 class="craft-card-title">Surat Lapidary Heritage</h3>
+          <p class="craft-card-desc">Hand-beveled anglage chamfers and diamond-cut hour markers polished by master craftsmen drawing from Surat’s legendary diamond-polishing tradition.</p>
+          <div class="craft-card-meta">Hand-Finished Bridges · Mirror Anglage</div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-card-num">02</div>
+          <h3 class="craft-card-title">Dual-Barrel Linear Torque</h3>
+          <p class="craft-card-desc">An optimized twin-barrel architecture delivers a stable 68-hour power reserve, ensuring identical chronometric precision on Day 3 as on Day 1.</p>
+          <div class="craft-card-meta">68-Hour Autonomous Reserve · 4Hz Cadence</div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-card-num">03</div>
+          <h3 class="craft-card-title">Topographic Relief Dial</h3>
+          <p class="craft-card-desc">CNC micro-milled with undulating contour lines inspired by the Himalayan massif, framed under a dual-domed anti-reflective sapphire crystal.</p>
+          <div class="craft-card-meta">3D Topography · Anti-Reflective Sapphire</div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-card-num">04</div>
+          <h3 class="craft-card-title">Paramagnetic Defense</h3>
+          <p class="craft-card-desc">Equipped with a Nivachron alloy hairspring impervious to magnetic distortion up to 15,000 Gauss, built to withstand extreme modern environments.</p>
+          <div class="craft-card-meta">Nivachron Alloy · 10 ATM Water Resistance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SHOWCASE SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="showcase">
+    <div class="showcase-visual">
+      <img class="showcase-bg-img" src="/assets/photo/z1.webp" alt="Showcase Watch" loading="lazy" />
+      <div class="showcase-gradient"></div>
+    </div>
+    <div class="showcase-text">
+      <p class="showcase-eyebrow">Limited to 300 Numbered Timepieces</p>
+      <h2 class="showcase-headline">Beyond<br><em>Ordinary.</em></h2>
+      <p class="showcase-body">When golden topographic ridges frame an impossible dial — this is what the world looks like at its most extraordinary. The GTC Himalayan stands as a monument to Indian craftsmanship.</p>
+      <a class="showcase-ig-link" href="#" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        Follow @gtcwatches
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MAISON STANDARDIZED LUXURY FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" aria-label="Gujarat Time Company Home">
+            <img class="footer-logo" src="/assets/photo/logo.svg" alt="Gujarat Time Company Logo" />
+          </a>
+          <p class="footer-tagline">Surat Manufacture · Est. 2026</p>
+          <p class="footer-address">
+            Gujarat Time Company Pvt. Ltd.<br>
+            Surat Horological District<br>
+            Gujarat 395007, India
+          </p>
+          <div class="footer-socials">
+            <a class="footer-social" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a class="footer-social" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a class="footer-social" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Collections Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Timepieces</h5>
+          <a href="collection.html#himalayan">GTC Himalayan (Horizon 300)</a>
+          <a href="collection.html">360° Virtual Atelier</a>
+          <a href="collection.html#grid-section">The Himalayan Collection</a>
+          <a href="craftsmanship.html">Calibre &amp; Movements</a>
+          <a href="profile.html#allocations">Bespoke Allocations</a>
+        </div>
+
+        <!-- Maison Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">The Maison</h5>
+          <a href="about.html">About Maison GTC</a>
+          <a href="heritage.html">Heritage &amp; Provenance</a>
+          <a href="craftsmanship.html">Craftsmanship &amp; Finishing</a>
+          <a href="about.html#manufacture">Surat Horological Atelier</a>
+          <a href="index.html#ethos">Ethos &amp; Manifesto</a>
+        </div>
+
+        <!-- Client Concierge Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Client Concierge</h5>
+          <a href="contact.html">Contact Us &amp; Concierge</a>
+          <a href="contact.html#salon">Surat Atelier Private Salon</a>
+          <a href="warranty.html">5-Year International Warranty</a>
+          <a href="warranty.html#care-guide">Horological Care Guide</a>
+          <a href="profile.html">Collector Sanctuary Vault</a>
+        </div>
+
+        <!-- Genesis Allocation Dossier Column -->
+        <div class="footer-col footer-col-reserve">
+          <h5 class="footer-col-title">Genesis Allocation</h5>
+          <p class="footer-col-desc">Strictly limited to 300 numbered timepieces worldwide. Individually regulated and hand-finished by master lapidaries in Surat, India.</p>
+          <button class="footer-reserve-btn open-reserve-modal">Reserve Your Piece</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC, Horizon, and the GTC Himalayan are registered marks of Gujarat Time Company. Designed and hand-assembled in Surat, India.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Allocation</a>
+          <a href="warranty.html">Warranty &amp; Care</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       TECHNICAL DOSSIER MODAL (#reserve-modal)
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="reserve-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="dossier-title" data-lenis-prevent="true" data-lenis-prevent-wheel="true" data-lenis-prevent-touch="true">
+    <div class="modal-container" id="modal-container" data-lenis-prevent="true" data-lenis-prevent-wheel="true" data-lenis-prevent-touch="true">
+      <!-- Minimalist Razor-Sharp Close Mechanism -->
+      <button class="modal-close" id="modal-close" aria-label="Close Technical Dossier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Left Panel: The Visual -->
+      <div class="dossier-visual" data-lenis-prevent="true" data-lenis-prevent-wheel="true" data-lenis-prevent-touch="true">
+        <div class="dossier-visual-strobe"></div>
+        <div class="dossier-image-wrapper">
+          <img class="dossier-watch-img" id="dossier-watch-img" src="/assets/photo/z1.webp" alt="GTC Himalayan Technical Reference" loading="lazy" />
+        </div>
+        <div class="dossier-visual-badge">
+          <span class="dossier-badge-dot"></span>
+          <span class="dossier-badge-ref" id="dossier-badge-ref">REF. H39-GT-2026 · 001/300</span>
+        </div>
+      </div>
+
+      <!-- Right Panel: The Dossier -->
+      <div class="dossier-panel" id="dossier-panel" data-lenis-prevent="true" data-lenis-prevent-wheel="true" data-lenis-prevent-touch="true">
+        <!-- Header -->
+        <header class="dossier-header">
+          <span class="modal-eyebrow" id="dossier-eyebrow">HORIZON ATELIER · LIMITED EDITION</span>
+          <h2 class="modal-title" id="dossier-title">GTC <em>Himalayan</em></h2>
+          <p class="modal-description" id="dossier-description">
+            Synthesizing Indian lapidary artistry with chronometric precision. Encased in 904L surgical steel with hand-milled topographic relief contours and an autonomous 68-hour twin-barrel caliber.
+          </p>
+        </header>
+
+        <!-- Dynamic / Universal Spec Sections -->
+        <div class="dossier-sections" id="dossier-sections" data-lenis-prevent="true" data-lenis-prevent-wheel="true" data-lenis-prevent-touch="true">
+          <!-- Group 1: Calibre Engineering -->
+          <section class="spec-group">
+            <h3 class="spec-group-title">
+              <span>CALIBRE ENGINEERING</span>
+              <span class="spec-group-pill">IN-HOUSE</span>
+            </h3>
+            <div class="spec-item">
+              <span class="spec-label">Movement Reference</span>
+              <span class="spec-value">Calibre GTC-2601 Mechanical</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Winding Architecture</span>
+              <span class="spec-value">Bidirectional 22K Solid Gold Rotor</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Escapement Cadence</span>
+              <span class="spec-value">28,800 VPH (4.0 Hz)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Autonomous Power Reserve</span>
+              <span class="spec-value">68 Hours (Twin-Barrel Linear Torque)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Jeweled Bearings</span>
+              <span class="spec-value">31 Synthetic Rubies in Solid Gold Chatons</span>
+            </div>
+          </section>
+
+          <!-- Group 2: Chassis & Materials -->
+          <section class="spec-group">
+            <h3 class="spec-group-title">
+              <span>CHASSIS &amp; MATERIALS</span>
+              <span class="spec-group-pill">316L STEEL</span>
+            </h3>
+            <div class="spec-item">
+              <span class="spec-label">Case Diameter &amp; Profile</span>
+              <span class="spec-value">39.0 mm · 11.4 mm Thickness</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Chassis Metallurgy</span>
+              <span class="spec-value">316L Surgical Steel · Brushed Chamfers</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Bezel Architecture</span>
+              <span class="spec-value">Micro-Fluted Satin Titanium Bezel Ring</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Water Resistance</span>
+              <span class="spec-value">100 Metres (10 ATM / 330 Feet)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Crystal Optics</span>
+              <span class="spec-value">Dual-Domed Anti-Reflective Sapphire</span>
+            </div>
+          </section>
+
+          <!-- Group 3: Chronometric Precision & Finishing -->
+          <section class="spec-group">
+            <h3 class="spec-group-title">
+              <span>CHRONOMETRIC PERFORMANCE &amp; FINISHING</span>
+              <span class="spec-group-pill">&plusmn;2 SEC/DAY</span>
+            </h3>
+            <div class="spec-item">
+              <span class="spec-label">Chronometer Certification</span>
+              <span class="spec-value">Internal Maison Precision Standard</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Magnetic Shielding</span>
+              <span class="spec-value">Nivachron Hairspring (15,000 Gauss)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Hand Finishing Standard</span>
+              <span class="spec-value">Surat Lapidary 45° Mirror Anglage</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Bridge Embellishment</span>
+              <span class="spec-value">Circular Côtes de Genève &amp; Perlage</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Dial Topography</span>
+              <span class="spec-value">CNC 3D Contours · Alpine Glacial Relief</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- Embedded Concierge Reservation Drawer -->
+        <div class="dossier-reservation-drawer" id="dossier-reservation-drawer" data-lenis-prevent="true" data-lenis-prevent-wheel="true" data-lenis-prevent-touch="true">
+          <div class="drawer-header">
+            <h4 class="drawer-title">Private Allocation Concierge</h4>
+            <button type="button" class="drawer-back-btn" id="drawer-back-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>Back to Technical Specs</span>
+            </button>
+          </div>
+          <form class="modal-form" id="reserve-form" name="reservation" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="reservation" />
+            <input type="hidden" name="selected-watch" id="form-watch-model" value="GTC Himalayan" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Vikram" maxlength="50" autocomplete="given-name" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Patel" maxlength="50" autocomplete="family-name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Private Email</label>
+                <input type="email" id="email" name="email" placeholder="v.patel@horizon.luxury" maxlength="254" autocomplete="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Concierge Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98250 00000" maxlength="25" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="variant">Timepiece Allocation</label>
+              <select id="variant" name="variant" required>
+                <option value="01 · GLACIAL TWILIGHT (Ref. HIM-GT-2601)" selected>01 · GLACIAL TWILIGHT (Ref. HIM-GT-2601 · Ice Blue Sunburst)</option>
+                <option value="02 · MINERAL SLATE (Ref. HIM-MS-2602)">02 · MINERAL SLATE (Ref. HIM-MS-2602 · Anthracite Fluted)</option>
+                <option value="03 · SUMMIT ICE (Ref. HIM-SI-2603)">03 · SUMMIT ICE (Ref. HIM-SI-2603 · Arctic Matte White)</option>
+                <option value="04 · ALPINE PINE (Ref. HIM-AP-2604)">04 · ALPINE PINE (Ref. HIM-AP-2604 · Deep Alpine Spruce)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Private Allocation Notes</label>
+              <textarea id="message" name="message" rows="2" maxlength="1000" placeholder="Numbered edition preference or bespoke delivery requests..."></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">
+              <span>CONFIRM ALLOCATION REQUEST</span>
+              <span class="btn-arrow">&rarr;</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Sticky Dossier Actions Footer -->
+        <footer class="dossier-actions" id="dossier-actions">
+          <button type="button" class="dossier-btn dossier-btn-inspect" id="btn-dossier-inspect-3d">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M16 12l-4-4-4 4"></path>
+              <path d="M12 16V8"></path>
+            </svg>
+            <span>INSPECT IN 3D</span>
+          </button>
+          <button type="button" class="dossier-btn dossier-btn-reserve" id="btn-dossier-reserve">
+            <span class="btn-text">RESERVE PIECE</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./hero-3d.js"></script>
+  <script type="module" src="./main.js"></script>
+
+  <!-- High Performance Non-Blocking Prefetching during Idle Time -->
+  <script>
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => {
+        ['collection.html', 'heritage.html', 'craftsmanship.html'].forEach((href) => {
+          const link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = href;
+          document.head.appendChild(link);
+        });
+      }, { timeout: 3500 });
+    }
+  </script>
+</body>
+</html>

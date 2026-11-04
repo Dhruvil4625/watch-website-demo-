@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Local environment & secrets
+.env
+.env.local
+.env.*.local
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# Local backup files & editor artifacts
+*.backup
+*.noir-backup
+*.watch-backup
+*.bak
+*.swp
+*.local
+.DS_Store
+Thumbs.db
+

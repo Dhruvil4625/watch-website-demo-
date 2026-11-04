@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halden — Expeditions to the edge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       1. GLOBAL RESET & CUSTOM PROPERTIES
+       ═══════════════════════════════════════════════════════════════ */
+    :root {
+      --ink: #0b1013;
+      --panel: rgba(14, 19, 23, 0.84);
+      --line: rgba(255, 255, 255, 0.08);
+      --hover: rgba(255, 255, 255, 0.065);
+      --text: #ffffff;
+      --soft: rgba(255, 255, 255, 0.74);
+      --muted: rgba(255, 255, 255, 0.60);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --morph: 0.5s;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      background-color: var(--ink);
+      color: var(--text);
+      font-family: "Geist", "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+    }
+
+    :focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       2. HERO SECTION & BACKGROUND
+       ═══════════════════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      min-height: 560px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: #1b2a30 url("https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_144652_9eaf1d6a-3e8d-4460-bd5b-0ec7221685a0.png") center 45% / cover no-repeat;
+      animation: heroIn 2.4s var(--ease) both;
+    }
+
+    @keyframes heroIn {
+      from {
+        transform: scale(1.08);
+        filter: brightness(0.6);
+      }
+      to {
+        transform: scale(1);
+        filter: brightness(1);
+      }
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(6,10,12,0.35) 0%, rgba(6,10,12,0) 22%),
+        linear-gradient(to top, rgba(6,9,11,0.8) 0%, rgba(6,9,11,0.25) 30%, rgba(6,9,11,0) 55%);
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13.5px;
+      letter-spacing: 0.01em;
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+      animation: fadeUp 1s var(--ease) 0.9s both;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .scroll-cue span:first-child,
+    .scroll-cue span:last-child {
+      opacity: 0.8;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       3. HEADER BAR
+       ═══════════════════════════════════════════════════════════════ */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+    }
+
+    .bar {
+      height: 76px;
+      padding: 0 clamp(20px, 3.4vw, 52px);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+
+    .logo {
+      justify-self: start;
+      display: inline-flex;
+      width: 30px;
+      height: 26px;
+      animation: fadeDown 0.9s var(--ease) 0.35s backwards;
+    }
+
+    .desktop-nav {
+      position: relative;
+      animation: fadeIn 0.9s ease 0.45s backwards;
+    }
+
+    .actions {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: fadeDown 0.9s var(--ease) 0.55s backwards;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .trigger,
+    .plain-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 0;
+      font-size: 14.5px;
+      color: var(--soft);
+      transition: color 0.25s ease;
+    }
+
+    .trigger:hover,
+    .trigger[aria-expanded="true"],
+    .plain-link:hover {
+      color: #fff;
+    }
+
+    .chevron {
+      transition: transform 0.35s var(--ease);
+    }
+
+    .trigger[aria-expanded="true"] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .cta {
+      height: 32px;
+      padding: 0 15px;
+      border-radius: 999px;
+      background: #fff;
+      color: #0b0f12;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .cta:hover {
+      background: #e9eef0;
+      transform: translateY(-1px);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 36px;
+      height: 32px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       4. MORPHING DROPDOWN
+       ═══════════════════════════════════════════════════════════════ */
+    .dd {
+      --x: 0px;
+      --w: 400px;
+      --h: 300px;
+      --s: 0.97;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: var(--w);
+      height: var(--h);
+      transform: translateX(var(--x)) scale(var(--s));
+      transform-origin: 50% 0;
+      opacity: 0;
+      pointer-events: none;
+      border-radius: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 70px -25px rgba(0,0,0,0.65), 0 2px 10px rgba(0,0,0,0.2);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      overflow: hidden;
+      transition: transform var(--morph) var(--ease), width var(--morph) var(--ease), height var(--morph) var(--ease), opacity 0.3s ease;
+      z-index: 100;
+    }
+
+    .dd.open {
+      --s: 1;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .dd.instant {
+      transition: opacity 0.3s ease, transform var(--morph) var(--ease);
+    }
+
+    .dd.instant.snap {
+      transition: none;
+    }
+
+    .panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      filter: blur(8px);
+      transform: translateX(0);
+      transition: opacity 0.26s ease, transform var(--morph) var(--ease), filter 0.4s ease, visibility 0s linear var(--morph);
+    }
+
+    .panel[data-state="exit-left"] {
+      transform: translateX(-56px);
+    }
+
+    .panel[data-state="exit-right"] {
+      transform: translateX(56px);
+    }
+
+    .panel[data-state="active"] {
+      opacity: 1;
+      visibility: visible;
+      filter: blur(0);
+      transform: translateX(0);
+      transition: opacity 0.36s ease 0.06s, transform var(--morph) var(--ease), filter 0.45s ease 0.04s, visibility 0s;
+    }
+
+    .panel.snap {
+      transition: none !important;
+    }
+
+    /* Panel A: Discover */
+    #p-discover {
+      width: 664px;
+      height: 358px;
+      display: grid;
+      grid-template-columns: 236px 1fr;
+    }
+
+    .d-list {
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      gap: 2px;
+    }
+
+    .d-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 12px;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+
+    .d-item.is-active,
+    .d-item:hover,
+    .d-item:focus-visible {
+      background: var(--hover);
+    }
+
+    .d-item strong {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+
+    .d-item span {
+      font-size: 13px;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+
+    .d-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 15px 15px 0;
+    }
+
+    .d-media::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 70px;
+      background: linear-gradient(to right, rgba(14,19,23,0.55), rgba(14,19,23,0));
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .d-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.06);
+      filter: blur(10px);
+      transition: opacity 0.6s ease, transform 0.9s var(--ease), filter 0.6s ease;
+    }
+
+    .d-media img.is-active {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+      z-index: 1;
+    }
+
+    /* Panel B: Journeys */
+    #p-journeys {
+      width: 446px;
+      height: 308px;
+      padding: 7px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 14px;
+      isolation: isolate;
+    }
+
+    .card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      transition: transform 0.9s var(--ease), filter 0.5s;
+    }
+
+    .card:hover img,
+    .card:focus-visible img {
+      transform: scale(1.05);
+      filter: brightness(1.08);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,11,13,0.88) 0%, rgba(8,11,13,0.35) 38%, rgba(8,11,13,0) 60%);
+      z-index: -1;
+    }
+
+    .card strong {
+      font-size: 15.5px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .card span {
+      font-size: 13px;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+
+    /* Panel C: Regions */
+    #p-regions {
+      width: 232px;
+      height: 218px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .r-link {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 9px;
+      font-size: 15px;
+      transition: background 0.25s;
+    }
+
+    .r-link:hover,
+    .r-link:focus-visible {
+      background: var(--hover);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       5. MOBILE (<= 860px)
+       ═══════════════════════════════════════════════════════════════ */
+    .sheet {
+      position: absolute;
+      top: 68px;
+      left: 12px;
+      right: 12px;
+      padding: 10px;
+      border-radius: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      max-height: calc(100svh - 90px);
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px) scale(0.98);
+      transform-origin: 50% 0;
+      transition: opacity 0.3s ease, transform 0.45s var(--ease), visibility 0s linear 0.45s;
+      z-index: 99;
+    }
+
+    .sheet.open {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: opacity 0.3s ease, transform 0.45s var(--ease), visibility 0s;
+    }
+
+    .sheet h3 {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 10px 12px 6px;
+    }
+
+    .sheet a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 9px;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    .sheet a:hover {
+      background: var(--hover);
+    }
+
+    @media (max-width: 860px) {
+      .bar {
+        grid-template-columns: 1fr auto;
+      }
+      .desktop-nav {
+        display: none !important;
+      }
+      .menu-btn {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 861px) {
+      .menu-btn {
+        display: none;
+      }
+      .sheet {
+        display: none !important;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       6. REDUCED MOTION
+       ═══════════════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        --morph: 0.01s;
+      }
+      .hero-bg, .scroll-cue, .logo, .desktop-nav, .actions {
+        animation-duration: 0.01s !important;
+        animation-delay: 0s !important;
+      }
+      .panel, .d-media img {
+        filter: none !important;
+        transition-duration: 0.01s !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero" aria-label="Halden expeditions">
+    <div class="hero-bg" role="img" aria-label="A turquoise glacial river winding through a volcanic valley toward snow-capped mountains"></div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>(</span><span>scroll down</span><span>)</span>
+    </div>
+
+    <header class="header" id="header">
+      <div class="bar">
+        <a class="logo" href="#" aria-label="Halden home">
+          <svg viewBox="0 0 30 26" width="30" height="26" fill="#fff" fill-rule="evenodd">
+            <path d="M3.2 19.6C.4 15.8 1.3 8.6 6.6 4.7 11.3 1.2 18.9.9 23.9 4.1c4.7 3 6.3 9 3.6 13.9-2.9 5.3-9.4 7.7-15.4 7-3.8-.4-6.9-2.4-8.9-5.4ZM9.5 17.2l4.3-6.4 2.6 3.6 1.7-2.2 3.4 5z"/>
+          </svg>
+        </a>
+
+        <nav class="desktop-nav" id="nav" aria-label="Main">
+          <ul class="links">
+            <li>
+              <button class="trigger" data-menu="discover" aria-expanded="false">
+                Discover
+                <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                  <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="trigger" data-menu="journeys" aria-expanded="false">
+                Journeys
+                <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                  <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="trigger" data-menu="regions" aria-expanded="false">
+                Regions
+                <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
+                  <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <a class="plain-link" id="story-link" href="#story">Our story</a>
+            </li>
+          </ul>
+
+          <!-- Morphing Dropdown -->
+          <div class="dd" id="dd">
+            <!-- Panel A: Discover -->
+            <div class="panel" id="p-discover" data-panel="discover">
+              <div class="d-list">
+                <a class="d-item is-active" data-img="0" href="#">
+                  <strong>Glaciers</strong>
+                  <span>Ancient ice fields carved into blue crevasses.</span>
+                </a>
+                <a class="d-item" data-img="1" href="#">
+                  <strong>Volcanoes</strong>
+                  <span>Walk the rim where the earth is still forming.</span>
+                </a>
+                <a class="d-item" data-img="2" href="#">
+                  <strong>Dunes</strong>
+                  <span>Sand seas shaped by wind and long shadows.</span>
+                </a>
+                <a class="d-item" data-img="3" href="#">
+                  <strong>Islands</strong>
+                  <span>Remote shores where the ocean sets the pace.</span>
+                </a>
+              </div>
+              <div class="d-media" aria-hidden="true">
+                <img class="is-active" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_051509_384c49d8-b37c-49a7-9180-a06ad914ec24.png" alt="">
+                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_051509_bf51abc3-090e-459f-8066-8f0cdd0c36b9.png" alt="">
+                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_051509_c4fa86ad-842a-41c9-8cff-a70068ac1aa3.png" alt="">
+                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_051511_ab19ff38-a140-442d-b2e7-82e3431bf3b6.png" alt="">
+              </div>
+            </div>
+
+            <!-- Panel B: Journeys -->
+            <div class="panel" id="p-journeys" data-panel="journeys">
+              <a class="card" href="#">
+                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_051510_400ed870-8ffb-4030-b267-2b003780a5e3.png" alt="">
+                <strong>Small Group Treks</strong>
+                <span>Six travellers, one guide, no crowds.</span>
+              </a>
+              <a class="card" href="#">
+                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260928_051510_3d88d3aa-ac8a-4e80-b70b-0da5523138cf.png" alt="">
+                <strong>Solo Expeditions</strong>
+                <span>Planned end to end around your pace.</span>
+              </a>
+            </div>
+
+            <!-- Panel C: Regions -->
+            <div class="panel" id="p-regions" data-panel="regions">
+              <a class="r-link" href="#">The Nordics</a>
+              <a class="r-link" href="#">Patagonia</a>
+              <a class="r-link" href="#">Himalaya</a>
+              <a class="r-link" href="#">Oceania</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="actions">
+          <a class="cta" href="#contact">Enquire</a>
+          <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 5.5h12M2 10.5h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Sheet -->
+      <div class="sheet" id="sheet">
+        <h3>Discover</h3>
+        <a href="#">Glaciers</a>
+        <a href="#">Volcanoes</a>
+        <a href="#">Dunes</a>
+        <a href="#">Islands</a>
+
+        <h3>Journeys</h3>
+        <a href="#">Small Group Treks</a>
+        <a href="#">Solo Expeditions</a>
+
+        <h3>Regions</h3>
+        <a href="#">The Nordics</a>
+        <a href="#">Patagonia</a>
+        <a href="#">Himalaya</a>
+        <a href="#">Oceania</a>
+
+        <h3>Halden</h3>
+        <a href="#story">Our story</a>
+      </div>
+    </header>
+  </section>
+
+  <script>
+    (function () {
+      const header = document.getElementById('header');
+      const nav = document.getElementById('nav');
+      const dd = document.getElementById('dd');
+      const triggers = Array.from(nav.querySelectorAll('.trigger'));
+      const panels = Array.from(dd.querySelectorAll('.panel'));
+      const storyLink = document.getElementById('story-link');
+      const menuBtn = document.getElementById('menu-btn');
+      const sheet = document.getElementById('sheet');
+
+      const menuOrder = ['discover', 'journeys', 'regions'];
+      const PAD = 20;
+
+      let current = null;
+      let closeTimer = null;
+
+      function place(id) {
+        const panel = document.getElementById('p-' + id);
+        const trigger = triggers.find(t => t.dataset.menu === id);
+        if (!panel || !trigger) return;
+
+        const panelWidth = panel.offsetWidth;
+        const panelHeight = panel.offsetHeight;
+        const triggerRect = trigger.getBoundingClientRect();
+        const headerRect = header.getBoundingClientRect();
+        const navRect = (dd.offsetParent || header).getBoundingClientRect();
+
+        let x = triggerRect.left - PAD;
+        const minX = headerRect.left + 12;
+        const maxX = headerRect.right - panelWidth - 12;
+        x = Math.max(minX, Math.min(x, maxX)) - navRect.left;
+
+        dd.style.setProperty('--x', x + 'px');
+        dd.style.setProperty('--w', panelWidth + 'px');
+        dd.style.setProperty('--h', panelHeight + 'px');
+      }
+
+      function open(id) {
+        clearTimeout(closeTimer);
+        if (id === current) return;
+
+        const newPanel = document.getElementById('p-' + id);
+        if (!newPanel) return;
+
+        const newIdx = menuOrder.indexOf(id);
+
+        if (!current) {
+          // First open
+          dd.classList.add('instant', 'snap');
+          panels.forEach(p => {
+            p.classList.add('snap');
+            p.removeAttribute('data-state');
+          });
+          place(id);
+          void dd.offsetWidth; // Force reflow
+          dd.classList.remove('snap');
+          panels.forEach(p => p.classList.remove('snap'));
+          dd.classList.add('open');
+          requestAnimationFrame(() => {
+            dd.classList.remove('instant');
+          });
+        } else {
+          // Switch between menus
+          const oldIdx = menuOrder.indexOf(current);
+          const dir = newIdx > oldIdx ? 1 : -1;
+          const oldPanel = document.getElementById('p-' + current);
+          if (oldPanel) {
+            oldPanel.setAttribute('data-state', dir > 0 ? 'exit-left' : 'exit-right');
+          }
+          newPanel.classList.add('snap');
+          newPanel.setAttribute('data-state', dir > 0 ? 'exit-right' : 'exit-left');
+          void newPanel.offsetWidth; // Force reflow
+          newPanel.classList.remove('snap');
+          place(id);
+        }
+
+        newPanel.setAttribute('data-state', 'active');
+        triggers.forEach(t => {
+          const isActive = t.dataset.menu === id;
+          t.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+        current = id;
+      }
+
+      function close() {
+        dd.classList.remove('open');
+        if (current) {
+          const oldPanel = document.getElementById('p-' + current);
+          if (oldPanel) oldPanel.removeAttribute('data-state');
+        }
+        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
+        current = null;
+      }
+
+      function scheduleClose(ms = 140) {
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(close, ms);
+      }
+
+      triggers.forEach(trig => {
+        const menu = trig.dataset.menu;
+        trig.addEventListener('pointerenter', (e) => {
+          if (e.pointerType === 'mouse') open(menu);
+        });
+        trig.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (current === menu) close();
+          else open(menu);
+        });
+      });
+
+      if (storyLink) {
+        storyLink.addEventListener('pointerenter', (e) => {
+          if (e.pointerType === 'mouse') scheduleClose(60);
+        });
+      }
+
+      nav.addEventListener('pointerenter', () => clearTimeout(closeTimer));
+      nav.addEventListener('pointerleave', (e) => {
+        if (e.pointerType === 'mouse') scheduleClose(140);
+      });
+
+      nav.addEventListener('focusout', (e) => {
+        if (!nav.contains(e.relatedTarget)) {
+          scheduleClose(0);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (current) {
+            const openTrigger = triggers.find(t => t.dataset.menu === current);
+            close();
+            if (openTrigger) openTrigger.focus();
+          }
+          if (sheet && sheet.classList.contains('open')) {
+            sheet.classList.remove('open');
+            sheet.setAttribute('aria-hidden', 'true');
+            if (menuBtn) {
+              menuBtn.setAttribute('aria-expanded', 'false');
+              menuBtn.focus();
+            }
+          }
+        }
+      });
+
+      document.addEventListener('pointerdown', (e) => {
+        if (!nav.contains(e.target)) close();
+      });
+
+      window.addEventListener('resize', () => {
+        if (current) place(current);
+      });
+
+      // Discover list item hover & focus crossfade
+      const dItems = Array.from(dd.querySelectorAll('.d-item'));
+      const dImgs = Array.from(dd.querySelectorAll('.d-media img'));
+
+      dItems.forEach(item => {
+        function activateItem() {
+          const imgIdx = parseInt(item.dataset.img, 10);
+          dItems.forEach(i => i.classList.toggle('is-active', i === item));
+          dImgs.forEach((img, idx) => img.classList.toggle('is-active', idx === imgIdx));
+        }
+        item.addEventListener('pointerenter', activateItem);
+        item.addEventListener('focus', activateItem);
+      });
+
+      // Mobile Menu Sheet
+      if (menuBtn && sheet) {
+        menuBtn.addEventListener('click', () => {
+          const isOpen = sheet.classList.toggle('open');
+          menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          sheet.setAttribute('aria-hidden', (!isOpen).toString());
+        });
+
+        sheet.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            sheet.classList.remove('open');
+            sheet.setAttribute('aria-hidden', 'true');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
