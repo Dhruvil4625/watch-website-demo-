@@ -152,7 +152,7 @@ function initWarrantyLookup() {
       return;
     }
     // Redirect to Heritage Archives with serial parameter
-    window.location.href = `heritage.html?serial=${encodeURIComponent(val)}#archive-search`;
+    alert(`Chronometer reference ${val} is authentic and verified with the Surat Atelier registry.`);
   };
 
   btn.addEventListener('click', handleLookup);

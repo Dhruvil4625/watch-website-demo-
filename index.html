@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GTC Himalayan — A limited edition of 300 numbered timepieces by Gujarat Time Company. Stand tall like the Himalayas. Crafted in Surat, India." />
+  <meta name="description" content="Gujarat Time Company — Contemporary Indian watchmaking demo. Featuring the GTC Himalayan edition." />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <title>GTC Himalayan | Horizon Collection — Gujarat Time Company</title>
+  <title>GTC Himalayan | Gujarat Time Company</title>
   <link rel="icon" type="image/x-icon" href="/assets/photo/logo.svg" />
 
   <!-- Google Fonts -->
@@ -33,10 +33,6 @@
 
   <!-- Luxury Horology Preloader -->
   <div id="preloader" class="preloader" aria-hidden="false">
-    <!-- Subtle Sound Toggle -->
-    <button id="preloader-sound-toggle" class="preloader-sound-btn" aria-label="Toggle Audio">
-      <span class="sound-icon">AUDIO:</span> <span id="sound-status">ON</span>
-    </button>
 
     <div class="preloader-ambient">
       <div class="ambient-glow"></div>
@@ -137,7 +133,7 @@
       <div class="preloader-telemetry">
         <p class="brand-eyebrow">GUJARAT TIME COMPANY</p>
         <div class="preloader-digits"><span id="loader-num">000</span><span class="unit">%</span></div>
-        <p class="status-indicator">INITIALIZING HORIZON CALIBRE</p>
+        <p class="status-indicator">LOADING WATCH SHOWCASE</p>
       </div>
     </div>
   </div>
@@ -155,14 +151,14 @@
       <!-- Desktop Morphing Nav (Centre: 4 Items) -->
       <nav class="desktop-nav" id="nav" aria-label="Main">
         <ul class="links">
-          <!-- 1. Maison (Direct Page Link) -->
+          <!-- 1. Home -->
           <li>
-            <a class="nav-link ${activePage === 'maison' ? 'active' : ''}" id="nav-maison" href="index.html">Maison</a>
+            <a class="nav-link active" id="nav-home" href="index.html">Home</a>
           </li>
 
-          <!-- 2. Collection (Vertical Morphing Dropdown for Infinite Scalable Sub-pages) -->
+          <!-- 2. Collection (Morphing Dropdown) -->
           <li>
-            <button class="trigger ${activePage === 'collection' ? 'active' : ''}" data-menu="collection" aria-expanded="false">
+            <button class="trigger" data-menu="collection" aria-expanded="false">
               <span>Collection</span>
               <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
                 <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -170,23 +166,18 @@
             </button>
           </li>
 
-          <!-- 3. Heritage (Direct Page Link) -->
+          <!-- 3. About Us -->
           <li>
-            <a class="nav-link ${activePage === 'heritage' ? 'active' : ''}" id="nav-heritage" href="heritage.html">Heritage</a>
-          </li>
-
-          <!-- 4. Craftsmanship (Dedicated Page Link) -->
-          <li>
-            <a class="nav-link" id="nav-craftsmanship" href="craftsmanship.html">Craftsmanship</a>
+            <a class="nav-link" id="nav-about" href="about.html">About Us</a>
           </li>
         </ul>
 
-        <!-- Morphing Dropdown Container for Collection (Vertical Animation & Scalable Box) -->
+        <!-- Morphing Dropdown Container for Collection -->
         <div class="dd" id="dd" aria-hidden="true">
           <div class="panel p-collection" id="p-collection" data-panel="collection">
             <div class="collection-vertical-header">
-              <span class="collection-header-title">Maison Collections</span>
-              <span class="collection-header-count">3 Sub-Pages</span>
+              <span class="collection-header-title">Collections</span>
+              <span class="collection-header-count">2 Views</span>
             </div>
 
             <div class="collection-items-list">
@@ -197,10 +188,10 @@
                 </div>
                 <div class="item-content">
                   <div class="item-top">
-                    <span class="item-badge">ATELIER 360°</span>
+                    <span class="item-badge">SHOWCASE 360°</span>
                   </div>
                   <strong class="item-title">Main Collection</strong>
-                  <p class="item-desc">Interactive 360° virtual horology showcase in Surat.</p>
+                  <p class="item-desc">Interactive 360° virtual horology showcase.</p>
                 </div>
                 <div class="item-arrow" aria-hidden="true">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -219,26 +210,7 @@
                     <span class="item-badge">HORIZON 300</span>
                   </div>
                   <strong class="item-title">GTC Himalayan</strong>
-                  <p class="item-desc">Numbered edition of 300 high-altitude alpine chronometers.</p>
-                </div>
-                <div class="item-arrow" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </div>
-              </a>
-
-              <!-- Sub-page 3: CTC / GTC Sub-page -->
-              <a class="collection-item" href="craftsmanship.html">
-                <div class="item-visual">
-                  <img src="/assets/photo/gtc-calibre-movement.webp" alt="CTC GTC Calibre Manufacture" loading="lazy" />
-                </div>
-                <div class="item-content">
-                  <div class="item-top">
-                    <span class="item-badge">CALIBRE 2601</span>
-                  </div>
-                  <strong class="item-title">CTC / GTC Calibre</strong>
-                  <p class="item-desc">In-house monobloc engineering, movements &amp; dossiers.</p>
+                  <p class="item-desc">High-altitude alpine chronometer edition.</p>
                 </div>
                 <div class="item-arrow" aria-hidden="true">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -262,7 +234,7 @@
       <div class="actions">
         <div class="auth-nav-container" id="auth-nav-container"></div>
         <!-- CART TRIGGER BUTTON -->
-        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Acquisition Bag">
+        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Cart">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -281,24 +253,14 @@
 
     <!-- Mobile Slide-Down Sheet -->
     <div class="sheet" id="sheet" aria-hidden="true">
-      <h3>Maison</h3>
-      <a href="about.html">About The Maison</a>
-      <a href="index.html">Maison Overview</a>
+      <h3>Navigation</h3>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection (360° Showcase)</a>
+      <a href="about.html">About Us</a>
 
-      <h3>Collection</h3>
-      <a href="collection.html">Main Collection Page (360° Atelier)</a>
-      <a href="index.html#hero">GTC Himalayan Sub-page</a>
-      <a href="craftsmanship.html">CTC / GTC Calibre Atelier</a>
-
-      <h3>Heritage</h3>
-      <a href="heritage.html">Heritage Coffret Vault</a>
-
-      <h3>Craftsmanship</h3>
-      <a href="craftsmanship.html">Craftsmanship &amp; Engineering</a>
-
-      <h3>Client Services</h3>
-      <a href="contact.html">Contact Us &amp; Concierge</a>
-      <a href="warranty.html">5-Year International Warranty</a>
+      <h3>Featured Models</h3>
+      <a href="index.html#hero">GTC Himalayan Horizon</a>
+      <a href="collection.html#grid-section">All Timepieces</a>
 
       <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px;">
         <div class="auth-nav-container" id="auth-nav-container-mobile" style="width: 100%;"></div>
@@ -330,7 +292,7 @@
 
         <div class="hero-actions-group">
           <button class="primary-btn open-reserve-modal">Reserve Piece</button>
-          <a class="secondary-btn" href="#craftsmanship">Inspect Architecture</a>
+          <a class="secondary-btn" href="collection.html">Explore Collection</a>
         </div>
       </div>
 
@@ -459,7 +421,7 @@
 
         <div class="product-reveal-cta-group">
           <span class="edition-tag">R 39 SC AT HIMALAYAN</span>
-          <a class="secondary-btn timeless-spec-btn view-spec-btn" href="#craftsmanship">View Specifications</a>
+          <a class="secondary-btn timeless-spec-btn view-spec-btn" href="#collection">View Models</a>
         </div>
       </div>
 
@@ -528,45 +490,6 @@
             <p class="reveal-card-desc">41mm surgical 316L chassis with integrated Jubilee-link bracelet, mirror-chamfered bevels, and fluted crown bearing the GTC crest.</p>
           </div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- GILDED HOROLOGICAL TRANSITION DIVIDER -->
-  <div class="gilded-crest-divider" aria-hidden="true">
-    <span class="crest-mark">❖</span>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       HERITAGE SECTION
-  ═══════════════════════════════════════════ -->
-  <section class="heritage" id="heritage">
-    <div class="heritage-bg">
-      <img class="heritage-bg-img" src="/assets/photo/q1.webp" alt="Heritage Background" loading="lazy" />
-      <div class="heritage-overlay"></div>
-    </div>
-    <div class="heritage-content">
-      <div class="heritage-text">
-        <p class="heritage-eyebrow">Est. 2026 · Surat Atelier Provenance</p>
-        <h2 class="heritage-title"><a href="heritage.html" style="color: inherit; text-decoration: none; transition: color 0.3s;">The Summit<br>of <em>Mastery</em></a></h2>
-        <div class="heritage-divider"></div>
-        <p class="heritage-body">Founded as an independent haute horlogerie manufacture in Surat in 2026, Gujarat Time Company engineers high-altitude chronometers for the extreme ridgelines of the Himalayas.</p>
-        <p class="heritage-body">The GTC Himalayan is forged to resist extreme barometric drops, sub-zero freezes, and high-shock alpine ascents through in-house monobloc engineering.</p>
-        <a class="heritage-link" href="heritage.html">Explore 2026 Genesis Coffret Vault &amp; Archives →</a>
-      </div>
-      <div class="heritage-stats">
-        <div class="heritage-stat">
-          <span class="heritage-stat-number">300</span>
-          <span class="heritage-stat-label">LIMITED PIECES</span>
-        </div>
-        <div class="heritage-stat">
-          <span class="heritage-stat-number">39mm</span>
-          <span class="heritage-stat-label">CASE DIAMETER</span>
-        </div>
-        <div class="heritage-stat">
-          <span class="heritage-stat-number">4</span>
-          <span class="heritage-stat-label">DIAL EDITIONS</span>
-        </div>
       </div>
     </div>
   </section>
@@ -651,189 +574,6 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       CRAFTSMANSHIP SECTION (Movement Architecture)
-  ═══════════════════════════════════════════ -->
-  <section class="craftsmanship-section" id="craftsmanship">
-    <div class="craft-container">
-      <!-- Section Header -->
-      <div class="craft-header">
-        <p class="craft-eyebrow">CALIBRE GTC-2601 · IN-HOUSE ARCHITECTURE</p>
-        <h2 class="section-title">THE ARCHITECTURE OF <span class="accent">PRECISION</span></h2>
-        <p class="section-subtitle">152 hand-assembled components. Every gear, spring, and jewel placed with absolute intent. This is the mechanical soul of the Himalayan.</p>
-      </div>
-
-      <!-- Telemetry Specs Bar -->
-      <div class="craft-specs-bar">
-        <div class="craft-spec-item">
-          <span class="craft-spec-num">152</span>
-          <span class="craft-spec-label">Hand-Placed Parts</span>
-        </div>
-        <div class="craft-spec-divider"></div>
-        <div class="craft-spec-item">
-          <span class="craft-spec-num">28,800</span>
-          <span class="craft-spec-label">Vibrations / Hour</span>
-        </div>
-        <div class="craft-spec-divider"></div>
-        <div class="craft-spec-item">
-          <span class="craft-spec-num">31</span>
-          <span class="craft-spec-label">Ruby Bearings</span>
-        </div>
-        <div class="craft-spec-divider"></div>
-        <div class="craft-spec-item">
-          <span class="craft-spec-num">68 hrs</span>
-          <span class="craft-spec-label">Power Reserve</span>
-        </div>
-        <div class="craft-spec-divider"></div>
-        <div class="craft-spec-item">
-          <span class="craft-spec-num">±2 sec</span>
-          <span class="craft-spec-label">Daily Chronometry</span>
-        </div>
-        <div class="craft-spec-divider"></div>
-        <div class="craft-spec-item">
-          <span class="craft-spec-num">300</span>
-          <span class="craft-spec-label">Numbered Pieces</span>
-        </div>
-      </div>
-
-      <!-- Interactive Component Quick-Nav Selector -->
-      <div class="craft-hotspot-nav" role="tablist" aria-label="Movement Hotspot Components">
-        <button class="hotspot-nav-pill active" data-target-hotspot="0" role="tab" aria-selected="true">
-          <span class="pill-gold-dot"></span>
-          <span>01 · 22K Gold Rotor</span>
-        </button>
-        <button class="hotspot-nav-pill" data-target-hotspot="1" role="tab" aria-selected="false">
-          <span class="pill-gold-dot"></span>
-          <span>02 · 4Hz Escapement</span>
-        </button>
-        <button class="hotspot-nav-pill" data-target-hotspot="2" role="tab" aria-selected="false">
-          <span class="pill-gold-dot"></span>
-          <span>03 · 31 Ruby Bearings</span>
-        </button>
-        <button class="hotspot-nav-pill" data-target-hotspot="3" role="tab" aria-selected="false">
-          <span class="pill-gold-dot"></span>
-          <span>04 · Twin-Barrel Torque</span>
-        </button>
-        <button class="hotspot-nav-pill" data-target-hotspot="4" role="tab" aria-selected="false">
-          <span class="pill-gold-dot"></span>
-          <span>05 · Surat Lapidary Anglage</span>
-        </button>
-      </div>
-
-      <!-- Movement Exhibition Stage with Interactive Telemetry Hotspots -->
-      <div class="craft-stage" id="craft-stage">
-        <div class="craft-stage-visual">
-          <div class="craft-movement-stage-inner" id="craft-movement-stage-inner">
-            <img class="craft-movement-img" id="craft-movement-img" src="/assets/photo/gtc-calibre-movement.webp" alt="Calibre GTC-2601 In-House Movement Architecture" loading="lazy" />
-
-            <!-- Real-Time Sapphire Crystal Glare Overlay -->
-            <div class="craft-sapphire-glare" id="craft-sapphire-glare"></div>
-            <div class="craft-vignette"></div>
-
-            <!-- Hotspot 1: 22K Gold Topographic Rotor -->
-            <div class="craft-hotspot active" data-index="0" style="top: 28%; left: 58%;" role="button" aria-label="22K Gold Topographic Rotor" tabindex="0">
-              <span class="hotspot-pulse"></span>
-              <span class="hotspot-dot"></span>
-              <div class="hotspot-tooltip">
-                <span class="tooltip-badge">Calibre Architecture · 22K Solid Gold</span>
-                <h4 class="tooltip-title">22K Gold Topographic Rotor</h4>
-                <p class="tooltip-text">Bi-directional skeletonized winding mass sculpted with Himalayan mountain ridge contours and the GTC emblem, delivering silky and efficient autonomous winding.</p>
-                <div class="tooltip-spec-tag">Bidirectional Ball-Bearing Rotor · 22K Solid Gold</div>
-              </div>
-            </div>
-
-            <!-- Hotspot 2: Free-Sprung Escapement & Balance Wheel -->
-            <div class="craft-hotspot" data-index="1" style="top: 79%; left: 52%;" role="button" aria-label="Free-Sprung Escapement and Balance Wheel" tabindex="0">
-              <span class="hotspot-pulse"></span>
-              <span class="hotspot-dot"></span>
-              <div class="hotspot-tooltip">
-                <span class="tooltip-badge">Regulating Organ · 4Hz Cadence</span>
-                <h4 class="tooltip-title">Free-Sprung Variable-Inertia Balance</h4>
-                <p class="tooltip-text">Cadenced at 28,800 vibrations per hour (4Hz) equipped with a paramagnetic Nivachron alloy hairspring, impervious to magnetic fields up to 15,000 Gauss.</p>
-                <div class="tooltip-spec-tag">28,800 VPH · ±2 Sec/Day Chronometer Grade</div>
-              </div>
-            </div>
-
-            <!-- Hotspot 3: Synthetic Ruby Bearings -->
-            <div class="craft-hotspot" data-index="2" style="top: 57%; left: 34%;" role="button" aria-label="Synthetic Ruby Bearings" tabindex="0">
-              <span class="hotspot-pulse"></span>
-              <span class="hotspot-dot"></span>
-              <div class="hotspot-tooltip">
-                <span class="tooltip-badge">Jeweled Bearings · Frictionless</span>
-                <h4 class="tooltip-title">31 Synthetic Ruby Chatons</h4>
-                <p class="tooltip-text">Hand-seated in solid gold chatons to minimize mechanical friction across high-cadence gear pivots for lifelong chronometric endurance.</p>
-                <div class="tooltip-spec-tag">31 Jewels · Solid Gold Chatons</div>
-              </div>
-            </div>
-
-            <!-- Hotspot 4: Dual-Barrel Linear Torque Train -->
-            <div class="craft-hotspot" data-index="3" style="top: 48%; left: 70%;" role="button" aria-label="Twin-Barrel Mainspring Architecture" tabindex="0">
-              <span class="hotspot-pulse"></span>
-              <span class="hotspot-dot"></span>
-              <div class="hotspot-tooltip tooltip-left">
-                <span class="tooltip-badge">Energy Transmission · 68h Reserve</span>
-                <h4 class="tooltip-title">Twin-Barrel Mainspring Architecture</h4>
-                <p class="tooltip-text">Dual mainspring barrels coupled in series to deliver ultra-linear isochronous torque for 68 autonomous hours, ensuring optimal amplitude across all days.</p>
-                <div class="tooltip-spec-tag">68-Hour Reserve · Dual-Barrel Linear Delivery</div>
-              </div>
-            </div>
-
-            <!-- Hotspot 5: Surat Lapidary Chamfering & Côtes de Genève -->
-            <div class="craft-hotspot" data-index="4" style="top: 44%; left: 21%;" role="button" aria-label="Surat Hand-Polished Anglage" tabindex="0">
-              <span class="hotspot-pulse"></span>
-              <span class="hotspot-dot"></span>
-              <div class="hotspot-tooltip">
-                <span class="tooltip-badge">Surat Atelier · Hand Finishing</span>
-                <h4 class="tooltip-title">Mirror Anglage &amp; Côtes de Genève</h4>
-                <p class="tooltip-text">Bridges hand-beveled with diamond-cut 45° chamfers (anglage) and decorated with circular Geneva striping by master Surat diamond lapidaries.</p>
-                <div class="tooltip-spec-tag">Hand-Beveled Anglage · Mirror-Polished Chamfers</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="craft-stage-caption">
-          <div class="caption-tag">
-            <span class="tag-glow"></span>
-            <span id="craft-active-hotspot-tag">CALIBRE GTC-2601 · IN-HOUSE EXHIBITION CASEBACK · INTERACTIVE TELEMETRY</span>
-          </div>
-          <p class="caption-hint">Tap on glowing telemetry nodes to inspect micro-engineering architecture</p>
-        </div>
-      </div>
-
-      <!-- 4 Engineering Pillars Grid -->
-      <div class="craft-pillars-grid">
-        <div class="craft-card">
-          <div class="craft-card-num">01</div>
-          <h3 class="craft-card-title">Surat Lapidary Heritage</h3>
-          <p class="craft-card-desc">Hand-beveled anglage chamfers and diamond-cut hour markers polished by master craftsmen drawing from Surat’s legendary diamond-polishing tradition.</p>
-          <div class="craft-card-meta">Hand-Finished Bridges · Mirror Anglage</div>
-        </div>
-
-        <div class="craft-card">
-          <div class="craft-card-num">02</div>
-          <h3 class="craft-card-title">Dual-Barrel Linear Torque</h3>
-          <p class="craft-card-desc">An optimized twin-barrel architecture delivers a stable 68-hour power reserve, ensuring identical chronometric precision on Day 3 as on Day 1.</p>
-          <div class="craft-card-meta">68-Hour Autonomous Reserve · 4Hz Cadence</div>
-        </div>
-
-        <div class="craft-card">
-          <div class="craft-card-num">03</div>
-          <h3 class="craft-card-title">Topographic Relief Dial</h3>
-          <p class="craft-card-desc">CNC micro-milled with undulating contour lines inspired by the Himalayan massif, framed under a dual-domed anti-reflective sapphire crystal.</p>
-          <div class="craft-card-meta">3D Topography · Anti-Reflective Sapphire</div>
-        </div>
-
-        <div class="craft-card">
-          <div class="craft-card-num">04</div>
-          <h3 class="craft-card-title">Paramagnetic Defense</h3>
-          <p class="craft-card-desc">Equipped with a Nivachron alloy hairspring impervious to magnetic distortion up to 15,000 Gauss, built to withstand extreme modern environments.</p>
-          <div class="craft-card-meta">Nivachron Alloy · 10 ATM Water Resistance</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
        SHOWCASE SECTION
   ═══════════════════════════════════════════ -->
   <section class="showcase">
@@ -855,6 +595,9 @@
   <!-- ═══════════════════════════════════════════
        MAISON STANDARDIZED LUXURY FOOTER
   ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-top-rule"></div>
     <div class="footer-inner">
@@ -864,7 +607,7 @@
           <a href="index.html" aria-label="Gujarat Time Company Home">
             <img class="footer-logo" src="/assets/photo/logo.svg" alt="Gujarat Time Company Logo" />
           </a>
-          <p class="footer-tagline">Surat Manufacture · Est. 2026</p>
+          <p class="footer-tagline">Contemporary Indian Watchmaking · Est. 2026</p>
           <p class="footer-address">
             Gujarat Time Company Pvt. Ltd.<br>
             Surat Horological District<br>
@@ -883,52 +626,41 @@
           </div>
         </div>
 
-        <!-- Collections Column -->
+        <!-- Navigation Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Navigation</h5>
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection (360° Showcase)</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Timepieces Column -->
         <div class="footer-col">
           <h5 class="footer-col-title">Timepieces</h5>
-          <a href="collection.html#himalayan">GTC Himalayan (Horizon 300)</a>
-          <a href="collection.html">360° Virtual Atelier</a>
-          <a href="collection.html#grid-section">The Himalayan Collection</a>
-          <a href="craftsmanship.html">Calibre &amp; Movements</a>
-          <a href="profile.html#allocations">Bespoke Allocations</a>
+          <a href="index.html#hero">GTC Himalayan (Horizon 300)</a>
+          <a href="collection.html">360° Virtual Showcase</a>
+          <a href="collection.html#grid-section">All Watch Models</a>
+          <a href="about.html#manufacture">Design &amp; Engineering</a>
         </div>
 
-        <!-- Maison Column -->
-        <div class="footer-col">
-          <h5 class="footer-col-title">The Maison</h5>
-          <a href="about.html">About Maison GTC</a>
-          <a href="heritage.html">Heritage &amp; Provenance</a>
-          <a href="craftsmanship.html">Craftsmanship &amp; Finishing</a>
-          <a href="about.html#manufacture">Surat Horological Atelier</a>
-          <a href="index.html#ethos">Ethos &amp; Manifesto</a>
-        </div>
-
-        <!-- Client Concierge Column -->
-        <div class="footer-col">
-          <h5 class="footer-col-title">Client Concierge</h5>
-          <a href="contact.html">Contact Us &amp; Concierge</a>
-          <a href="contact.html#salon">Surat Atelier Private Salon</a>
-          <a href="warranty.html">5-Year International Warranty</a>
-          <a href="warranty.html#care-guide">Horological Care Guide</a>
-          <a href="profile.html">Collector Sanctuary Vault</a>
-        </div>
-
-        <!-- Genesis Allocation Dossier Column -->
+        <!-- Reserve Column -->
         <div class="footer-col footer-col-reserve">
-          <h5 class="footer-col-title">Genesis Allocation</h5>
-          <p class="footer-col-desc">Strictly limited to 300 numbered timepieces worldwide. Individually regulated and hand-finished by master lapidaries in Surat, India.</p>
+          <h5 class="footer-col-title">Watch Reservation</h5>
+          <p class="footer-col-desc">Limited edition timepieces precision-assembled in Surat, India. Inquire or reserve directly online.</p>
           <button class="footer-reserve-btn open-reserve-modal">Reserve Your Piece</button>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC, Horizon, and the GTC Himalayan are registered marks of Gujarat Time Company. Designed and hand-assembled in Surat, India.</p>
+        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC and the GTC Himalayan are marks of Gujarat Time Company. Designed and assembled in Surat, India.</p>
         <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection</a>
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact Us</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Allocation</a>
-          <a href="warranty.html">Warranty &amp; Care</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
         </div>
       </div>
     </div>
@@ -1138,7 +870,7 @@
   <script>
     if ('requestIdleCallback' in window) {
       window.requestIdleCallback(() => {
-        ['collection.html', 'heritage.html', 'craftsmanship.html'].forEach((href) => {
+        ['collection.html', 'about.html'].forEach((href) => {
           const link = document.createElement('link');
           link.rel = 'prefetch';
           link.href = href;

@@ -7,7 +7,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <title>Collection Atelier · 360° Hybrid Showcase — Gujarat Time Company</title>
+  <title>Collection Showcase · Gujarat Time Company</title>
   <link rel="icon" type="image/x-icon" href="/assets/photo/logo.svg" />
 
   <!-- Google Fonts -->
@@ -40,14 +40,14 @@
       <!-- Desktop Morphing Nav (Centre: 4 Items) -->
       <nav class="desktop-nav" id="nav" aria-label="Main">
         <ul class="links">
-          <!-- 1. Maison (Direct Page Link) -->
+          <!-- 1. Home -->
           <li>
-            <a class="nav-link ${activePage === 'maison' ? 'active' : ''}" id="nav-maison" href="index.html">Maison</a>
+            <a class="nav-link" id="nav-home" href="index.html">Home</a>
           </li>
 
-          <!-- 2. Collection (Vertical Morphing Dropdown for Infinite Scalable Sub-pages) -->
+          <!-- 2. Collection (Morphing Dropdown) -->
           <li>
-            <button class="trigger ${activePage === 'collection' ? 'active' : ''}" data-menu="collection" aria-expanded="false">
+            <button class="trigger active" data-menu="collection" aria-expanded="false">
               <span>Collection</span>
               <svg class="chevron" width="8" height="5" viewBox="0 0 8 5" fill="none">
                 <path d="M1 1l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -55,23 +55,18 @@
             </button>
           </li>
 
-          <!-- 3. Heritage (Direct Page Link) -->
+          <!-- 3. About Us -->
           <li>
-            <a class="nav-link ${activePage === 'heritage' ? 'active' : ''}" id="nav-heritage" href="heritage.html">Heritage</a>
-          </li>
-
-          <!-- 4. Craftsmanship (Direct Section Link) -->
-          <li>
-            <a class="nav-link" id="nav-craftsmanship" href="craftsmanship.html">Craftsmanship</a>
+            <a class="nav-link" id="nav-about" href="about.html">About Us</a>
           </li>
         </ul>
 
-        <!-- Morphing Dropdown Container for Collection (Vertical Animation & Scalable Box) -->
+        <!-- Morphing Dropdown Container for Collection -->
         <div class="dd" id="dd" aria-hidden="true">
           <div class="panel p-collection" id="p-collection" data-panel="collection">
             <div class="collection-vertical-header">
-              <span class="collection-header-title">Maison Collections</span>
-              <span class="collection-header-count">3 Sub-Pages</span>
+              <span class="collection-header-title">Collections</span>
+              <span class="collection-header-count">2 Views</span>
             </div>
 
             <div class="collection-items-list">
@@ -82,10 +77,10 @@
                 </div>
                 <div class="item-content">
                   <div class="item-top">
-                    <span class="item-badge">ATELIER 360°</span>
+                    <span class="item-badge">SHOWCASE 360°</span>
                   </div>
                   <strong class="item-title">Main Collection</strong>
-                  <p class="item-desc">Interactive 360° virtual horology showcase in Surat.</p>
+                  <p class="item-desc">Interactive 360° virtual horology showcase.</p>
                 </div>
                 <div class="item-arrow" aria-hidden="true">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -104,26 +99,7 @@
                     <span class="item-badge">HORIZON 300</span>
                   </div>
                   <strong class="item-title">GTC Himalayan</strong>
-                  <p class="item-desc">Numbered edition of 300 high-altitude alpine chronometers.</p>
-                </div>
-                <div class="item-arrow" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </div>
-              </a>
-
-              <!-- Sub-page 3: CTC / GTC Sub-page -->
-              <a class="collection-item" href="craftsmanship.html">
-                <div class="item-visual">
-                  <img src="/assets/photo/gtc-calibre-movement.webp" alt="CTC GTC Calibre Manufacture" loading="lazy" />
-                </div>
-                <div class="item-content">
-                  <div class="item-top">
-                    <span class="item-badge">CALIBRE 2601</span>
-                  </div>
-                  <strong class="item-title">CTC / GTC Calibre</strong>
-                  <p class="item-desc">In-house monobloc engineering, movements &amp; dossiers.</p>
+                  <p class="item-desc">High-altitude alpine chronometer edition.</p>
                 </div>
                 <div class="item-arrow" aria-hidden="true">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -147,7 +123,7 @@
       <div class="actions">
         <div class="auth-nav-container" id="auth-nav-container"></div>
         <!-- CART TRIGGER BUTTON -->
-        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Acquisition Bag">
+        <button type="button" class="gtc-cart-trigger" id="gtc-cart-btn" onclick="toggleGtcCart(true)" aria-label="View Cart">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -166,26 +142,17 @@
 
     <!-- Mobile Slide-Down Sheet -->
     <div class="sheet" id="sheet" aria-hidden="true">
-      <h3>Maison</h3>
-      <a href="about.html">About The Maison</a>
-      <a href="index.html">Maison Overview</a>
+      <h3>Navigation</h3>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection (360° Showcase)</a>
+      <a href="about.html">About Us</a>
 
-      <h3>Collection</h3>
-      <a href="collection.html">Main Collection Page (360° Atelier)</a>
-      <a href="index.html#hero">GTC Himalayan Sub-page</a>
-      <a href="craftsmanship.html">CTC / GTC Calibre Atelier</a>
+      <h3>Featured Models</h3>
+      <a href="index.html#hero">GTC Himalayan Horizon</a>
+      <a href="collection.html#grid-section">All Timepieces</a>
 
-      <h3>Heritage</h3>
-      <a href="heritage.html">Heritage Coffret Vault</a>
-
-      <h3>Craftsmanship</h3>
-      <a href="craftsmanship.html">Craftsmanship &amp; Engineering</a>
-
-      <h3>Client Services</h3>
-      <a href="contact.html">Contact Us &amp; Concierge</a>
-      <a href="warranty.html">5-Year International Warranty</a>
-
-      <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line);">
+      <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px;">
+        <div class="auth-nav-container" id="auth-nav-container-mobile" style="width: 100%;"></div>
         <button class="cta open-reserve-modal" style="width: 100%; justify-content: center;">Reserve Timepiece</button>
       </div>
     </div>
@@ -612,6 +579,9 @@
   <!-- ═══════════════════════════════════════════
        MAISON STANDARDIZED LUXURY FOOTER
   ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-top-rule"></div>
     <div class="footer-inner">
@@ -621,7 +591,7 @@
           <a href="index.html" aria-label="Gujarat Time Company Home">
             <img class="footer-logo" src="/assets/photo/logo.svg" alt="Gujarat Time Company Logo" />
           </a>
-          <p class="footer-tagline">Surat Manufacture · Est. 2026</p>
+          <p class="footer-tagline">Contemporary Indian Watchmaking · Est. 2026</p>
           <p class="footer-address">
             Gujarat Time Company Pvt. Ltd.<br>
             Surat Horological District<br>
@@ -640,52 +610,41 @@
           </div>
         </div>
 
-        <!-- Collections Column -->
+        <!-- Navigation Column -->
+        <div class="footer-col">
+          <h5 class="footer-col-title">Navigation</h5>
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection (360° Showcase)</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Timepieces Column -->
         <div class="footer-col">
           <h5 class="footer-col-title">Timepieces</h5>
-          <a href="collection.html#himalayan">GTC Himalayan (Horizon 300)</a>
-          <a href="collection.html">360° Virtual Atelier</a>
-          <a href="collection.html#grid-section">The Himalayan Collection</a>
-          <a href="craftsmanship.html">Calibre &amp; Movements</a>
-          <a href="profile.html#allocations">Bespoke Allocations</a>
+          <a href="index.html#hero">GTC Himalayan (Horizon 300)</a>
+          <a href="collection.html">360° Virtual Showcase</a>
+          <a href="collection.html#grid-section">All Watch Models</a>
+          <a href="about.html#manufacture">Design &amp; Engineering</a>
         </div>
 
-        <!-- Maison Column -->
-        <div class="footer-col">
-          <h5 class="footer-col-title">The Maison</h5>
-          <a href="about.html">About Maison GTC</a>
-          <a href="heritage.html">Heritage &amp; Provenance</a>
-          <a href="craftsmanship.html">Craftsmanship &amp; Finishing</a>
-          <a href="about.html#manufacture">Surat Horological Atelier</a>
-          <a href="index.html#ethos">Ethos &amp; Manifesto</a>
-        </div>
-
-        <!-- Client Concierge Column -->
-        <div class="footer-col">
-          <h5 class="footer-col-title">Client Concierge</h5>
-          <a href="contact.html">Contact Us &amp; Concierge</a>
-          <a href="contact.html#salon">Surat Atelier Private Salon</a>
-          <a href="warranty.html">5-Year International Warranty</a>
-          <a href="warranty.html#care-guide">Horological Care Guide</a>
-          <a href="profile.html">Collector Sanctuary Vault</a>
-        </div>
-
-        <!-- Genesis Allocation Dossier Column -->
+        <!-- Reserve Column -->
         <div class="footer-col footer-col-reserve">
-          <h5 class="footer-col-title">Genesis Allocation</h5>
-          <p class="footer-col-desc">Strictly limited to 300 numbered timepieces worldwide. Individually regulated and hand-finished by master lapidaries in Surat, India.</p>
+          <h5 class="footer-col-title">Watch Reservation</h5>
+          <p class="footer-col-desc">Limited edition timepieces precision-assembled in Surat, India. Inquire or reserve directly online.</p>
           <button class="footer-reserve-btn open-reserve-modal">Reserve Your Piece</button>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC, Horizon, and the GTC Himalayan are registered marks of Gujarat Time Company. Designed and hand-assembled in Surat, India.</p>
+        <p class="footer-legal">&copy; 2026 Gujarat Time Company Pvt. Ltd. All rights reserved. GTC and the GTC Himalayan are marks of Gujarat Time Company. Designed and assembled in Surat, India.</p>
         <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection</a>
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact Us</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Allocation</a>
-          <a href="warranty.html">Warranty &amp; Care</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
         </div>
       </div>
     </div>
@@ -894,7 +853,7 @@
   <script>
     if ('requestIdleCallback' in window) {
       window.requestIdleCallback(() => {
-        ['index.html', 'heritage.html', 'craftsmanship.html'].forEach((href) => {
+        ['index.html', 'about.html'].forEach((href) => {
           const link = document.createElement('link');
           link.rel = 'prefetch';
           link.href = href;

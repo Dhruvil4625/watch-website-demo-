@@ -2569,7 +2569,7 @@ const initProductDetailsModal = (showcaseInstance) => {
 class HorologyAudio {
   constructor() {
     this.ctx = null;
-    this.enabled = true;
+    this.enabled = false;
   }
   init() {
     if (!this.ctx) {
@@ -2728,7 +2728,7 @@ function initPreloader(onCompleteCallback) {
   const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
   masterTl.to(counter, {
     val: 100,
-    duration: isMobile ? 1.05 : 1.45,
+    duration: 0.6,
     ease: "power2.inOut",
     onUpdate: () => {
       const current = Math.floor(counter.val);
@@ -2780,7 +2780,7 @@ function initPreloader(onCompleteCallback) {
   })
   // Stage 3: Watch Box Vault Split Open with Pneumatic Cushion Release
   .call(() => audio.playVaultOpen())
-  .to(topPanel, { yPercent: -100, duration: isMobile ? 0.7 : 0.95, ease: "expo.inOut" })
+  .to(topPanel, { yPercent: -100, duration: 0.4, ease: "expo.inOut" })
   .to(bottomPanel, { yPercent: 100, duration: isMobile ? 0.7 : 0.95, ease: "expo.inOut" }, "<")
   .to(ambientGlow, { opacity: 0, duration: 0.6, ease: "power2.out" }, "<")
   .to(seam, { opacity: 0, duration: 0.25, ease: "power2.out" }, "<0.15")
@@ -2793,13 +2793,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initPreloader((isSkipped) => {
     initHeroAnimations(isSkipped);
     // Automatically pops up Login after preloader finishes if user is not logged in
-    triggerPostPreloaderAuth();
+    // triggerPostPreloaderAuth(); // Disabled auto login popup in demo mode
   });
 
   initProductRevealAnimations();
-  initHeritageAnimations();
+  // initHeritageAnimations();
   initEthosAnimations();
-  initCraftsmanshipAnimations();
+  // initCraftsmanshipAnimations();
   initShowcaseAnimations();
   initNavScroll();
   initMorphingNavigation();
