@@ -317,7 +317,7 @@ const initProductRevealAnimations = () => {
         if (glare) {
           const glareX = (x / rect.width) * 100;
           const glareY = (y / rect.height) * 100;
-          glare.style.background = `radial-gradient(circle 280px at ${glareX}% ${glareY}%, rgba(201, 168, 76, 0.22) 0%, transparent 70%)`;
+          glare.style.background = `radial-gradient(circle 280px at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.15) 0%, transparent 70%)`;
           glare.style.opacity = '1';
         }
       });
@@ -1190,14 +1190,14 @@ const initModal = () => {
           if (drawerContainer) {
             drawerContainer.innerHTML = `
               <div class="reservation-success-receipt" style="text-align: center; padding: 2rem 0.5rem; animation: fadeIn 0.5s ease;">
-                <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; border: 1px solid #c9a84c; color: #c9a84c; font-size: 1.3rem; margin-bottom: 1.2rem; background: rgba(201, 168, 76, 0.1);">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; border: 1px solid #ffffff; color: #ffffff; font-size: 1.3rem; margin-bottom: 1.2rem; background: rgba(201, 168, 76, 0.1);">
                   ✓
                 </div>
-                <div style="font-family: var(--font-accent, 'Outfit', sans-serif); font-size: 0.68rem; letter-spacing: 0.25em; color: #c9a84c; text-transform: uppercase; margin-bottom: 0.5rem;">
+                <div style="font-family: var(--font-accent, 'Outfit', sans-serif); font-size: 0.68rem; letter-spacing: 0.25em; color: #ffffff; text-transform: uppercase; margin-bottom: 0.5rem;">
                   GENESIS ALLOCATION SECURED · SURAT MASTER VAULT
                 </div>
                 <h3 style="font-family: var(--font-serif, 'Playfair Display', serif); font-size: 1.6rem; color: #f8f5ef; margin: 0 0 1rem; text-transform: uppercase;">
-                  ALLOCATION REF: <span style="color: #c9a84c;">${result.allocationCode}</span>
+                  ALLOCATION REF: <span style="color: #ffffff;">${result.allocationCode}</span>
                 </h3>
                 <p style="font-size: 0.88rem; color: rgba(248, 245, 239, 0.75); line-height: 1.6; max-width: 440px; margin: 0 auto 1.8rem;">
                   Your private reservation for <strong>${reservationPayload.watchModel} (${(reservationPayload.variant.split('·')[1] || reservationPayload.variant).trim()})</strong> has been registered in the Surat Atelier master registry. A Maison Client Advisor will establish private contact within 24 hours.
@@ -1209,7 +1209,7 @@ const initModal = () => {
                       <span>→</span>
                     </a>
                   ` : ''}
-                  <button type="button" class="drawer-back-btn" id="receipt-close-btn" style="border: 1px solid rgba(201, 168, 76, 0.4); padding: 10px 24px; border-radius: 2px;">
+                  <button type="button" class="drawer-back-btn" id="receipt-close-btn" style="border: 1px solid rgba(255, 255, 255, 0.3); padding: 10px 24px; border-radius: 2px;">
                     <span>RETURN TO ATELIER</span>
                   </button>
                 </div>
@@ -1540,9 +1540,9 @@ class HybridShowcase3D {
     canvas.height = 32;
     const ctx = canvas.getContext('2d');
     const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    grad.addColorStop(0, 'rgba(212, 175, 55, 1)');
-    grad.addColorStop(0.35, 'rgba(212, 175, 55, 0.7)');
-    grad.addColorStop(0.75, 'rgba(201, 168, 76, 0.2)');
+    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    grad.addColorStop(0.35, 'rgba(255, 255, 255, 0.7)');
+    grad.addColorStop(0.75, 'rgba(255, 255, 255, 0.2)');
     grad.addColorStop(1, 'rgba(201, 168, 76, 0)');
     ctx.fillStyle = grad;
     ctx.beginPath();
@@ -1552,7 +1552,7 @@ class HybridShowcase3D {
     const sparkleTexture = new THREE.CanvasTexture(canvas);
 
     const material = new THREE.PointsMaterial({
-      color: 0xd4af37,
+      color: 0xffffff,
       size: 0.14,
       map: sparkleTexture,
       transparent: true,
@@ -1649,7 +1649,7 @@ class HybridShowcase3D {
 
         const softbox = ctx.createRadialGradient(128, 25, 2, 128, 25, 60);
         softbox.addColorStop(0, 'rgba(255, 248, 230, 0.95)');
-        softbox.addColorStop(0.5, 'rgba(201, 168, 76, 0.4)');
+        softbox.addColorStop(0.5, 'rgba(255, 255, 255, 0.3)');
         softbox.addColorStop(1, 'transparent');
         ctx.fillStyle = softbox;
         ctx.fillRect(0, 0, 256, 85);
@@ -2764,7 +2764,7 @@ function initPreloader(onCompleteCallback) {
   })
   // Stage 2: Mechanical Lock Pulse at 12:00, Gold Seam Expansion & Energy Charge Sound
   .to([minuteHand, hourHand].filter(Boolean), {
-    boxShadow: "0 0 18px rgba(201, 168, 76, 1), 0 0 35px rgba(245, 232, 199, 0.9)",
+    boxShadow: "0 0 18px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6)",
     duration: 0.15,
     ease: "power2.out"
   })
@@ -2773,7 +2773,7 @@ function initPreloader(onCompleteCallback) {
   .to(seam, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power3.out" }, "-=0.08")
   .to(core, { scale: 0.92, opacity: 0, duration: 0.35, ease: "power2.in" }, "+=0.02")
   .to(seam, { 
-    boxShadow: "0 0 70px 20px rgba(201, 168, 76, 0.95), 0 0 120px 40px rgba(232, 214, 179, 0.7)",
+    boxShadow: "0 0 70px 20px rgba(255, 255, 255, 0.8), 0 0 120px 40px rgba(255, 255, 255, 0.4)",
     height: 4,
     duration: 0.2,
     ease: "power1.in"
